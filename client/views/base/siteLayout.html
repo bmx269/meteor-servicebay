@@ -1,0 +1,15 @@
+<template name="siteLayout">
+<head>
+  {{#with site}}<title>{{siteTitle}}</title>{{/with}}
+  <meta property="title" content="{{siteTitle}}">
+  <meta property="description" content="Get your own easy to use, auto service based website.">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <meta name="fragment" content="!">
+</head>
+
+
+  <!--[if lt IE 9]>
+    <p class="browser-warning"><strong><i class="icon-exclamation-sign"></i> Warning</strong> - You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> to properly view this website.</p> oops
+  <![endif]-->
+  {{> yield}}
+</template>

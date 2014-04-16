@@ -1,0 +1,125 @@
+#iron-router-progress {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: $blue;
+  box-shadow: 0 0 5px rgba(255,255,255,.5);
+  opacity: 1;
+  z-index: 10000;
+}
+
+// #iron-router-progress.loading.spinner:before {
+// opacity: 1;
+// }
+#iron-router-progress.spinner:before {
+content: "";
+display: block;
+position: fixed;
+top: 7px;
+right: inherit;
+left: 10px;
+width: 20px;
+height: 20px;
+background-color: transparent;
+border: 2px solid $grayLight;
+border-radius: 100px;
+border-right-color: transparent !important;
+opacity: 0;
+z-index: 10000;
+transition: .5s opacity;
+transition-delay: .5s;
+-webkit-animation: iron-router-progress-before 0.5s linear infinite;
+-moz-animation: iron-router-progress-before 0.5s linear infinite;
+-o-animation: iron-router-progress-before 0.5s linear infinite;
+-ms-animation: iron-router-progress-before 0.5s linear infinite;
+animation: iron-router-progress-before 0.5s linear infinite;
+}
+.theme0,
+.theme1,
+.theme2,
+.theme3{
+  #iron-router-progress {
+    height: 1px;
+    background-color: $blue;
+    box-shadow: 0 0 5px rgba(255,255,255,.5);
+  }
+}
+// Features Icons
+ul.features{
+  li{
+    h3{
+      text-align: center;
+      &:before{
+        color: #273138;
+      }
+    }
+    // Services
+    .node-14{
+      @include icon-eye-open;
+      @include icon-xlarge;
+    }
+    // Designs
+    .node-13{
+      @include icon-picture;
+      @include icon-xlarge;
+    }
+    // Management
+    .node-8{
+      @include icon-cogs;
+      @include icon-xlarge;
+    }
+    // Mobile
+    .node-9{
+      @include icon-mobile-phone;
+      @include icon-xlarge;
+    }
+    // SEO
+    .node-12{
+      @include icon-search;
+      @include icon-xlarge;
+    }
+    // Affordable
+    .node-11{
+      @include icon-heart;
+      @include icon-xlarge;
+    }
+    // No Contracts
+    .node-10{
+      @include icon-thumbs-up;
+      @include icon-xlarge;
+    }
+  } //li
+} //ul
+
+#map { height: 180px; }
+
+.entry{
+  background: #fff;
+  border: 1px #ddd solid;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.entry-form button.submit {
+font-size: 16px;
+padding: 10px 14px;
+//margin-top:inherit;
+}
+
+.entry-social button {
+  display: block;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 10px;
+  padding: 8px 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+  text-shadow: none;
+
+  i {
+    display: none;
+  }
+}

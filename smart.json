@@ -1,0 +1,19 @@
+{
+  "packages": {
+    "iron-router": "0.7.1",
+    "autoform": {
+      "git": "https://github.com/aldeed/meteor-autoform",
+      "branch": "ui"
+    },
+    "accounts-entry": "0.7.1",
+    "blog": "0.3.0",
+    "collection-helpers": {},
+    "headers": {},
+    "autocompletion": {},
+    "ejson-minimax": {},
+    "mailgun": {},
+    "collection-behaviours": {},
+    "impicker": {},
+    "HTML5-History-API": {}
+  }
+}

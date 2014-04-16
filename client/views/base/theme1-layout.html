@@ -1,0 +1,17 @@
+<template name="theme1.layout">
+<head>
+  {{#with site}}<title>{{siteTitle}}</title>{{/with}}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+</head>
+  {{!-- Theme 1 --}}
+
+  <!--[if lt IE 9]>
+    <p class="browser-warning"><strong><i class="icon-exclamation-sign"></i> Warning</strong> - You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> to properly view this website.</p>
+  <![endif]-->
+
+  {{> yield "theme1.header"}}
+
+  {{> yield}}
+
+  {{> yield "theme1.footer"}}
+</template>

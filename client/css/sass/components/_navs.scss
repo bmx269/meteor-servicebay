@@ -1,0 +1,559 @@
+
+.menu-trigger{
+    font-size: 0px;
+    @include inline-block;
+    color: $grayLight;
+    padding-top: 0px;
+    line-height: 1em;
+
+    @include icon-reorder;
+
+    &:before{
+      display: block;
+      font-size: 32px;
+      padding: 10px 0px;
+
+    }
+
+    &:hover,
+    &:active,
+    &:focus{
+      color: #fff;
+      text-decoration: none;
+    }
+
+    @include at-breakpoint($narrow){
+      display: none;
+    }
+}
+
+#mobile-menu{
+  display: none;
+}
+
+nav#jPanelMenu-menu{
+    background: $grayLighter;
+    margin: 0;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-top: 15px;
+    border-right: 1px solid $grayDark;
+
+    ul.menu{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      text-align: left;
+
+      li{
+        display: block;
+        margin: 0 0 0 0px;
+        padding: 0;
+        border-bottom: 1px solid $grayLight;
+
+        a{
+          padding: 8px 15px;
+          display: block;
+          text-decoration: none;
+          color: $grayDark;
+          @include border-radius(0px);
+
+          &:hover,
+          &:focus,
+          &:active {
+            color: $white;
+            background: $grayDark;
+
+            &.active{
+              background: $grayDark;
+              color: $white;
+            }
+          }
+
+          &.active{
+            background: $grayDark;
+            color: $white;
+
+            &:hover,
+            &:focus,
+            &:active {
+              color: $white;
+              background: $grayDark;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+//
+// Navs
+// --------------------------------------------------
+
+nav#user-menu{
+  float: right;
+  @include inline-block;
+  font-size: 11px;
+  padding: 10px 0 5px 0;
+  line-height: 11px;
+  width: 85%;
+
+  @include at-breakpoint($narrow){
+    padding: 5px 0 5px 0;
+    width: 100%;
+  }
+
+  ul.menu{
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+
+  @include at-breakpoint($tablet){
+    text-align: right;
+  } //at-breakpoint($tablet)
+
+    li{
+      line-height: 11px;
+      @include inline-block;
+      margin: 0;
+      padding: 0;
+      vertical-align: top;
+
+      a{
+        display: block;
+        padding: 5px 10px;
+        color: $white;
+        text-decoration: none;
+        @include border-radius(4px);
+
+        &.support{
+          @include icon-comments-alt;
+          @include icon-large;
+          font-size: 11px;
+          background: $red;
+
+           &:hover,
+           &:focus,
+           &:active,
+           &.active{
+            background: $green;
+            color: $white;
+
+          }
+
+        }
+
+        &.dashboard{
+          @include icon-home;
+          @include icon-large;
+          font-size: 11px;
+        }
+
+        &.signup{
+          @include icon-cog;
+          @include icon-large;
+          font-size: 11px;
+        }
+        &.signin,
+        &.signout,
+        &.profileLink{
+          @include icon-user;
+          @include icon-large;
+          font-size: 11px;
+        }
+
+        &.logout{
+          @include icon-signout;
+          @include icon-large;
+          font-size: 11px;
+        }
+        &.active{
+          background: $gray;
+          color: $white;
+          @include border-radius(4px)
+        }
+      }
+      a:hover,
+      a:focus,
+      a:active {
+        color: $white;
+        background: $green;
+        @include border-radius(4px);
+
+        // &.active{
+        //   background: $black;
+        //   color: $white;
+        //   @include border-radius(4px)
+        // }
+      }
+      .open > a.dropdown-toggle,
+      .open > a.dropdown-toggle:hover,
+      .open > a.dropdown-toggle:focus{
+          background-color: $black;
+          color: $white;
+          @include border-radius(4px);
+          border:none;
+      }
+    }
+  }
+}
+
+nav#main-menu{
+  margin: 20px 0 0 0;
+  font-size: 16px;
+  display: none;
+
+  @include at-breakpoint($narrow){
+    display: block;
+  }
+  @include at-breakpoint($tablet){
+    margin: 10px 0 0 0;
+    font-size: 14px;
+  } //at-breakpoint($tablet)
+  @include at-breakpoint($computer){
+    font-size: 16px;
+  } //at-breakpoint($computer)
+
+  ul.menu{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+
+    @include at-breakpoint($tablet){
+      text-align: right;
+    } //at-breakpoint($computer)
+
+    li{
+      @include inline-block;
+      margin: 0 0 0 0px;
+      padding: 0;
+
+      @include at-breakpoint($wide){
+        margin: 0 0 0 10px;
+      } //at-breakpoint($wide)
+
+      a{
+        padding: 5px 10px;
+        text-decoration: none;
+        color: $grayDark;
+        @include border-radius(4px);
+
+
+      @include at-breakpoint($wide){
+        padding: 5px 15px;
+      } //at-breakpoint($wide)
+
+        &.active{
+          background: $grayLighter;
+          color: $grayDark;
+        }
+      }
+      a:hover,
+      a:focus,
+      a:active {
+        color: $white;
+        background: $grayDark;
+
+        &.active{
+          background: $grayLighter;
+          color: $grayDark;
+        }
+      }
+    }
+  }
+}
+
+
+#block-block-1{
+  @include at-breakpoint($narrow){
+    display: none;
+  }
+}
+
+#footer-wrapper{
+  nav{
+
+    ul.menu{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: left;
+
+      li{
+        margin: 0 0 5px 0px;
+        padding: 0;
+        line-height: 16px;
+        font-size: 14px;
+
+        a{
+          padding: 5px 0px;
+          text-decoration: none;
+          color: $blueDark;
+
+          &.active{
+            color: $grayLighter;
+          }
+        }
+        a:hover {
+          color: $white;
+
+          &.active{
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+#login-buttons{
+  .login-link-and-dropdown-list {
+  position: relative;
+  }
+
+  #login-dropdown-list {
+  position: absolute;
+  min-width: 200px;
+  // left: -100%;
+  // top: 100%;
+  z-index: 999;
+  text-align: right;
+  right: 0;
+  left: auto;
+  padding: 10px 15px;
+  margin: 2px 0 0;
+  list-style: none;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+
+  .login-close-text{
+    display: inline-block;
+    padding: 7px 10px;
+    color: $grayDark;
+    background: $grayLighter;
+    @include border-radius(4px);
+    text-decoration: none;
+    font-weight: 600;
+
+    &:hover,
+    &:focus{
+      background: $grayDark;
+      color: $white;
+      @include border-radius(4px)
+    }
+  }
+  .login-password-form {
+    text-align: left;
+  }
+
+  #login-buttons-password,
+  #login-buttons-do-change-password{
+    display: block;
+    text-align: center;
+    padding: 7px 10px;
+    margin: 5px 0;
+    color: $white;
+    background: $blue;
+    @include border-radius(4px);
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 1.2em;
+    font-weight: 600;
+
+    &:hover,
+    &:focus{
+      background: $blueDark;
+      color: $white;
+      @include border-radius(4px)
+    }
+  }
+
+  #login-buttons-facebook{
+    display: block;
+    text-align: center;
+    padding: 7px 10px;
+    margin: 5px 0;
+    color: $white;
+    background: $blue;
+    @include border-radius(4px);
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 1.2em;
+    font-weight: 600;
+
+    &:hover,
+    &:focus{
+      background: $blueDark;
+      color: $white;
+      @include border-radius(4px)
+    }
+  }
+  #signup-link{
+    display: block;
+    text-align: center;
+    padding: 7px 10px;
+    margin: 5px 0;
+    color: $white;
+    background: $green;
+    @include border-radius(4px);
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 1.2em;
+    font-weight: 600;
+
+    &:hover,
+    &:focus{
+      background: $greenDark;
+      color: $white;
+      @include border-radius(4px)
+    }
+  }
+}
+#login-buttons-logout{
+  display: block;
+  text-align: center;
+  padding: 12px 15px;
+  margin: 10px 0 0 0;
+  color: $white;
+  background: $red;
+  @include border-radius(4px);
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 1.2em;
+  font-weight: 600;
+
+  &:hover,
+  &:focus{
+    background: $orange;
+    color: $white;
+    @include border-radius(4px)
+  }
+}
+#login-buttons-open-change-password{
+  display: block;
+  text-align: center;
+  padding: 7px 10px;
+  margin: 5px 0;
+  color: $white;
+  background: $gray;
+  @include border-radius(4px);
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 1.2em;
+  font-weight: 600;
+
+  &:hover,
+  &:focus{
+    background: $blueDark;
+    color: $white;
+    @include border-radius(4px)
+  }
+}
+
+#back-to-login-link{
+  display: block;
+  text-align: center;
+  padding: 7px 10px;
+  margin: 5px 0;
+  color: $white;
+  background: $grayLight;
+  @include border-radius(4px);
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 1.2em;
+  font-weight: 600;
+
+  &:hover,
+  &:focus{
+    background: $grayDark;
+    color: $white;
+    @include border-radius(4px)
+  }
+}
+  .nav {
+    margin: 0px;
+    line-height: 10px;
+    padding: 0;
+    list-style: none outside none;
+  }
+
+  .nav .dropdown-toggle .caret {
+    margin-top: 2px;
+    border-top-color: #fff;
+    border-bottom-color: #fff;
+  }
+  .dropdown-menu {
+    text-align: left;
+    right: 0;
+    left: auto;
+    min-width: 252px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    list-style: none;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+  }
+}
+
+
+#footer-wrapper{
+  nav{
+
+    ul.menu{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: left;
+
+      li{
+        margin: 0 0 5px 0px;
+        padding: 0;
+        line-height: 16px;
+        font-size: 14px;
+
+        a{
+          padding: 5px 0px;
+          text-decoration: none;
+          color: $blueDark;
+
+          &.active{
+            color: $grayLighter;
+          }
+        }
+        a:hover {
+          color: $white;
+
+          &.active{
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}

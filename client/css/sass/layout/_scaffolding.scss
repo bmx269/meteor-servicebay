@@ -1,0 +1,212 @@
+//
+// Scaffolding
+// --------------------------------------------------
+
+
+// Reset the box-sizing
+//
+// Heads up! This reset may cause conflicts with some third-party widgets.
+// For recommendations on resolving such conflicts, see
+// http://getbootstrap.com/getting-started/#third-box-sizing
+* {
+  @include box-sizing(border-box);
+}
+*:before,
+*:after {
+  @include box-sizing(border-box);
+}
+
+
+// Body reset
+
+html {
+  font-size: 62.5%;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+
+// Body reset
+// -------------------------
+
+body {
+  margin: 0;
+  font-family: $baseFontFamily;
+  font-size: $baseFontSize;
+  line-height: $baseLineHeight;
+  color: $textColor;
+  background: $bodyBackground;
+}
+
+.theme1 body{
+  background: #efefef;
+}
+// Links
+// -------------------------
+
+a {
+  color: $linkColor;
+  text-decoration: none;
+}
+a:hover {
+  color: $linkColorHover;
+  text-decoration: underline;
+}
+
+
+
+// Images
+// -------------------------
+
+// Rounded corners
+.img-rounded {
+  @include border-radius(6px);
+}
+
+// Add polaroid-esque trim
+.img-polaroid {
+  padding: 4px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0,0,0,.2);
+  @include box-shadow(#{0 1px 3px rgba(0,0,0,.1)});
+}
+
+// Perfect circle
+.img-circle {
+  @include border-radius(500px); // crank the border-radius so it works with most reasonably sized images
+}
+
+/*
+Block clearfix - yup its a recap of the clearfix trick, no reason to do class="clearfix/cf/whatever" all over our markup
+----------------------------*/
+.block .content:before,.block .content:after { content:""; display:table;}
+.block .content:after { clear:both;}
+.block .content { zoom:1;}
+
+/*
+  admin styles for blocks
+* ------------------------------------- */
+.page-admin-structure-block-demo .block-region {
+  background: #ffff66;
+  border: 1px dotted #9f9e00;
+  color: #000;
+  font: 90% "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+  margin: 0px;
+  padding: 5px;
+  text-align: center;
+  text-shadow: none;
+}
+
+
+.fullwidth{
+  width: 100%;
+}
+// Regions
+.row{
+  padding: 0;
+  margin: 0;
+}
+
+.jPanelMenu-panel{
+  overflow: hidden;
+}
+
+#user-wrapper{
+  //background: $black url(../img/txture.png) left top repeat;
+  background: $grayDarker;
+  //color: $white;
+}
+
+#header-wrapper,
+.header-wrapper{
+  background: transparent;
+  //position: absolute;
+  //top: 67px;
+  //left: 0;
+  //z-index: 300;
+
+  .container{
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+.page{
+   //background: $white;
+}
+
+#content-wrapper,
+.content-wrapper{
+  background: $white;
+  //  border-bottom: 1px solid $green;
+
+  .container{
+    padding-top: 30px;
+    padding-bottom: 80px;
+  }
+}
+
+#footer-wrapper{
+  background: $grayDarker;
+  color: $white;
+
+  .container{
+  padding-top: 50px;
+  padding-bottom: 50px;
+  }
+
+  a {
+    color: $linkColor;
+    text-decoration: none;
+  }
+  a:hover {
+    color: $white;
+    text-decoration: underline;
+  }
+}
+
+.one-stacked{
+  #top-wrapper{
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  #bottom-wrapper{
+    background: $gray;
+    color: $grayLighter;
+    font-weight: 300;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+} //one-stacked
+
+
+#features-wrapper{
+    background: $grayLighter;
+    color: $gray;
+    font-weight: 300;
+
+    .container{
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+}
+
+#invoice-wrapper{
+  background: $grayLighter;
+  color: $gray;
+  font-weight: 300;
+
+  .container{
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+
+#page-pricing{
+  #mini-panel-features_listing{
+    background: $grayLighter;
+    color: $gray;
+    font-weight: 300;
+  }
+}
+

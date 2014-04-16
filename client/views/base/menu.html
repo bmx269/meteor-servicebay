@@ -1,0 +1,93 @@
+<template name="topMenu">
+  <div id="user-wrapper">
+    <div class="container">
+      <span class="menu-trigger sb-toggle-left">Menu</span>
+      <nav class="nav" id="user-menu">
+        <ul class="menu">
+          <li><a href="{{pathFor 'sb.support'}}" class="{{activeRouteClass 'sb.support'}} support">Help &amp; Support</a></li>
+          <li><a href="{{pathFor 'dashboard'}}" class="{{activeRouteClass 'dashboard'}} dashboard">My Dashboard</a></li>
+          {{#unless currentUser}}<li><a href="/sign-up" class="signup">Sign Up</a></li>{{/unless}}
+          {{#if currentUser}}<li><a href="/sign-out" class="signout">Sign Out</a></li>{{/if}}
+          {{#if adminUser}}<li><a href="{{pathFor 'admin'}}">Admin</a></li>{{/if}}
+        </ul>
+      </nav>
+    </div>
+  </div>
+</template>
+
+
+<template name="menu">
+    <nav id="main-menu">
+      <ul class="menu" >
+        <li><a href="{{pathFor 'home'}}">Home</a></li>
+        <li><a href="{{pathFor 'services'}}" class="{{activeRouteClass 'services'}}">Services</a></li>
+        <li><a href="{{pathFor 'about'}}" class="{{activeRouteClass 'about'}}">About Us</a></li>
+        <li><a href="{{pathFor 'contact'}}" class="{{activeRouteClass 'contact'}}">Contact</a></li>
+      </ul>
+    </nav>
+</template>
+
+<template name="clientMobileMenu">
+    <nav id="mobile-menu" class="client">
+      <ul class="menu">
+        <li><a href="{{pathFor 'home'}}">Home</a></li>
+        <li><a href="{{pathFor 'services'}}" class="{{activeRouteClass 'services'}}">Services</a></li>
+        <li><a href="{{pathFor 'about'}}" class="{{activeRouteClass 'about'}}">About Us</a></li>
+        <li><a href="{{pathFor 'contact'}}" class="{{activeRouteClass 'contact'}}">Contact</a></li>
+      </ul>
+    </nav>
+</template>
+
+
+<template name="serviceBayMenu">
+    <nav id="main-menu">
+      <ul class="menu">
+        <li><a href="{{pathFor 'home'}}">Home</a></li>
+        <li><a href="{{pathFor 'sb.features'}}" class="{{activeRouteClass 'sb.features'}}">Features</a></li>
+        <li><a href="{{pathFor 'sb.pricing'}}" class="{{activeRouteClass 'sb.pricing'}}">Pricing & Options</a></li>
+        <li><a href="{{pathFor 'sb.listing'}}" class="{{activeRouteClass 'sb.listing'}}">Listing</a></li>
+      </ul>
+    </nav>
+</template>
+
+<template name="serviceBayMobileMenu">
+    <nav id="mobile-menu" class="sb">
+      <ul class="menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="{{pathFor 'sb.features'}}" class="{{activeRouteClass 'sb.features'}}">Features</a></li>
+        <li><a href="{{pathFor 'sb.pricing'}}" class="{{activeRouteClass 'sb.pricing'}}">Pricing & Options</a></li>
+        <li><a href="{{pathFor 'sb.listing'}}" class="{{activeRouteClass 'sb.listing'}}">Listing</a></li>
+      </ul>
+    </nav>
+</template>
+
+
+<template name="serviceBayAboutFooterMenu">
+    <div class="footer-menu about">
+      <h3>About ServiceBay</h3>
+      <nav id="about-menu">
+        <ul class="menu">
+          <li><a href="{{pathFor 'sb.choose'}}" class="{{activeRouteClass 'sb.choose'}}">Why Choose ServiceBay?</a></li>
+          <li><a href="{{pathFor 'sb.promise'}}" class="{{activeRouteClass 'sb.promise'}}">Our Promise</a></li>
+          <li><a href="{{pathFor 'sb.team'}}" class="{{activeRouteClass 'sb.team'}}">Our Team</a></li>
+          <li><a href="{{pathFor 'sb.policy'}}" class="{{activeRouteClass 'sb.policy'}}">Privacy Policy</a></li>
+          <li><a href="{{pathFor 'sb.terms'}}" class="{{activeRouteClass 'sb.terms'}}">Terms of Use</a></li>
+        </ul>
+      </nav>
+    </div>
+</template>
+
+<template name="serviceBayConnectFooterMenu">
+    <div class="footer-menu connect">
+      <h3>Connect to ServiceBay</h3>
+      <nav id="connect-menu">
+        <ul class="menu">
+          <li><a href="{{pathFor 'blogIndex'}}" class="{{activeRouteClass 'blogIndex'}}">Our Blog</a></li>
+          <li><a href="{{pathFor 'contact'}}" class="{{activeRouteClass 'contact'}}">Contact Us</a></li>
+          <li><a href="{{pathFor 'sb.support'}}" class="{{activeRouteClass 'sb.support'}}">Help &amp; Support</a></li>
+          <li><a href="http://facebook.com" class="facebook">Facebook</a></li>
+          <li><a href="http://twitter.com/Service-Bay" class="twitter">Twitter</a></li>
+        </ul>
+      </nav>
+    </div>
+</template>

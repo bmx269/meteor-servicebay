@@ -1,0 +1,35 @@
+<template name="dashboard">
+  <div id="content-wrapper">
+    <div class="container">
+      <h1>Your Dashboard</h1>
+    </div>
+  </div>
+  <div id="invoice-wrapper">
+  </div>
+</template>
+
+
+<template name="billingDashboard">
+  <div id="content-wrapper">
+    <div class="container">
+      <h1>Your Dashboard</h1>
+    </div>
+  </div>
+  <div id="invoice-wrapper">
+    {{> invoices}}
+  </div>
+</template>
+
+
+<template name="siteItem">
+  <div class="site">
+    <div class="site-content">
+      <h3><a href="{{url}}" target="_blank">{{title}}</a><span>{{domain}}</span></h3>
+      <p>
+        {{#if ownSite}}
+        <a href="{{pathFor 'siteEdit'}}">Edit</a> | <a href="{{pathFor 'disableSite'}}" class="disable-site btn">Disable</a>
+        {{/if}}
+      </p>
+    </div>
+  </div>
+</template>

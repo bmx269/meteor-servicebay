@@ -1,0 +1,26 @@
+# Meteor packages used by this project, one per line.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+standard-app-packages
+accounts-password
+collection-helpers
+headers
+autocompletion
+ejson-minimax
+coffeescript
+email
+mailgun
+collection-behaviours
+impicker
+jquery
+iron-router
+blog
+accounts-entry
+accounts-ui
+accounts-facebook
+accounts-twitter
+accounts-google
+iron-router-progress
+HTML5-History-API
