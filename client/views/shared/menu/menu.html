@@ -1,0 +1,92 @@
+<template name="topMenu">
+  <div id="user-wrapper">
+    <div class="container">
+      <span class="menu-trigger sb-toggle-left">Menu</span>
+      <nav class="nav" id="user-menu">
+        <ul class="menu">
+          <li><a href="{{pathFor 'support'}}" class="{{activeRouteClass 'support'}} support">Help &amp; Support</a></li>
+          <li><a href="{{pathFor 'dashboard'}}" class="{{activeRouteClass 'dashboard'}} dashboard">My Dashboard</a></li>
+          <li>{{> loginButtons }}</li>
+          {{#if adminUser}}<li><a href="{{pathFor 'admin'}}">Admin</a></li>{{/if}}
+        </ul>
+      </nav>
+    </div>
+  </div>
+</template>
+
+
+<template name="Menu">
+    <nav id="main-menu">
+      <ul class="menu" >
+        <li><a href="{{pathFor 'home'}}">Home</a></li>
+        <li><a href="{{pathFor 'services.index'}}" class="{{activeRouteClass 'services.index'}}">Services</a></li>
+        <li><a href="{{pathFor 'site.about'}}" class="{{activeRouteClass 'site.about'}}">About Us</a></li>
+        <li><a href="{{pathFor 'contact'}}" class="{{activeRouteClass 'contact'}}">Contact</a></li>
+      </ul>
+    </nav>
+</template>
+
+<template name="clientMobileMenu">
+    <nav id="mobile-menu" class="client">
+      <ul class="menu">
+        <li><a href="{{pathFor 'home'}}">Home</a></li>
+        <li><a href="{{pathFor 'services.index'}}" class="{{activeRouteClass 'services.index'}}">Services</a></li>
+        <li><a href="{{pathFor 'site.about'}}" class="{{activeRouteClass 'site.about'}}">About Us</a></li>
+        <li><a href="{{pathFor 'contact'}}" class="{{activeRouteClass 'contact'}}">Contact</a></li>
+      </ul>
+    </nav>
+</template>
+
+
+<template name="serviceBayMenu">
+    <nav id="main-menu">
+      <ul class="menu">
+        <li><a href="{{pathFor 'home'}}">Home</a></li>
+        <li><a href="{{pathFor 'features'}}" class="{{activeRouteClass 'features'}}">Features</a></li>
+        <li><a href="{{pathFor 'pricing'}}" class="{{activeRouteClass 'pricing'}}">Pricing & Options</a></li>
+        <li><a href="{{pathFor 'listing'}}" class="{{activeRouteClass 'listing'}}">Listing</a></li>
+      </ul>
+    </nav>
+</template>
+
+<template name="serviceBayMobileMenu">
+    <nav id="mobile-menu" class="sb">
+      <ul class="menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="{{pathFor 'features'}}" class="{{activeRouteClass 'features'}}">Features</a></li>
+        <li><a href="{{pathFor 'pricing'}}" class="{{activeRouteClass 'pricing'}}">Pricing & Options</a></li>
+        <li><a href="{{pathFor 'listing'}}" class="{{activeRouteClass 'listing'}}">Listing</a></li>
+      </ul>
+    </nav>
+</template>
+
+
+<template name="serviceBayAboutFooterMenu">
+    <div class="footer-menu about">
+      <h3>About ServiceBay</h3>
+      <nav id="about-menu">
+        <ul class="menu">
+          <li><a href="{{pathFor 'whychoose'}}" class="{{activeRouteClass 'whychoose'}}">Why Choose ServiceBay?</a></li>
+          <li><a href="{{pathFor 'promise'}}" class="{{activeRouteClass 'promise'}}">Our Promise</a></li>
+          <li><a href="{{pathFor 'team'}}" class="{{activeRouteClass 'team'}}">Our Team</a></li>
+          <li><a href="{{pathFor 'privacy'}}" class="{{activeRouteClass 'privacy'}}">Privacy Policy</a></li>
+          <li><a href="{{pathFor 'terms'}}" class="{{activeRouteClass 'terms'}}">Terms of Use</a></li>
+        </ul>
+      </nav>
+    </div>
+</template>
+
+<template name="serviceBayConnectFooterMenu">
+    <div class="footer-menu connect">
+      <h3>Connect to ServiceBay</h3>
+      <nav id="connect-menu">
+        <ul class="menu">
+          <li><a href="{{pathFor 'blogIndex'}}" class="{{activeRouteClass 'blogIndex'}}">Our Blog</a></li>
+          <li><a href="{{pathFor 'contact'}}" class="{{activeRouteClass 'contact'}}">Contact Us</a></li>
+          <li><a href="{{pathFor 'support'}}" class="{{activeRouteClass 'support'}}">Help &amp; Support</a></li>
+          <li><a href="http://facebook.com" class="facebook">Facebook</a></li>
+          <li><a href="http://twitter.com/Service-Bay" class="twitter">Twitter</a></li>
+        </ul>
+      </nav>
+    </div>
+</template>
