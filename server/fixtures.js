@@ -2,7 +2,7 @@ if (Subscription.find().count() === 0) {
   Subscription.insert({
     siteTitle: 'ServiceBay Sample',
     userId: '1',
-    owner: 'bm269@gmail.com',
+    owner: '123@gmail.com',
     domain: 'localhost:3000',
     subscriptionLevel: '1',
     active: '1',
@@ -11,7 +11,7 @@ if (Subscription.find().count() === 0) {
   Subscription.insert({
     siteTitle: 'ServiceBay 123 Sample',
     userId: '1',
-    owner: 'bm269@gmail.com',
+    owner: '123@gmail.com',
     domain: '123.servicebay.ca',
     subscriptionLevel: '1',
     active: '1',
