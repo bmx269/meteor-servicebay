@@ -6,7 +6,7 @@ DashboardController = RouteController.extend({
 
   onBeforeAction: function() {
     Session.set('fromWhere', "dashboard");
-    //return AccountsEntry.signInRequired(this);
+//    return AccountsEntry.signInRequired(this);
   },
 
   data: function() {
@@ -33,3 +33,4 @@ DashboardController = RouteController.extend({
     return Session.set('fromWhere', null);
   }
 });
+

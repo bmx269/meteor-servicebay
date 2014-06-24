@@ -8,11 +8,29 @@
 // });
 
 
-Meteor.publish('site', function () {
+Meteor.publish('site', function (options) {
 
-  var host =  headers.methodGet(this, 'host');
-  var host = String(host).replace(/^www\./,'')
-  var header =  headers.methodGet(this);
-  //console.log(header);
-  return Site.find({'domain': host});
+//  var host =  headers.methodGet(this, 'host');
+//  var host = String(host).replace(/^www\./,'')
+//  var header =  headers.methodGet(this);
+//  console.log(header);
+//  return Site.find({'domain': host});
+
+//    console.log('site Find');
+    return Site.findFaster({}, options);
 });
+
+
+//Meteor.publish('userSites', function (options) {
+//
+////  var host =  headers.methodGet(this, 'host');
+////  var host = String(host).replace(/^www\./,'')
+////  var header =  headers.methodGet(this);
+//    //console.log(header);
+////  return Site.find({'domain': host});
+//
+////    console.log('userSites Find');
+//    return Site.find({}, options);
+//});
+//
+//

@@ -52,13 +52,13 @@ NotFoundController = RouteController.extend({
       });
       this.render("404");
     } else {
-      this.render('Header', {
+      this.render('HeaderNotFound', {
         to: 'header'
       });
-      this.render('Footer', {
+      this.render('FooterNotFound', {
         to: 'footer'
       });
-      this.render("404");
+      this.render("NotFound");
     }
   }
 });

@@ -1,17 +1,13 @@
-<template name="footerBranding">
-  <div class="branding">
-    <a href="//smallrobot.org" target="_blank"><img src="/img/smallrobot.png" alt="Small Robot"></a>
-    <p class="copyright">Powered by <a href="//servicebay.ca">ServiceBay</a>. ©2014. All rights reserved. ServiceBay is a <a href="//smallrobot.org" target="_blank">Small Robot</a> product.</p>
+<template name="FooterNotFound">
+  <div id="footer-wrapper">
+    <div class="container">
+      <footer>
+        {{> footerBranding}}
+      </footer>
+    </div>
   </div>
+  {{> serviceBayMobileMenu}}
 </template>
-
-<template name="footerBrandingSite">
-  <div class="branding">
-    <a href="//servicebay.ca" target="_blank"><img src="/img/servicebay-white.png" alt="Small Robot"></a>
-    <p class="copyright">Powered by <a href="//servicebay.ca" target="_blank">ServiceBay</a>. ©2014. All rights reserved. ServiceBay is a <a href="//smallrobot.org" target="_blank">Small Robot</a> company.</p>
-  </div>
-</template>
-
 
 <template name="Footer">
   <div id="footer-wrapper">
@@ -72,3 +68,19 @@
   </div>
   {{> clientMobileMenu}}
 </template>
+
+
+<template name="footerBranding">
+  <div class="branding">
+    <a href="//smallrobot.org" target="_blank"><img src="/img/smallrobot.png" alt="Small Robot"></a>
+    <p class="copyright">Powered by <a href="//servicebay.ca">ServiceBay</a>. ©2014. All rights reserved. ServiceBay is a <a href="//smallrobot.org" target="_blank">Small Robot</a> product.</p>
+  </div>
+</template>
+
+<template name="footerBrandingSite">
+  <div class="branding">
+    <a href="//servicebay.ca" target="_blank"><img src="/img/servicebay-white.png" alt="Small Robot"></a>
+    <p class="copyright">Powered by <a href="//servicebay.ca" target="_blank">ServiceBay</a>. ©2014. All rights reserved. ServiceBay is a <a href="//smallrobot.org" target="_blank">Small Robot</a> company.</p>
+  </div>
+</template>
+

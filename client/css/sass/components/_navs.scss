@@ -12,13 +12,18 @@
       display: block;
       font-size: 32px;
       padding: 10px 0px;
-
+      &:hover,
+      &:active,
+      &:focus{
+        color: $blueDark;
+        text-decoration: none;
+      }
     }
 
     &:hover,
     &:active,
     &:focus{
-      color: #fff;
+      color: $blueDark;
       text-decoration: none;
     }
 
@@ -293,7 +298,7 @@ nav#main-menu{
         a{
           padding: 5px 0px;
           text-decoration: none;
-          color: $blueDark;
+          color: $blue;
 
           &.active{
             color: $grayLighter;
@@ -522,38 +527,3 @@ nav#main-menu{
 }
 
 
-#footer-wrapper{
-  nav{
-
-    ul.menu{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-align: left;
-
-      li{
-        margin: 0 0 5px 0px;
-        padding: 0;
-        line-height: 16px;
-        font-size: 14px;
-
-        a{
-          padding: 5px 0px;
-          text-decoration: none;
-          color: $blueDark;
-
-          &.active{
-            color: $grayLighter;
-          }
-        }
-        a:hover {
-          color: $white;
-
-          &.active{
-            color: $white;
-          }
-        }
-      }
-    }
-  }
-}

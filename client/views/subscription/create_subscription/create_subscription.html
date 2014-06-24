@@ -1,3 +1,9 @@
 <template name="CreateSubscription">
-  client/views/subscription/create_subscription/create_subscription.html
+    <div id="content-wrapper">
+        <div class="container">
+            <h1>New Subscription</h1>
+            {{> quickForm collection="Subscription" id="createSubscriptionForm"
+  type="insert" validation="blur"}}
+      </div>
+    </div>
 </template>

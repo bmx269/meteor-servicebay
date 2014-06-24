@@ -135,6 +135,7 @@ Block clearfix - yup its a recap of the clearfix trick, no reason to do class="c
    //background: $white;
 }
 
+#blog-admin,
 #content-wrapper,
 .content-wrapper{
   background: $white;
@@ -156,7 +157,7 @@ Block clearfix - yup its a recap of the clearfix trick, no reason to do class="c
   }
 
   a {
-    color: $linkColor;
+    color: $blueLight;
     text-decoration: none;
   }
   a:hover {
@@ -191,7 +192,7 @@ Block clearfix - yup its a recap of the clearfix trick, no reason to do class="c
     }
 }
 
-#invoice-wrapper{
+#dashboard-wrapper{
   background: $grayLighter;
   color: $gray;
   font-weight: 300;
@@ -210,3 +211,13 @@ Block clearfix - yup its a recap of the clearfix trick, no reason to do class="c
   }
 }
 
+.site-actions{
+  padding-bottom: 20px;
+  margin-bottom: 10px;
+  border-bottom: 1px #ddd solid;
+}
+
+#blog-admin {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}

@@ -19,6 +19,10 @@ Template.EditSite.helpers({
    */
 });
 
+Template.EditSite.editingDoc = function () {
+  return Site.findOne({_id: Session.get("selectedDocId")});
+};
+
 /*****************************************************************************/
 /* EditSite: Lifecycle Hooks */
 /*****************************************************************************/

@@ -1,3 +1,10 @@
 <template name="CreateSite">
-  client/views/site/create_site/create_site.html
+  <div id="content-wrapper">
+    <div class="container">
+      <h1>Create Site</h1>
+        {{> quickForm collection="Site"
+    id="createSiteForm"
+    type="insert" validation="blur"}}
+    </div>
+  </div>
 </template>

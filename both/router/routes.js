@@ -52,7 +52,7 @@ IR_UnloadHooks = {};
 Router.configure({
   layoutTemplate: 'MasterLayout',
   loadingTemplate: 'Loading',
-  notFoundTemplate: 'NotFound',
+  // default to site not found templates, real ones called in route.
   yieldTemplates: {
     'Header': {
       to: 'header'
@@ -61,6 +61,7 @@ Router.configure({
       to: 'footer'
     }
   },
+  notFoundTemplate: 'NotFound',
   templateNameConverter: 'upperCamelCase',
   routeControllerNameConverter: 'upperCamelCase',
 
@@ -68,9 +69,21 @@ Router.configure({
     headers;
     IR_Filters.baseSubscriptions();
   },
+
   onBeforeAction: function() {
     //IR_Filters.baseSubscriptions();
     IR_Filters.scrollUp();
+  },
+
+//  data: function() {
+//    return siteData();
+//  }
+  onAfterAction: function() {
+    var jPM = $.jPanelMenu({
+      menu: '#mobile-menu',
+      trigger: '.menu-trigger'
+    });
+    jPM.close();
   }
 });
 
@@ -92,6 +105,7 @@ Router.map(function () {
   this.route('privacy', {path: '/privacy'});
   this.route('contact', {path: '/contact'});
   this.route('support', {path: '/support'});
+  this.route('listing', {path: '/listing'});
 
   // Client Sites
 
@@ -102,9 +116,18 @@ Router.map(function () {
 
   // Dashboard
 
-  this.route('dashboard', {path: '/dashboard', loginRequired: 'login'});
+  this.route('dashboard', {path: '/dashboard'});
   this.route('subscription.index', {path: '/dashboard/subscription'});
-  this.route('theme.index', {path: '/dashboard/site/themes'});
-  this.route("notFound", {path: "*"});
+  this.route('theme.index', {path: '/dashboard/site/edit/themes'});
+  this.route('create.subscription', {path: '/dashboard/subscription/create'});
+  this.route('edit.subscription', {path: '/dashboard/subscription/edit/:_id'});
+  this.route('edit.site', {path: '/dashboard/site/edit/:_id'});
+  this.route('create.site', {path: '/dashboard/site/create'});
+  this.route('services.create', {path: '/services/create'});
+  this.route('services.edit', {path: '/services/edit/:_id'});
+  this.route("notFound", {path: "*", yieldTemplates: {'HeaderNotFound': {to: 'header'}, 'FooterNotFound': {to: 'footer'} }});
+
+
+
 
 });

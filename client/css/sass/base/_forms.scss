@@ -86,6 +86,7 @@ input[type="email"],
 input[type="month"],
 input[type="number"],
 input[type="password"],
+input[type="phone"],
 input[type="search"],
 input[type="string"],
 input[type="tel"],
@@ -110,9 +111,9 @@ input[type="week"] {
   // on inputs. Arial is more reliable, on Windows and OS X.
   font-family: Arial, "Liberation Sans", FreeSans, sans-serif;
   //height: 1.8em;
-  width: 100%;
-  display: block;
-  vertical-align: top;
+//  width: 100%;
+//  display: block;
+//  vertical-align: top;
   // IE7
   *padding-top: 2px;
   *padding-bottom: 1px;
@@ -289,5 +290,12 @@ input[type="checkbox"],
   &[disabled],
   fieldset[disabled] & {
     cursor: not-allowed;
+  }
+}
+
+#signIn,
+#signUp{
+  input{
+    width: 100%;
   }
 }

@@ -44,13 +44,13 @@ SiteAboutController = RouteController.extend({
     } else if (Session.equals("theme", "269")) {
       this.redirect("/");
     } else {
-      this.render('Header', {
+      this.render('HeaderNotFound', {
         to: 'header'
       });
-      this.render('Footer', {
+      this.render('FooterNotFound', {
         to: 'footer'
       });
-      this.render("SiteAbout");
+      this.render("NotFound");
     }
   }
 });

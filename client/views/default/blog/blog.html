@@ -1,8 +1,11 @@
 <template name="blogList">
   <div id="content-wrapper">
     <div class="container">
-    <h1>Our Blog</h1>
-    <div>{{blogIndex}}</div>
+      <h1>Our Blog</h1>
+      <div>
+        {{> blogIndexLoop}}
+        {{blogPager}}
+      </div>
     </div>
   </div>
 </template>
@@ -11,7 +14,8 @@
 <template name="blogPost">
   <div id="content-wrapper">
     <div class="container">
-    {{blogShow}}
+      {{> blogShowBody}}
     </div>
   </div>
 </template>
+

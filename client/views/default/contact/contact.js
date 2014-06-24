@@ -1,6 +1,27 @@
 /*****************************************************************************/
 /* Contact: Event Handlers and Helpers */
 /*****************************************************************************/
+
+Schema = {};
+Schema.contact = new SimpleSchema({
+    name: {
+        type: String,
+        label: "Your name",
+        max: 50
+    },
+    email: {
+        type: String,
+        regEx: SimpleSchema.RegEx.Email,
+        label: "E-mail address"
+    },
+    message: {
+        type: String,
+        label: "Message",
+        max: 1000
+    }
+});
+
+
 Template.Contact.events({
   /*
    * Example:
@@ -17,6 +38,10 @@ Template.Contact.helpers({
    *    return Items.find();
    *  }
    */
+
+    contactFormSchema: function() {
+        return Schema.contact;
+    }
 });
 
 /*****************************************************************************/

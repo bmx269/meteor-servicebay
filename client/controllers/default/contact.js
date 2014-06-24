@@ -50,13 +50,13 @@ ContactController = RouteController.extend({
       });
       this.render("Contact");
     } else {
-      this.render('Header', {
+      this.render('HeaderNotFound', {
         to: 'header'
       });
-      this.render('Footer', {
+      this.render('FooterNotFound', {
         to: 'footer'
       });
-      this.render("Contact");
+      this.render("NotFound");
     }
   }
 });

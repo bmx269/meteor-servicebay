@@ -5,11 +5,16 @@
       {{#with site}}
         <div class="intro" data-placeholder="Type some text">{{contactIntro}}</div>
       {{/with}}
-    <h3>Email Form</h3>
-      <input type="text" name="name" placeholder="Name" value="">
-      <input type="email" name="email" value="" placeholder="Email Address">
-      <textarea name="message" class="editable" placeholder="Message"></textarea>
-      <input type="submit" name="submit" class="btn" value="Submit">
+    <h3>Message Us</h3>
+    {{#autoForm schema=contactFormSchema id="contactForm" type="method" meteormethod="sendEmail"}}
+        {{> afQuickField name="name"}}
+        {{> afQuickField name="email"}}
+        {{> afQuickField name="message" rows="10"}}
+        <div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-default">Reset</button>
+        </div>
+    {{/autoForm}}
     </div>
   </div>
 </template>

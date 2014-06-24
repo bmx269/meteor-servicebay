@@ -3,7 +3,7 @@
 /*****************************************************************************/
 Template.CreateSubscription.events({
   /*
-   * Example:
+   * Example: 
    *  'click .selector': function (e, tmpl) {
    *
    *  }
@@ -12,7 +12,7 @@ Template.CreateSubscription.events({
 
 Template.CreateSubscription.helpers({
   /*
-   * Example:
+   * Example: 
    *  items: function () {
    *    return Items.find();
    *  }

@@ -5,8 +5,10 @@
       <nav class="nav" id="user-menu">
         <ul class="menu">
           <li><a href="{{pathFor 'support'}}" class="{{activeRouteClass 'support'}} support">Help &amp; Support</a></li>
-          <li><a href="{{pathFor 'dashboard'}}" class="{{activeRouteClass 'dashboard'}} dashboard">My Dashboard</a></li>
-          <li>{{> loginButtons }}</li>
+          {{#if currentUser}}<li><a href="{{pathFor 'dashboard'}}" class="{{activeRouteClass 'dashboard'}} dashboard">My Dashboard</a></li>{{/if}}
+          {{#unless currentUser}}<li><a href="/sign-in" class="signup">Sign
+            In</a></li>{{/unless}}
+          {{#if currentUser}}<li><a href="/sign-out" class="signout">Sign Out</a></li>{{/if}}
           {{#if adminUser}}<li><a href="{{pathFor 'admin'}}">Admin</a></li>{{/if}}
         </ul>
       </nav>

@@ -1,4 +1,3 @@
-
 siteData = function(){
 
   // check to make sure headers are loaded
@@ -13,7 +12,7 @@ siteData = function(){
     Session.set("domain", domain);
 
     // find data based on session domain
-    var theSite = Site.findOne({'domain': domain});
+    var theSite = Site.findOneFaster({'domain': domain});
 
     if (theSite) {
       // set theme session for theme function
@@ -25,7 +24,7 @@ siteData = function(){
     }
   }
   // no data found, must return null for iron-router
-  console.log('no data found');
+  console.log('no site found');
   return null;
 };
 
@@ -34,7 +33,6 @@ siteData = function(){
 UI.registerHelper("site", function(){
   return siteData();
 });
-
 
 
 UI.registerHelper("siteTheme", function(){
@@ -55,3 +53,6 @@ UI.registerHelper('activeRouteClass', function () {
   }
   return '';
 });
+
+
+

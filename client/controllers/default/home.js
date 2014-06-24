@@ -9,7 +9,15 @@ HomeController = RouteController.extend({
   },
 
   action: function() {
-    if (Session.equals("theme", "1")) {
+    if (Session.equals("theme", "0")) {
+      this.render('Header0', {
+        to: 'header'
+      });
+      this.render('Footer0', {
+        to: 'footer'
+      });
+      this.render("SiteIndex0");
+    } else if (Session.equals("theme", "1")) {
       this.render('Header1', {
         to: 'header'
       });
@@ -21,7 +29,7 @@ HomeController = RouteController.extend({
       this.render('Header2', {
         to: 'header'
       });
-      this.render('footer2', {
+      this.render('Footer2', {
         to: 'footer'
       });
       this.render("SiteIndex2");
@@ -42,13 +50,13 @@ HomeController = RouteController.extend({
       });
       this.render("Home");
     } else {
-      this.render('Header0', {
+      this.render('HeaderNotFound', {
         to: 'header'
       });
-      this.render('Footer0', {
+      this.render('FooterNotFound', {
         to: 'footer'
       });
-      this.render("SiteIndex0");
+      this.render("NotFound");
     }
   }
 });

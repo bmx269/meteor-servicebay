@@ -19,6 +19,9 @@ Template.EditSubscription.helpers({
    */
 });
 
+Template.EditSubscription.editingDoc = function () {
+  return Subscription.findOne({_id: Session.get("selectedDocId")});
+};
 /*****************************************************************************/
 /* EditSubscription: Lifecycle Hooks */
 /*****************************************************************************/

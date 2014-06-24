@@ -4,6 +4,7 @@
   $('html').removeClass('theme2');
   $('html').removeClass('theme3');
   $('html').removeClass('theme269');
+  $('html').removeClass('theme-none');
   $('html').addClass('theme0');
  }};
 
@@ -13,6 +14,7 @@
   $('html').removeClass('theme2');
   $('html').removeClass('theme3');
   $('html').removeClass('theme269');
+  $('html').removeClass('theme-none');
   $('html').addClass('theme1');
  }};
 
@@ -22,6 +24,7 @@
   $('html').removeClass('theme1');
   $('html').removeClass('theme3');
   $('html').removeClass('theme269');
+  $('html').removeClass('theme-none');
   $('html').addClass('theme2');
  }};
 
@@ -31,6 +34,7 @@
   $('html').removeClass('theme1');
   $('html').removeClass('theme2');
   $('html').removeClass('theme269');
+  $('html').removeClass('theme-none');
   $('html').addClass('theme3');
  }};
 
@@ -40,12 +44,25 @@
   $('html').removeClass('theme1');
   $('html').removeClass('theme2');
   $('html').removeClass('theme3');
+  $('html').removeClass('theme-none');
   $('html').addClass('theme269');
  }};
 
+ var siteThemeNone = {
+   f: function(){
+     $('html').removeClass('theme0');
+     $('html').removeClass('theme1');
+     $('html').removeClass('theme2');
+     $('html').removeClass('theme3');
+     $('html').removeClass('theme269');
+     $('html').addClass('theme-none');
+   }};
+
 // Detect Session theme setting and run function
 Deps.autorun(function(c) {
-  if (Session.equals("theme", "1")) {
+  if (Session.equals("theme", "0")) {
+    return siteTheme0.f();
+  } else if (Session.equals("theme", "1")) {
     return siteTheme1.f();
   } else if (Session.equals("theme", "2")) {
     return siteTheme2.f();
@@ -54,7 +71,7 @@ Deps.autorun(function(c) {
   } else if (Session.equals("theme", "269")) {
     return siteTheme269.f();
   } else {
-    Session.set("theme", "0");
-    return siteTheme0.f();
+    Session.set("theme", "none");
+    return siteThemeNone.f();
   }
 });

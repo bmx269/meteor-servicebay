@@ -3,22 +3,53 @@
 /*****************************************************************************/
 Template.Dashboard.events({
   /*
-   * Example: 
+   * Example:
    *  'click .selector': function (e, tmpl) {
    *
    *  }
    */
+
 });
 
-Template.Dashboard.helpers({
+Template.subscriptionsList.helpers({
   /*
-   * Example: 
+   * Example:
    *  items: function () {
    *    return Items.find();
    *  }
    */
+
+  siteItem: function(){
+      var user = Meteor.userId();
+
+      if (user) {
+          //console.log(user);
+          var theSites = Site.findFaster({'userId': user});
+          return theSites;
+
+      }
+      console.log('no sites found');
+      return null;
+  },
+
+  subscriptionItem: function(){
+    var user = Meteor.userId();
+
+    if (user) {
+      //console.log(user);
+      var theSubs = Subscription.findFaster({'userId': user});
+      return theSubs;
+
+    }
+    console.log('no subscriptions found');
+    return null;
+  }
+
 });
 
+
+//var ownPost = Meteor.userId();
+//Meteor.subscribe('site', {userId: ownPost});
 /*****************************************************************************/
 /* Dashboard: Lifecycle Hooks */
 /*****************************************************************************/

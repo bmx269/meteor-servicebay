@@ -466,16 +466,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-*, *:after, *:before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  *behavior: url('../behaviors/box-sizing/boxsizing.php'); }
-
-img, video {
-  max-width: 100%;
-  height: auto; }
-
 /*!
  *  Font Awesome 3.0.2
  *  the iconic font designed for use with Twitter Bootstrap
@@ -1938,6 +1928,66 @@ ul.features {
       float: right;
       margin-right: 0; } }
 
+#invoices {
+  width: 100%;
+  float: right;
+  margin-right: 0;
+  *margin-left: -2em;
+  display: inline; }
+  @media (min-width: 30em) {
+    #invoices {
+      width: 100%;
+      float: right;
+      margin-right: 0; } }
+  @media (min-width: 40em) {
+    #invoices {
+      width: 48.93617%;
+      float: right;
+      margin-right: 0; } }
+  @media (min-width: 52em) {
+    #invoices {
+      width: 48.93617%;
+      float: right;
+      margin-right: 0; } }
+  @media (min-width: 65em) {
+    #invoices {
+      width: 48.93617%;
+      float: right;
+      margin-right: 0; } }
+
+#subscriptions {
+  width: 100%;
+  float: right;
+  margin-right: 0;
+  *margin-left: -2em;
+  display: inline; }
+  @media (min-width: 30em) {
+    #subscriptions {
+      width: 100%;
+      float: right;
+      margin-right: 0; } }
+  @media (min-width: 40em) {
+    #subscriptions {
+      float: left;
+      margin-right: 3.22581%;
+      width: 48.93617%;
+      float: left;
+      margin-right: 2.12766%; } }
+  @media (min-width: 52em) {
+    #subscriptions {
+      float: left;
+      margin-right: 2.12766%;
+      width: 48.93617%;
+      float: left;
+      margin-right: 2.12766%; } }
+  @media (min-width: 65em) {
+    #subscriptions {
+      float: left;
+      margin-right: 2.12766%;
+      width: 48.93617%;
+      float: left;
+      margin-right: 2.12766%; } }
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -1965,11 +2015,11 @@ body {
   background: #efefef; }
 
 a {
-  color: #21b5fd;
+  color: #008fd5;
   text-decoration: none; }
 
 a:hover {
-  color: #008fd5;
+  color: #004d75;
   text-decoration: underline; }
 
 .img-rounded {
@@ -2038,9 +2088,11 @@ Block clearfix - yup its a recap of the clearfix trick, no reason to do class="c
     padding-top: 20px;
     padding-bottom: 20px; }
 
+#blog-admin,
 #content-wrapper,
 .content-wrapper {
   background: white; }
+  #blog-admin .container,
   #content-wrapper .container,
   .content-wrapper .container {
     padding-top: 30px;
@@ -2077,11 +2129,11 @@ Block clearfix - yup its a recap of the clearfix trick, no reason to do class="c
     padding-top: 80px;
     padding-bottom: 80px; }
 
-#invoice-wrapper {
+#dashboard-wrapper {
   background: #f7f7f9;
   color: #4b5c66;
   font-weight: 300; }
-  #invoice-wrapper .container {
+  #dashboard-wrapper .container {
     padding-top: 80px;
     padding-bottom: 80px; }
 
@@ -2089,6 +2141,15 @@ Block clearfix - yup its a recap of the clearfix trick, no reason to do class="c
   background: #f7f7f9;
   color: #4b5c66;
   font-weight: 300; }
+
+.site-actions {
+  padding-bottom: 20px;
+  margin-bottom: 10px;
+  border-bottom: 1px #ddd solid; }
+
+#blog-admin {
+  padding-top: 0px;
+  padding-bottom: 0px; }
 
 /*!
  *  Font Awesome 3.0.2
@@ -2213,7 +2274,7 @@ h1 {
   font-size: 42px;
   line-height: 44px;
   padding-bottom: 25px;
-  color: #21b5fd;
+  color: #008fd5;
   font-weight: 300; }
 
 h2 {
@@ -2254,7 +2315,15 @@ h3 {
 
 h4 {
   font-size: 16px;
-  line-height: 20px; }
+  padding-bottom: 5px;
+  line-height: 20px;
+  color: #273138; }
+  h4 a {
+    color: #273138;
+    text-decoration: none; }
+  h4 a:hover {
+    color: #4b5c66;
+    text-decoration: underline; }
 
 h5 {
   font-size: 14px;
@@ -2399,6 +2468,19 @@ address {
   margin-top: 5px;
   color: #89949b; }
 
+.blog-back-link {
+  margin-bottom: 20px; }
+  .blog-back-link i {
+    margin-right: 10px; }
+  .blog-back-link a:hover {
+    text-decoration: none; }
+
+.share-buttons .btn-facebook, .share-buttons .btn-twitter {
+  margin-right: 20px; }
+.share-buttons i {
+  margin-right: 10px;
+  font-size: 18px; }
+
 code,
 pre {
   padding: 0 3px 2px;
@@ -2507,6 +2589,7 @@ input[type="email"],
 input[type="month"],
 input[type="number"],
 input[type="password"],
+input[type="phone"],
 input[type="search"],
 input[type="string"],
 input[type="tel"],
@@ -2536,9 +2619,6 @@ input[type="week"] {
   text-align: left;
   font-size: 16px;
   font-family: Arial, "Liberation Sans", FreeSans, sans-serif;
-  width: 100%;
-  display: block;
-  vertical-align: top;
   *padding-top: 2px;
   *padding-bottom: 1px;
   *height: auto; }
@@ -2551,6 +2631,7 @@ input[type="week"] {
   input[type="month"][disabled],
   input[type="number"][disabled],
   input[type="password"][disabled],
+  input[type="phone"][disabled],
   input[type="search"][disabled],
   input[type="string"][disabled],
   input[type="tel"][disabled],
@@ -2699,11 +2780,16 @@ input[type="checkbox"],
 .checkbox-inline {
   cursor: not-allowed; }
 
+#signIn input,
+#signUp input {
+  width: 100%; }
+
 table {
   max-width: 100%;
   background-color: transparent;
   border-collapse: collapse;
-  border-spacing: 0; }
+  border-spacing: 0;
+  clear: left; }
 
 .table {
   width: 100%;
@@ -2846,6 +2932,14 @@ Tables
 .table-order-desc {
   background: transparent url(/misc/arrow-desc.png) no-repeat center top; }
 
+a.for-unpublish {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline; }
+
 img {
   /* Responsive images (ensure images don't scale beyond their parents) */
   max-width: 100%;
@@ -2948,11 +3042,11 @@ input[type="reset"],
 input[type="submit"],
 input[type="button"] {
   -webkit-appearance: none;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
-  border-radius: 4px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
   -webkit-background-clip: padding;
   -moz-background-clip: padding;
   background-clip: padding-box;
@@ -3145,7 +3239,7 @@ button {
 .btn-group.open .btn.dropdown-toggle {
   background-color: #e6e6e6; }
 .btn-group.open .btn-primary.dropdown-toggle {
-  background-color: #216cfd; }
+  background-color: #0048d5; }
 .btn-group.open .btn-warning.dropdown-toggle {
   background-color: #f89406; }
 .btn-group.open .btn-danger.dropdown-toggle {
@@ -3290,119 +3384,19 @@ input[type="button"].btn-block {
   border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25); }
 
 .btn-primary {
-  color: white;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #2197fd;
-  background-image: -moz-linear-gradient(top, #21b5fd, #216cfd);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#21b5fd), to(#216cfd));
-  background-image: -webkit-linear-gradient(top, #21b5fd, #216cfd);
-  background-image: -o-linear-gradient(top, #21b5fd, #216cfd);
-  background-image: linear-gradient(to bottom, #21b5fd, #216cfd);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF21B5FD', endColorstr='#FF216CFD', GradientType=0);
-  border-color: #216cfd #216cfd #0248d0;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) fadein(rgba(0, 0, 0, 0.1), 15%);
-  *background-color: #216cfd;
-  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false); }
-  .btn-primary:hover, .btn-primary:active, .btn-primary.active, .btn-primary.disabled, .btn-primary[disabled] {
-    color: white;
-    background-color: #216cfd;
-    *background-color: #085bfd; }
-  .btn-primary:active, .btn-primary.active {
-    background-color: #0250e9 \9; }
+  background: #313f48; }
 
 .btn-warning {
-  color: white;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #f9a732;
-  background-image: -moz-linear-gradient(top, #fbb450, #f89406);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fbb450), to(#f89406));
-  background-image: -webkit-linear-gradient(top, #fbb450, #f89406);
-  background-image: -o-linear-gradient(top, #fbb450, #f89406);
-  background-image: linear-gradient(to bottom, #fbb450, #f89406);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFBB450', endColorstr='#FFF89406', GradientType=0);
-  border-color: #f89406 #f89406 #ad6704;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) fadein(rgba(0, 0, 0, 0.1), 15%);
-  *background-color: #f89406;
-  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false); }
-  .btn-warning:hover, .btn-warning:active, .btn-warning.active, .btn-warning.disabled, .btn-warning[disabled] {
-    color: white;
-    background-color: #f89406;
-    *background-color: #df8505; }
-  .btn-warning:active, .btn-warning.active {
-    background-color: #c67605 \9; }
+  background: #f89406; }
 
 .btn-danger {
-  color: white;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #da4e49;
-  background-image: -moz-linear-gradient(top, #ee5f5b, #bd362f);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ee5f5b), to(#bd362f));
-  background-image: -webkit-linear-gradient(top, #ee5f5b, #bd362f);
-  background-image: -o-linear-gradient(top, #ee5f5b, #bd362f);
-  background-image: linear-gradient(to bottom, #ee5f5b, #bd362f);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFEE5F5B', endColorstr='#FFBD362F', GradientType=0);
-  border-color: #bd362f #bd362f #802420;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) fadein(rgba(0, 0, 0, 0.1), 15%);
-  *background-color: #bd362f;
-  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false); }
-  .btn-danger:hover, .btn-danger:active, .btn-danger.active, .btn-danger.disabled, .btn-danger[disabled] {
-    color: white;
-    background-color: #bd362f;
-    *background-color: #a9302a; }
-  .btn-danger:active, .btn-danger.active {
-    background-color: #942a25 \9; }
+  background: #9d261d; }
 
 .btn-success {
-  color: white;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #5bb65b;
-  background-image: -moz-linear-gradient(top, #62c462, #51a351);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#62c462), to(#51a351));
-  background-image: -webkit-linear-gradient(top, #62c462, #51a351);
-  background-image: -o-linear-gradient(top, #62c462, #51a351);
-  background-image: linear-gradient(to bottom, #62c462, #51a351);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF62C462', endColorstr='#FF51A351', GradientType=0);
-  border-color: #51a351 #51a351 #387038;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) fadein(rgba(0, 0, 0, 0.1), 15%);
-  *background-color: #51a351;
-  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false); }
-  .btn-success:hover, .btn-success:active, .btn-success.active, .btn-success.disabled, .btn-success[disabled] {
-    color: white;
-    background-color: #51a351;
-    *background-color: #499249; }
-  .btn-success:active, .btn-success.active {
-    background-color: #408140 \9; }
+  background: #6cb33f; }
 
 .btn-info {
-  color: white;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #49afcd;
-  background-image: -moz-linear-gradient(top, #5bc0de, #2f96b4);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#5bc0de), to(#2f96b4));
-  background-image: -webkit-linear-gradient(top, #5bc0de, #2f96b4);
-  background-image: -o-linear-gradient(top, #5bc0de, #2f96b4);
-  background-image: linear-gradient(to bottom, #5bc0de, #2f96b4);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF5BC0DE', endColorstr='#FF2F96B4', GradientType=0);
-  border-color: #2f96b4 #2f96b4 #1f6377;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) fadein(rgba(0, 0, 0, 0.1), 15%);
-  *background-color: #2f96b4;
-  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false); }
-  .btn-info:hover, .btn-info:active, .btn-info.active, .btn-info.disabled, .btn-info[disabled] {
-    color: white;
-    background-color: #2f96b4;
-    *background-color: #2a85a0; }
-  .btn-info:active, .btn-info.active {
-    background-color: #24748c \9; }
+  background: #008fd5; }
 
 .btn-inverse {
   color: white;
@@ -3451,16 +3445,19 @@ input[type="submit"].btn {
 .btn-link,
 .btn-link:active,
 .btn-link[disabled] {
+  margin: 0;
+  padding: 0;
   background-color: transparent;
   background-image: none;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
-  box-shadow: none; }
+  box-shadow: none;
+  vertical-align: middle; }
 
 .btn-link {
   border-color: transparent;
   cursor: pointer;
-  color: #21b5fd;
+  color: #008fd5;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -ms-border-radius: 0;
@@ -3468,7 +3465,7 @@ input[type="submit"].btn {
   border-radius: 0; }
 
 .btn-link:hover {
-  color: #008fd5;
+  color: #004d75;
   text-decoration: underline;
   background-color: transparent; }
 
@@ -3482,11 +3479,11 @@ input[type="submit"].btn {
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
   background-color: #fcf8e3;
   border: 1px solid #fbeed5;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  -ms-border-radius: 4px;
-  -o-border-radius: 4px;
-  border-radius: 4px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
   color: #c09853; }
 
 .alert h4 {
@@ -3564,8 +3561,11 @@ input[type="submit"].btn {
     display: block;
     font-size: 32px;
     padding: 10px 0px; }
+    .menu-trigger:before:hover, .menu-trigger:before:active, .menu-trigger:before:focus {
+      color: #004d75;
+      text-decoration: none; }
   .menu-trigger:hover, .menu-trigger:active, .menu-trigger:focus {
-    color: #fff;
+    color: #004d75;
     text-decoration: none; }
   @media (min-width: 30em) {
     .menu-trigger {
@@ -3978,7 +3978,7 @@ nav#main-menu {
     padding: 7px 10px;
     margin: 5px 0;
     color: white;
-    background: #21b5fd;
+    background: #008fd5;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
@@ -3991,7 +3991,7 @@ nav#main-menu {
     #login-buttons #login-dropdown-list #login-buttons-password:hover, #login-buttons #login-dropdown-list #login-buttons-password:focus,
     #login-buttons #login-dropdown-list #login-buttons-do-change-password:hover,
     #login-buttons #login-dropdown-list #login-buttons-do-change-password:focus {
-      background: #008fd5;
+      background: #004d75;
       color: white;
       -webkit-border-radius: 4px;
       -moz-border-radius: 4px;
@@ -4004,7 +4004,7 @@ nav#main-menu {
     padding: 7px 10px;
     margin: 5px 0;
     color: white;
-    background: #21b5fd;
+    background: #008fd5;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
@@ -4015,7 +4015,7 @@ nav#main-menu {
     line-height: 1.2em;
     font-weight: 600; }
     #login-buttons #login-dropdown-list #login-buttons-facebook:hover, #login-buttons #login-dropdown-list #login-buttons-facebook:focus {
-      background: #008fd5;
+      background: #004d75;
       color: white;
       -webkit-border-radius: 4px;
       -moz-border-radius: 4px;
@@ -4087,7 +4087,7 @@ nav#main-menu {
   line-height: 1.2em;
   font-weight: 600; }
   #login-buttons #login-buttons-open-change-password:hover, #login-buttons #login-buttons-open-change-password:focus {
-    background: #008fd5;
+    background: #004d75;
     color: white;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
@@ -4147,27 +4147,6 @@ nav#main-menu {
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   background-clip: padding-box; }
-
-#footer-wrapper nav ul.menu {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-align: left; }
-  #footer-wrapper nav ul.menu li {
-    margin: 0 0 5px 0px;
-    padding: 0;
-    line-height: 16px;
-    font-size: 14px; }
-    #footer-wrapper nav ul.menu li a {
-      padding: 5px 0px;
-      text-decoration: none;
-      color: #008fd5; }
-      #footer-wrapper nav ul.menu li a.active {
-        color: #f7f7f9; }
-    #footer-wrapper nav ul.menu li a:hover {
-      color: white; }
-      #footer-wrapper nav ul.menu li a:hover.active {
-        color: white; }
 
 .breadcrumb {
   padding: 8px 15px;
@@ -4417,7 +4396,7 @@ a.label:hover, a.badge:hover {
   left: 0;
   width: 0;
   height: 1px;
-  background-color: #21b5fd;
+  background-color: #008fd5;
   box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
   opacity: 1;
   z-index: 10000; }
@@ -4450,7 +4429,7 @@ a.label:hover, a.badge:hover {
 .theme2 #iron-router-progress,
 .theme3 #iron-router-progress {
   height: 1px;
-  background-color: #21b5fd;
+  background-color: #008fd5;
   box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
 
 ul.features li h3 {

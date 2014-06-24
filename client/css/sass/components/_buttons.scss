@@ -5,7 +5,7 @@ input[type="reset"],
 input[type="submit"],
 input[type="button"] {
   -webkit-appearance: none;
-  @include border-radius(4px);
+  @include border-radius(2px);
   @include background-clip(padding-box);
   background: $gray;
   border: 0px solid;
@@ -449,23 +449,23 @@ input[type="button"] {
   border-color: rgba(0,0,0,.15) rgba(0,0,0,.15) rgba(0,0,0,.25);
 }
 .btn-primary {
-  @include buttonBackground($btnPrimaryBackground, $btnPrimaryBackgroundHighlight);
+  background: $grayDark;
 }
 // Warning appears are orange
 .btn-warning {
-  @include buttonBackground($btnWarningBackground, $btnWarningBackgroundHighlight);
+  background: $orange;
 }
 // Danger and error appear as red
 .btn-danger {
-  @include buttonBackground($btnDangerBackground, $btnDangerBackgroundHighlight);
+  background: $red;
 }
 // Success appears as green
 .btn-success {
-  @include buttonBackground($btnSuccessBackground, $btnSuccessBackgroundHighlight);
+  background: $green;
 }
 // Info appears as a neutral blue
 .btn-info {
-  @include buttonBackground($btnInfoBackground, $btnInfoBackgroundHighlight);
+  background: $blue;
 }
 // Inverse appears as dark gray
 .btn-inverse {
@@ -511,9 +511,12 @@ input[type="submit"].btn {
 .btn-link,
 .btn-link:active,
 .btn-link[disabled] {
+  margin: 0;
+  padding: 0;
   background-color: transparent;
   background-image: none;
   @include box-shadow(none);
+  vertical-align: middle;
 }
 .btn-link {
   border-color: transparent;
