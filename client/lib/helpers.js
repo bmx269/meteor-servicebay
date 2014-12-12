@@ -126,12 +126,3 @@ scrollPage = function() {
     }
   });
 };
-
-
-inlineEditor = function(selector){
-  //var editable = document.querySelector('.editable');
-  //editable.style.borderColor = '#54c8eb';
-  //aloha(editable);
-  //$ (".editable").summernote();
- // $(selector).summernote({focus: true});
-};

@@ -26,7 +26,6 @@ meteorhacks:npm
 npm-container
 aldeed:simple-schema
 iron:dynamic-template
-woody:stripe-easy
 gfk:notifications
 digilord:roles
 mrt:jquery-ui
@@ -57,4 +56,5 @@ aldeed:template-extension
 mpowaga:autoform-summernote
 yogiben:autoform-map
 yogiben:autoform-modals
+woody:stripe-easy
 

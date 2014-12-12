@@ -35,4 +35,3 @@ App = {
     return (Session.get('theme') === this.variables.themeMaster);
   }
 };
-
