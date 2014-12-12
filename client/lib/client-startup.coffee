@@ -15,18 +15,18 @@ Meteor.startup ->
 
 #  createUserAdminRoles();
 
-  Blog.config
-    blogIndexTemplate: 'blogList' # '/blog' route
-    blogShowTemplate: 'blogPost'   # '/blog/:slug' route
+#  Blog.config
+#    blogIndexTemplate: 'blogList' # '/blog' route
+#    blogShowTemplate: 'blogPost'   # '/blog/:slug' route
 #    blogIndexTemplate: 'blogIndex'
 #    blogShowTemplate: 'blogShow'
 #    blogAdminTemplate: 'blogAdmin'
 #    blogAdminNewTemplate:'blogAdminNew'
 #    blogAdminEditTemplate: 'blogAdminEdit'
-    pageSize: 10
-
-  Billing.config
-    publishableKey: ""
+#    pageSize: 10
+#
+#  Billing.config
+#    publishableKey: "pk_test_SJcxgwBsH6teU2NcIJ2SvIvF"
 
 #  Template.signUp.rendered = ->
 #     $('form').validate
@@ -44,6 +44,6 @@ Meteor.startup ->
 # Register Global Helpers
 #
 
-if Package.ui
-  ->
-    Handlebars = Package.ui.Handlebars
+#if Package.ui
+#  ->
+#    Handlebars = Package.ui.Handlebars

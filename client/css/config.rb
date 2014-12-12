@@ -1,5 +1,7 @@
 # Require any additional compass plugins here.
 
+require 'font-awesome-sass'
+
 require 'susy'
 # http://susy.oddbird.net/
 

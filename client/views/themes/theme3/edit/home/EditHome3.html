@@ -1,0 +1,12 @@
+<template name="EditHome3">
+  {{#autoForm collection="Site" template="afContenteditable" doc=editingDoc id="editSiteForm" type="update" validation="submitThenBlur"}}
+    <div id="content-wrapper">
+      <div class="container">
+        <div class="home intro">
+          {{> afQuickField name='homeIntro' label=false placeholder="Introduce us to your company..."}}
+        </div>
+      </div>
+    </div>
+    {{> adminToolbar}}
+  {{/autoForm}}
+</template>

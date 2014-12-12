@@ -1,0 +1,87 @@
+<template name="Dashboard">
+  <div id="content-wrapper">
+    <div class="container">
+      <h1>Your Dashboard</h1>
+      <div class="intro">
+        <p>Your Dashboard is where you can manage your all aspects of
+          your website. From Feature changes, Billing/Plan details,
+          to the adjustment of your website's Appearance,
+          your Dashboard covers everything you need for your account.</p>
+      </div>
+    </div>
+  </div>
+  <div id="dashboard-wrapper">
+    <div class="container">
+      <div id="subscriptions">
+        {{> subscriptionsList}}
+      </div>
+      <div id="invoices">
+        {{!-- {{> invoices}} --}}
+      </div>
+    </div>
+  </div>
+</template>
+
+
+<template name="subscriptionsList">
+  <h2>Your Subscriptions</h2>
+  <p>Here is a list of the current subscriptions in your plan.</p>
+  <p><a href="#create-subscription" class="fancybox btn btn-success">New
+    Subscription</a></p>
+    <div class="subscriptions">
+    {{#each subscriptionItem}}
+      {{> subscription}}
+    {{else}}
+      <p class="alert alert-info">You do not have any subscriptions yet. <a href="#create-subscription" class="fancybox">Subscribe.</a></p>
+    {{/each}}
+    </div>
+  <h2>Your Sites</h2>
+  <p>Here is a list of the current sites in your plan.</p>
+  <p><a href="#create-site" class="fancybox btn btn-warning">New
+    Site Instance</a></p>
+    <div class="sites">
+      {{#each siteItem}}
+        {{> site}}
+        {{else}}
+        <p class="alert alert-info">You do not have any sites yet. <a href="#create-site" class="fancybox">Create new site.</a></p>
+      {{/each}}
+    </div>
+
+    {{> CreateSite}}
+    {{> EditSite}}
+    {{> CreateSubscription}}
+    {{> EditSubscription}}
+    {{> autoformModals}}
+
+</template>
+
+
+<template name="subscription">
+  <div class="subscription">
+    <div class="subscription-content">
+      <h4><a href="http://{{domain}}" target="_blank">{{siteTitle}}</a></h4>
+      <div class="site-url"><a href="http://{{domain}}" target="_blank">{{domain}}</a></div>
+      <div class="site-actions">
+        <a href="http://{{domain}}" class="btn btn-link" target="_blank">View</a> | <a href="#edit-subscription" class="fancybox btn btn-link editThis">Edit</a> | <a href="#" class="btn btn-link deleteThis">Permanently Delete</a>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="site">
+  <div class="site">
+    <div class="site-content">
+      <h4><a href="http://{{domain}}" target="_blank">{{siteTitle}}</a></h4>
+        <div class="site-url"><a href="http://{{domain}}" target="_blank">{{domain}}</a></div>
+      <div class="site-actions">
+        <a href="http://{{domain}}" class="btn btn-primary" target="_blank">View</a><a href="{{pathFor 'edit.home'}}" class="btn btn-warning wysiwygThis">Edit</a>
+        {{#if isInRole 'admin'}}
+          <div class="admin-actions">
+            <p><strong>Admin</strong></p><p>
+            <a href="#edit-site" doc="{{_id}}" class="fancybox editThis">Quick Edit</a> | <a href="#" class="deleteThis">Permanently Delete</a></p>
+        </div>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</template>

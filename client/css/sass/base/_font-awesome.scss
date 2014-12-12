@@ -60,7 +60,7 @@ $fontAwesomePath:   "../../fonts" !default;
 /* makes the font 33% larger relative to the icon container */
 @mixin icon-large {
   &:before {
-    vertical-align: -10%;
+    vertical-align: -5%;
     font-size: 1.3333333333333333em;
   }
 }
@@ -1886,4 +1886,3 @@ $fontAwesomePath:   "../../fonts" !default;
     @include Awesome;
   }
 }
-

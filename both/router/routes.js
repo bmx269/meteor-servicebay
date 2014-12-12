@@ -1,95 +1,45 @@
 /*****************************************************************************/
 /* Client and Server Routes */
 /*****************************************************************************/
-var IR_AfterHooks, IR_Filters, IR_UnloadHooks, baseURL;
 
-IR_Filters = {
-  baseSubscriptions: function() {
-    Meteor.subscribe("site");
-  },
-  isLoggedIn: function() {
-    if (!Meteor.user()) {
-      this.render("entrySignIn");
-      this.stop();
-    }
-  },
-  scrollUp: function() {
-    $('body,html').scrollTop(0);
-  },
-  startNProgress: function() {
-    if (_.isFunction(this.data)) {
-      NProgress.start();
-    }
-  },
-  pageview: function() {
-    GAnalytics.pageview(this.path);
-  },
-  isAdmin: function() {
-    if (!Roles.userIsInRole(Meteor.userId(), ["admin"])) {
-      this.render("login");
-      this.stop();
-    }
-  },
-  animateContentOut: function() {
-    $("#content").removeClass("animated fadeIn fadeInRight");
-    $("footer").addClass("hide");
-  }
-};
 
-IR_AfterHooks = {
-  fadeContentIn: function() {
-    $("#content").addClass("animated fadeIn");
-    $("footer").removeClass("hide");
-  },
-  endNProgess: function() {
-    NProgess.done();
-  }
-};
-
-IR_UnloadHooks = {};
-
+var subs = new SubsManager({
+    // will be cached only 20 recently used subscriptions
+  cacheLimit: 20,
+  // any subscription will be expired after 5 minutes of inactivity
+  expireIn: 5
+});
 
 Router.configure({
   layoutTemplate: 'MasterLayout',
   loadingTemplate: 'Loading',
+
   // default to site not found templates, real ones called in route.
-  yieldTemplates: {
-    'Header': {
-      to: 'header'
-    },
-    'Footer': {
-      to: 'footer'
-    }
-  },
   notFoundTemplate: 'NotFound',
   templateNameConverter: 'upperCamelCase',
   routeControllerNameConverter: 'upperCamelCase',
 
   waitOn: function() {
     headers;
-    IR_Filters.baseSubscriptions();
+    return subs.subscribe('site', {domain: host});
   },
 
-  onBeforeAction: function() {
+  //onBeforeAction: function() {
     //IR_Filters.baseSubscriptions();
-    IR_Filters.scrollUp();
-  },
+    //IR_Filters.scrollUp();
+  //},
 
 //  data: function() {
 //    return siteData();
 //  }
-  onAfterAction: function() {
-    var jPM = $.jPanelMenu({
-      menu: '#mobile-menu',
-      trigger: '.menu-trigger'
-    });
-    jPM.close();
-  }
+//  onAfterAction: function() {
+//  }
 });
 
 Router.onBeforeAction('loading');
 
 Router.onBeforeAction('dataNotFound');
+//Router.plugin('dataNotFound', {notFoundTemplate: 'NotFound'});
 
 Router.map(function () {
 
@@ -110,9 +60,10 @@ Router.map(function () {
   // Client Sites
 
   // this.route('site.index', {path: '/'});
-  this.route('services.index', {path: '/services'});
+  this.route('services', {path: '/services'});
   // this.route('site.contact', {path: '/contact'});
-  this.route('site.about', {path: '/about'});
+  this.route('about', {path: '/about'});
+
 
   // Dashboard
 
@@ -123,11 +74,17 @@ Router.map(function () {
   this.route('edit.subscription', {path: '/dashboard/subscription/edit/:_id'});
   this.route('edit.site', {path: '/dashboard/site/edit/:_id'});
   this.route('create.site', {path: '/dashboard/site/create'});
-  this.route('services.create', {path: '/services/create'});
-  this.route('services.edit', {path: '/services/edit/:_id'});
-  this.route("notFound", {path: "*", yieldTemplates: {'HeaderNotFound': {to: 'header'}, 'FooterNotFound': {to: 'footer'} }});
+  this.route('service.create', {path: '/dashboard/site/wysiwyg/:_id/services/create'});
+  this.route('service.edit', {path: '/dashboard/site/wysiwyg/:_id/services/edit/:_id'});
 
 
+  // WYSIWYG Edit
+
+  this.route('edit.home', {path: '/dashboard/site/wysiwyg/:_id'});
+  this.route('edit.services', {path: '/dashboard/site/wysiwyg/:_id/services'});
+  this.route('edit.about', {path: '/dashboard/site/wysiwyg/:_id/about'});
+  this.route('edit.contact', {path: '/dashboard/site/wysiwyg/:_id/contact'});
 
 
+  this.route('NotFound', {path: '*'});
 });

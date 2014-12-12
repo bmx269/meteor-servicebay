@@ -1,0 +1,13 @@
+<template name="EditAbout3">
+  {{#autoForm collection="Site" template="afContenteditable" doc=editingDoc id="editSiteForm" type="update" validation="submitThenBlur"}}
+    <div id="content-wrapper">
+      <div class="container">
+        <h2>About Us</h2>
+        <div class="about intro">
+          {{> afQuickField name='aboutIntro' label=false placeholder="Write something about your company..."}}
+        </div>
+      </div>
+    </div>
+    {{> adminToolbar}}
+  {{/autoForm}}
+</template>

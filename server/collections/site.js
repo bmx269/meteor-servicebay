@@ -31,3 +31,10 @@ Site.deny({
     return false;
   }
 });
+
+
+Meteor.users.deny({
+  update: function() {
+    return true;
+  }
+});

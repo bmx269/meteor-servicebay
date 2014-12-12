@@ -94,7 +94,11 @@ ul.features{
   } //li
 } //ul
 
-#map { height: 180px; }
+#map {
+  height: 300px;
+  background: #efefef;
+  margin-bottom: 40px;
+}
 
 .entry{
   background: #fff;
@@ -123,3 +127,11 @@ padding: 10px 14px;
     display: none;
   }
 }
+
+.services{
+  .service{
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+

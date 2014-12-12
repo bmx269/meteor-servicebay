@@ -1,0 +1,12 @@
+<template name="Contact1">
+  <div id="content-wrapper">
+    <div class="container">
+      <div id="map"></div>
+      <h2>Contact Us</h2>
+      {{#with site}}
+        <div class="contact intro">{{{contactIntro}}}</div>
+      {{/with}}
+      {{> ContactForm}}
+    </div>
+  </div>
+</template>

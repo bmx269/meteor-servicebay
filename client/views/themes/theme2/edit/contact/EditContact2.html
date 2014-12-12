@@ -1,0 +1,12 @@
+<template name="EditContact2">
+    <div id="contact">
+      <div class="container">
+        {{> afQuickField name="location"}}
+        <h2>Contact Us</h2>
+        <div class="contact intro">
+          {{> afQuickField name='contactIntro' label=false placeholder="Tell us how to contact you..."}}
+        </div>
+        {{> ContactForm}}
+      </div>
+    </div>
+</template>

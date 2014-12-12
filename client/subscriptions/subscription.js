@@ -7,8 +7,8 @@
  // Meteor.subscribe('subscription');
 
 
-var host =  headers.get('host'),
-    host = String(host).replace(/^www\./,'');
+host =  headers.get('host');
+host = String(host).replace(/^www\./,'');
 var header =  headers.get();
 //console.log(host);
 //return Site.find({'domain': host});

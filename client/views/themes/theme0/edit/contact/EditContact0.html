@@ -1,0 +1,15 @@
+<template name="EditContact0">
+  {{#autoForm collection="Site" template="afContenteditable" doc=this id="editSiteForm" type="update" validation="submitThenBlur"}}
+    <div id="content-wrapper">
+      <div class="container">
+        <div id="map"></div>
+        <h2>Contact Us</h2>
+        <div class="contact intro">
+          {{> afQuickField name='contactIntro' label=false placeholder="Tell us how to contact you..."}}
+        </div>
+        {{> ContactForm}}
+      </div>
+    </div>
+    {{> adminToolbar}}
+  {{/autoForm}}
+</template>

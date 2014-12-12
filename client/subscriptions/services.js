@@ -4,8 +4,8 @@
  *    return Services.find({is_public: true});
  *  }
  */
-var host =  headers.get('host'),
-    host = String(host).replace(/^www\./,'');
-var header =  headers.get();
+// var host =  headers.get('host'),
+//     host = String(host).replace(/^www\./,'');
+// var header =  headers.get();
 
- Meteor.subscribe('services', {domain: host});
+// Meteor.subscribe('services', {domain: host});

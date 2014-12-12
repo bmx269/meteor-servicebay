@@ -1,4 +1,4 @@
-//
+////
 // Alerts
 // --------------------------------------------------
 
@@ -7,45 +7,64 @@
 // -------------------------
 
 .alert {
-  padding: 8px 35px 8px 14px;
-  margin-bottom: $baseLineHeight;
-  text-shadow: 0 1px 0 rgba(255,255,255,.5);
-  background-color: $warningBackground;
-  border: 1px solid $warningBorder;
-  @include border-radius(0px);
-  color: $warningText;
-}
-.alert h4 {
-  margin: 0;
+  padding: $alert-padding;
+  margin-bottom: $line-height-computed;
+  border: 1px solid transparent;
+  border-radius: $alert-border-radius;
+
+  // Headings for larger alerts
+  h4 {
+    margin-top: 0;
+    // Specified for the h4 to prevent conflicts of changing $headings-color
+    color: inherit;
+  }
+  // Provide class for links that match alerts
+  .alert-link {
+    font-weight: $alert-link-font-weight;
+  }
+
+  // Improve alignment and spacing of inner content
+  > p,
+  > ul {
+    margin-bottom: 0;
+  }
+  > p + p {
+    margin-top: 5px;
+  }
 }
 
-// Adjust close link position
-.alert .close {
-  position: relative;
-  top: -2px;
-  right: -21px;
-  line-height: $baseLineHeight;
-}
+// Dismissible alerts
+//
+// Expand the right padding and account for the close button's positioning.
 
+.alert-dismissable, // The misspelled .alert-dismissable was deprecated in 3.2.0.
+.alert-dismissible {
+  padding-right: ($alert-padding + 20);
+
+  // Adjust close link position
+  .close {
+    position: relative;
+    top: -2px;
+    right: -21px;
+    color: inherit;
+  }
+}
 
 // Alternate styles
-// -------------------------
+//
+// Generate contextual modifier classes for colorizing the alert.
 
 .alert-success {
-  background-color: $successBackground;
-  border-color: $successBorder;
-  color: $successText;
-}
-.alert-danger,
-.alert-error {
-  background-color: $errorBackground;
-  border-color: $errorBorder;
-  color: $errorText;
+  @include alert-variant($alert-success-bg, $alert-success-border, $alert-success-text);
 }
 .alert-info {
-  background-color: $infoBackground;
-  border-color: $infoBorder;
-  color: $infoText;
+  @include alert-variant($alert-info-bg, $alert-info-border, $alert-info-text);
+}
+.alert-warning {
+  @include alert-variant($alert-warning-bg, $alert-warning-border, $alert-warning-text);
+}
+.alert-danger {
+  @include alert-variant($alert-danger-bg, $alert-danger-border, $alert-danger-text);
 }
 
 
@@ -62,4 +81,122 @@
 }
 .alert-block p + p {
   margin-top: 5px;
+}
+
+
+.fancybox-overlay {
+    background: transparent;
+}
+
+
+ul.notifications {
+    z-index: 99999 !important;
+    position: fixed;
+    top: 0px;
+    right: 10px;
+    list-style-type: none;
+    padding: 0px;
+    width: auto;
+    min-width: 280px;
+    max-width: 600px;
+}
+
+// #loader {
+//   width: 70px;
+//   height: 35px;
+//   overflow: hidden;
+//   position: absolute;
+//   top: calc(50% - 17px);
+//   left: calc(50% - 35px);
+// }
+// .page-loading {
+
+//   width: 70px;
+//   height: 70px;
+//   border-style: solid;
+//   border-top-color: $grayLight;
+//   border-right-color: $grayLight;
+//   border-left-color: transparent;
+//   border-bottom-color: transparent;
+//   border-radius: 50%;
+//   box-sizing: border-box;
+//   animation: rotate 1s ease-in-out infinite;
+//   transform: rotate(-200deg)
+// }
+// @keyframes rotate {
+//   0% { border-width: 10px; }
+//   25% { border-width: 3px; }
+//   50% {
+//     transform: rotate(115deg);
+//     border-width: 10px;
+//   }
+//   75% { border-width: 3px;}
+//   100% { border-width: 10px;}
+// }
+
+
+#loader {
+  font-size: 20px;
+  position: relative;
+  width: 4em;
+  height: 1em;
+  margin: 30% auto;
+}
+
+.dot {
+  width: 1em;
+  height: 1em;
+  border-radius: 0.5em;
+  background: $grayLight;
+  position: absolute;
+  animation-duration: 0.5s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+
+.dot1, .dot2 {
+  left: 0;
+}
+
+.dot3 { left: 1.5em; }
+
+.dot4 { left: 3em; }
+
+@keyframes reveal {
+  from { transform: scale(0.001); }
+  to { transform: scale(1); }
+}
+
+@keyframes slide {
+  to { transform: translateX(1.5em) }
+}
+
+
+.dot1 {
+  animation-name: reveal;
+}
+
+.dot2, .dot3 {
+  animation-name: slide;
+}
+
+.dot4 {
+  animation-name: reveal;
+  animation-direction: reverse; /* thx @HugoGiraudel */
+}
+
+.help-block{
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: $red;
+
+}
+
+.admin-actions{
+  @extend .alert;
+  @extend .alert-block;
+  @extend .alert-danger;
+
+
 }

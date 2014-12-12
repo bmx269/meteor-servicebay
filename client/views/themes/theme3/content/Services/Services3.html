@@ -1,0 +1,12 @@
+<template name="Services3">
+  <div id="content-wrapper">
+    <div class="container">
+      <h2>Services</h2>
+      {{#with site}}
+        <div class="services intro">{{{servicesIntro}}}</div>
+      {{/with}}
+
+      {{> ServicesList3}}
+    </div>
+  </div>
+</template>

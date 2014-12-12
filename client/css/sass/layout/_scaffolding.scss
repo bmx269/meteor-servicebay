@@ -1,4 +1,4 @@
-//
+////
 // Scaffolding
 // --------------------------------------------------
 
@@ -20,38 +20,793 @@
 // Body reset
 
 html {
-  font-size: 62.5%;
+  font-size: 10px;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
-
-// Body reset
-// -------------------------
-
 body {
-  margin: 0;
-  font-family: $baseFontFamily;
-  font-size: $baseFontSize;
-  line-height: $baseLineHeight;
-  color: $textColor;
-  background: $bodyBackground;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $text-color;
+  background-color: $body-bg;
 }
+
+// Reset fonts for relevant elements
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+
+// Links
+
+a {
+  color: $link-color;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+  }
+
+  &:focus {
+    @include tab-focus;
+  }
+}
+
+
+// Figures
+//
+// We reset this here because previously Normalize had no `figure` margins. This
+// ensures we don't break anyone's use of the element.
+
+figure {
+  margin: 0;
+}
+
+
+// Images
+
+img {
+  vertical-align: middle;
+}
+
+// Responsive images (ensure images don't scale beyond their parents)
+.img-responsive {
+  @include img-responsive;
+}
+
+// Rounded corners
+.img-rounded {
+  border-radius: $border-radius-large;
+}
+
+// Image thumbnails
+//
+// Heads up! This is mixin-ed into thumbnails.less for `.thumbnail`.
+.img-thumbnail {
+  padding: $thumbnail-padding;
+  line-height: $line-height-base;
+  background-color: $thumbnail-bg;
+  border: 1px solid $thumbnail-border;
+  border-radius: $thumbnail-border-radius;
+  @include transition(all .2s ease-in-out);
+
+  // Keep them at most 100% wide
+  @include img-responsive(inline-block);
+}
+
+// Perfect circle
+.img-circle {
+  border-radius: 50%; // set radius in percents
+}
+
+
+// Horizontal rules
+
+hr {
+  margin-top:    $line-height-computed;
+  margin-bottom: $line-height-computed;
+  border: 0;
+  border-top: 1px solid $hr-border;
+}
+
+
+// Only display content to screen readers
+//
+// See: http://a11yproject.com/posts/how-to-hide-content/
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+// Use in conjunction with .sr-only to only display content when it's focused.
+// Useful for "Skip to main content" links; see http://www.w3.org/TR/2013/NOTE-WCAG20-TECHS-20130905/G1
+// Credit: HTML5 Boilerplate
+
+.sr-only-focusable {
+  &:active,
+  &:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+  }
+}
+
+
+
+.theme0 body{
+  background: #fff;
+
+  .jPanelMenu-panel{
+    overflow: hidden;
+    background: #fff;
+  }
+  #header-wrapper{
+    margin-top: 0px;
+    background: transparent;
+    //position: absolute;
+    //top: 67px;
+    //left: 0;
+    //z-index: 300;
+
+    .container{
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    &.home{
+      background: url("/img/home-splash.jpg") center center no-repeat;
+      background-size: cover;
+
+      .splash{
+        height: 300px;
+        position: relative;
+
+        @include at-breakpoint($narrow){
+        }
+        @include at-breakpoint($tablet){
+          height: 350px;
+        }
+        @include at-breakpoint($computer){
+          height: 450px;
+        }
+      }
+    }
+  }
+
+  #content-wrapper{
+    background: $white;
+    //  border-bottom: 1px solid $green;
+
+    .container{
+      padding-top: 30px;
+      padding-bottom: 80px;
+    }
+  }
+  #footer-wrapper{
+    background: transparent url("../img/userbar.png") left top repeat;
+    color: $white;
+
+    .container{
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    a {
+      color: $blueLight;
+      text-decoration: none;
+    }
+    a:hover {
+      color: $white;
+      text-decoration: underline;
+    }
+  }
+}//.theme0 body
+
+
+
+
+
+
+
+
+
 
 .theme1 body{
   background: #efefef;
-}
-// Links
-// -------------------------
 
-a {
-  color: $linkColor;
-  text-decoration: none;
-}
-a:hover {
-  color: $linkColorHover;
-  text-decoration: underline;
-}
+  .jPanelMenu-panel{
+    overflow: hidden;
+    background: #efefef;
+  }
 
+  #header-wrapper{
+    margin-top: 0px;
+    background: transparent;
+    //position: absolute;
+    //top: 67px;
+    //left: 0;
+    //z-index: 300;
+
+    .container{
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    &.home{
+      background: url("/img/home-splash.jpg") center center no-repeat;
+      background-size: cover;
+
+      .splash{
+        height: 300px;
+        position: relative;
+
+        @include at-breakpoint($narrow){
+        }
+        @include at-breakpoint($tablet){
+          height: 350px;
+        }
+        @include at-breakpoint($computer){
+          height: 450px;
+        }
+      }
+    }
+  }
+
+  #content-wrapper{
+    background: $white;
+    //  border-bottom: 1px solid $green;
+
+    .container{
+      padding-top: 30px;
+      padding-bottom: 80px;
+    }
+  }
+  #footer-wrapper{
+    background: transparent url("../img/userbar.png") left top repeat;
+    color: $white;
+
+    .container{
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    a {
+      color: $blueLight;
+      text-decoration: none;
+    }
+    a:hover {
+      color: $white;
+      text-decoration: underline;
+    }
+  }
+} //.theme1 body
+
+
+
+
+
+
+
+.theme2 body{
+  background: #1e2a30;
+  color: #ccc;
+
+  .jPanelMenu-panel{
+    overflow: hidden;
+    background: transparent;
+  }
+
+//  a {
+//    color: $linkColor;
+//    text-decoration: none;
+//  }
+//  a:hover {
+//    color: $linkColorHover;
+//    text-decoration: underline;
+//  }
+
+  #header-wrapper{
+    margin-top: 0px;
+    background: transparent url("../img/userbar.png") left top repeat;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    z-index: 300;
+
+    .container{
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+  }
+  #branding{
+    h1{
+      font-size: 30px;
+      line-height: 1em;
+      padding: 10px 0;
+      color: #fff;
+      font-weight: 300;
+      display: block;
+      vertical-align: middle;
+
+      a{
+        color: #fff;
+      }
+    }
+  }
+  #splash{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 300px;
+    width: 100%;
+    background-size: cover;
+    //background-attachment: fixed;
+    background-position: center top;
+    z-index: -1;
+
+
+    @include at-breakpoint($narrow){
+    }
+    @include at-breakpoint($tablet){
+      height: 350px;
+    }
+    @include at-breakpoint($computer){
+      height: 450px;
+    }
+
+    .container{
+      padding-top: 150px;
+      padding-bottom: 50px;
+    }
+  }
+
+  .content{
+    background: #1e2a30;
+    margin-top: 300px;;
+    @include at-breakpoint($narrow){
+    }
+    @include at-breakpoint($tablet){
+      margin-top: 350px;
+    }
+    @include at-breakpoint($computer){
+      margin-top: 450px;
+    }
+  }
+  #intro-wrapper{
+    background: transparent;
+    //  border-bottom: 1px solid $green;
+
+    .container{
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+  }
+  #services{
+    background: #000;
+    //  border-bottom: 1px solid $green;
+
+    .container{
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+  }
+  #about{
+//    background: #fff;
+//    color: $grayDark;
+    //  border-bottom: 1px solid $green;
+
+    .container{
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+  }
+  #contact{
+    background: #fff;
+    color: $grayDark;
+    //  border-bottom: 1px solid $green;
+
+    .container{
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+  }
+  #footer-wrapper{
+    background: transparent url("../img/userbar.png") left top repeat;
+    color: $white;
+
+    .container{
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    a {
+      color: $blueLight;
+      text-decoration: none;
+    }
+    a:hover {
+      color: $white;
+      text-decoration: underline;
+    }
+  }
+} //.theme2 body
+
+
+
+
+
+
+.theme3 body{
+  background: #efefef;
+
+  .jPanelMenu-panel{
+    overflow: hidden;
+    background: #efefef;
+  }
+
+  #header-wrapper{
+    margin-top: 0px;
+    background: transparent;
+    //position: absolute;
+    //top: 67px;
+    //left: 0;
+    //z-index: 300;
+
+    .container{
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    &.home{
+      background: url("/img/home-splash.jpg") center center no-repeat;
+      background-size: cover;
+
+      .splash{
+        height: 230px;
+        position: relative;
+        margin-top: 70px;
+
+        @include at-breakpoint($narrow){
+        }
+        @include at-breakpoint($tablet){
+          height: 280px;
+        }
+        @include at-breakpoint($computer){
+          height: 380px;
+
+        }
+      }
+    }
+  }
+
+  #content-wrapper{
+    background: $white;
+    //  border-bottom: 1px solid $green;
+
+    .container{
+      padding-top: 30px;
+      padding-bottom: 80px;
+    }
+  }
+  #footer-wrapper{
+    background: transparent url("../img/userbar.png") left top repeat;
+    color: $white;
+
+    .container{
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    a {
+      color: $blueLight;
+      text-decoration: none;
+    }
+    a:hover {
+      color: $white;
+      text-decoration: underline;
+    }
+  }
+} //.theme3 body
+
+
+
+
+
+
+
+// Main Site
+
+.themeMaster body,
+.themeNone body{
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $text-color;
+  background-color: $body-bg;
+//
+//  .jPanelMenu-panel{
+//    overflow: hidden;
+//    background: $bodyBackground;
+//  }
+
+//  a {
+//    color: $linkColor;
+//    text-decoration: none;
+//  }
+//  a:hover {
+//    color: $linkColorHover;
+//    text-decoration: underline;
+//  }
+
+
+
+  #user-wrapper{
+    //background: $black url(../img/txture.png) left top repeat;
+    background: transparent url("../img/userbar.png") left top repeat;
+    width: 100%;
+    overflow: hidden;
+
+    @include at-breakpoint($tablet){
+      position: fixed;
+      width: 100%;
+      //height: 34px;
+      overflow: hidden;
+      top: 0px;
+      left: 0;
+      z-index: 999;
+      -webkit-transform: translateZ(0);
+    }
+  }
+
+  #header-wrapper{
+    margin-top: 0px;
+    padding-top: 0px;
+    background: transparent;
+    //position: absolute;
+    //top: 67px;
+    //left: 0;
+    //z-index: 300;
+
+    @include at-breakpoint($narrow){
+    }
+    @include at-breakpoint($tablet){
+      padding-top: 34px;
+    }
+
+    .container{
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    &.home{
+//      background: url("/img/home-splash.jpg") center center no-repeat;
+      margin-bottom: 156px;;
+      @include at-breakpoint($narrow){
+      }
+      @include at-breakpoint($tablet){
+        margin-bottom: 224px;
+      }
+      @include at-breakpoint($computer){
+        margin-bottom: 324px;
+      }
+
+    }
+  }
+
+  #splash.home{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 300px;
+    width: 100%;
+    display: block;
+    background-size: cover;
+   // background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: -1;
+
+
+    @include at-breakpoint($narrow){
+    }
+    @include at-breakpoint($tablet){
+      height: 350px;
+    }
+    @include at-breakpoint($computer){
+      height: 450px;
+    }
+
+    .container{
+      position: relative;
+      height: 300px;
+
+      @include at-breakpoint($tablet){
+        height: 350px;
+      }
+      @include at-breakpoint($computer){
+        height: 450px;
+      }
+    }
+  }
+
+  #content-wrapper{
+    background: $white;
+    //  border-bottom: 1px solid $green;
+
+    .container{
+      padding-top: 30px;
+      padding-bottom: 80px;
+
+      .intro {
+        &.home {
+
+          h2{
+            color: $white;
+            font-size: 20px;
+            line-height: 1.4em;
+            font-weight: 300;
+            text-align: center;
+
+            @include at-breakpoint($narrow) {
+            }
+            @include at-breakpoint($tablet) {
+              font-size: 26px;
+            }
+            @include at-breakpoint($computer) {
+              font-size: 30px;
+            }
+            @include at-breakpoint($wide) {
+              font-size: 34px;
+            }
+          }
+          color: $grayLight;
+          font-size: 14px;
+          line-height: 1.6em;
+          font-weight: 300;
+          text-align: center;
+          //  border-bottom: 1px solid $green;
+
+          @include at-breakpoint($narrow) {
+          }
+          @include at-breakpoint($tablet) {
+            font-size: 16px;
+          }
+          @include at-breakpoint($computer) {
+            font-size: 17px;
+          }
+          @include at-breakpoint($wide) {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+    &.home{
+      color: $white;
+      background: #111;
+
+      .container{
+        padding-top: 40px;
+        padding-bottom: 40px;
+      }
+    }
+  } //#content-wrapper
+
+  #features-wrapper{
+    .intro {
+      padding-bottom: 20px;
+
+      @include at-breakpoint($tablet){
+        padding-bottom: 30px;
+      }
+      @include at-breakpoint($computer){
+        padding-bottom: 30px;
+      }
+    }
+  }
+
+  #footer-wrapper{
+    background: transparent url("../img/userbar.png") left top repeat;
+    color: $white;
+
+    .container{
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    a {
+      color: $blueLight;
+      text-decoration: none;
+    }
+    a:hover {
+      color: $white;
+      text-decoration: underline;
+    }
+  }
+
+  .one-stacked{
+    #top-wrapper{
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+    #bottom-wrapper{
+      background: $gray;
+      color: $grayLighter;
+      font-weight: 300;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+  } //one-stacked
+
+
+  #features-wrapper{
+    background: $grayLighter;
+    color: $gray;
+    font-weight: 300;
+
+    .container{
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+  }
+
+  .section{
+    border-bottom: 1px solid #eee;
+
+    .container{
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+  }
+
+  #dashboard-wrapper{
+    background: $grayLighter;
+    color: $gray;
+    font-weight: 300;
+
+    .container{
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+  }
+
+  #page-pricing{
+    #mini-panel-features_listing{
+      background: $grayLighter;
+      color: $gray;
+      font-weight: 300;
+    }
+  }
+
+  .site-actions{
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px #ddd solid;
+  }
+
+  #blog-admin {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+
+} //.themeMaster body
 
 
 // Images
@@ -76,27 +831,6 @@ a:hover {
   @include border-radius(500px); // crank the border-radius so it works with most reasonably sized images
 }
 
-/*
-Block clearfix - yup its a recap of the clearfix trick, no reason to do class="clearfix/cf/whatever" all over our markup
-----------------------------*/
-.block .content:before,.block .content:after { content:""; display:table;}
-.block .content:after { clear:both;}
-.block .content { zoom:1;}
-
-/*
-  admin styles for blocks
-* ------------------------------------- */
-.page-admin-structure-block-demo .block-region {
-  background: #ffff66;
-  border: 1px dotted #9f9e00;
-  color: #000;
-  font: 90% "Lucida Grande", "Lucida Sans Unicode", sans-serif;
-  margin: 0px;
-  padding: 5px;
-  text-align: center;
-  text-shadow: none;
-}
-
 
 .fullwidth{
   width: 100%;
@@ -111,113 +845,54 @@ Block clearfix - yup its a recap of the clearfix trick, no reason to do class="c
   overflow: hidden;
 }
 
-#user-wrapper{
-  //background: $black url(../img/txture.png) left top repeat;
-  background: $grayDarker;
-  //color: $white;
-}
+#admin-flyout{
+  display: none;
+  background: #efefef;
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  //height: 200px;
+  //height: 34px;
+  overflow: hidden;
+  bottom: 100px;
+  left: 0;
+  z-index: 99999;
+  -webkit-transform: translateZ(0);
+  border-top: 1px solid $gray;
 
-#header-wrapper,
-.header-wrapper{
-  background: transparent;
-  //position: absolute;
-  //top: 67px;
-  //left: 0;
-  //z-index: 300;
+  @include at-breakpoint($narrow){
+    bottom: 46px;
+  }
 
-  .container{
-    padding-top: 20px;
-    padding-bottom: 20px;
+  &.open{
+    display: block;
   }
 }
 
-.page{
-   //background: $white;
-}
+#admin-toolbar{
+  border-top: 1px solid $gray;
+  background: #000;
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  bottom: 0px;
+  left: 0;
+  z-index: 99999;
+  -webkit-transform: translateZ(0);
 
-#blog-admin,
-#content-wrapper,
-.content-wrapper{
-  background: $white;
-  //  border-bottom: 1px solid $green;
-
-  .container{
-    padding-top: 30px;
-    padding-bottom: 80px;
+  @include at-breakpoint($narrow){
+    height: 46px;
   }
 }
 
-#footer-wrapper{
-  background: $grayDarker;
-  color: $white;
 
-  .container{
-  padding-top: 50px;
-  padding-bottom: 50px;
-  }
-
-  a {
-    color: $blueLight;
-    text-decoration: none;
-  }
-  a:hover {
-    color: $white;
-    text-decoration: underline;
-  }
+.container.loading{
+  height: 1000px;
+  width: 100%;
+  margin: 0 auto;
 }
 
-.one-stacked{
-  #top-wrapper{
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-  #bottom-wrapper{
-    background: $gray;
-    color: $grayLighter;
-    font-weight: 300;
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-} //one-stacked
 
 
-#features-wrapper{
-    background: $grayLighter;
-    color: $gray;
-    font-weight: 300;
-
-    .container{
-      padding-top: 80px;
-      padding-bottom: 80px;
-    }
-}
-
-#dashboard-wrapper{
-  background: $grayLighter;
-  color: $gray;
-  font-weight: 300;
-
-  .container{
-    padding-top: 80px;
-    padding-bottom: 80px;
-  }
-}
-
-#page-pricing{
-  #mini-panel-features_listing{
-    background: $grayLighter;
-    color: $gray;
-    font-weight: 300;
-  }
-}
-
-.site-actions{
-  padding-bottom: 20px;
-  margin-bottom: 10px;
-  border-bottom: 1px #ddd solid;
-}
-
-#blog-admin {
-  padding-top: 0px;
-  padding-bottom: 0px;
-}

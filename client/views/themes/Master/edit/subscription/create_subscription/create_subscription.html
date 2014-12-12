@@ -1,0 +1,16 @@
+<template name="CreateSubscription">
+    <div id="create-subscription" tabindex="-1" role="dialog" style="display: none;">
+        <div class="container">
+            <h1>New Subscription</h1>
+        {{#autoForm collection="Subscription" id="createSubscriptionForm" type="insert" validation="submitThenBlur" class="grid-form"}}
+            {{> afQuickField name='siteTitle'}}
+            {{> afQuickField name='domain'}}
+            {{> afQuickField name='fulldomain'}}
+            {{> afQuickField name='subscriptionLevel'}}
+            {{> afQuickField name='active'}}
+            {{> afQuickField name='summary' rows=6}}
+        <button type="submit" class="btn btn-primary">Create Subscription</button>
+        {{/autoForm}}
+      </div>
+    </div>
+</template>
