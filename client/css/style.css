@@ -1892,6 +1892,11 @@ hr {
   width: 100%;
   margin: 0 auto; }
 
+.sites,
+.services {
+  position: relative;
+  display: block; }
+
 /*!
  *  Font Awesome 3.0.2
  *  the iconic font designed for use with Twitter Bootstrap

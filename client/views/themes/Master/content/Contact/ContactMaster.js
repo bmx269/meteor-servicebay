@@ -29,6 +29,10 @@ Template.ContactMaster.events({
    *
    *  }
    */
+
+  contact: function(){
+    return Site.findOneFaster({'_id': Session.get("selectedDocId")},{fields: {'contactIntro': 1}});
+  }
 });
 
 Template.ContactMaster.helpers({

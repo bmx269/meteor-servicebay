@@ -11,12 +11,9 @@ Template.AboutMaster.events({
 });
 
 Template.AboutMaster.helpers({
-  /*
-   * Example:
-   *  items: function () {
-   *    return Items.find();
-   *  }
-   */
+  about: function(){
+    return Site.findOneFaster({'_id': Session.get("selectedDocId")},{fields: {'aboutIntro': 1}});
+  }
 });
 
 /*****************************************************************************/

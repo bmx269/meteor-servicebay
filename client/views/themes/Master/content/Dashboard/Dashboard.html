@@ -40,11 +40,7 @@
   <p><a href="#create-site" class="fancybox btn btn-warning">New
     Site Instance</a></p>
     <div class="sites">
-      {{#each siteItem}}
         {{> site}}
-        {{else}}
-        <p class="alert alert-info">You do not have any sites yet. <a href="#create-site" class="fancybox">Create new site.</a></p>
-      {{/each}}
     </div>
 
     {{> CreateSite}}
@@ -69,19 +65,28 @@
 </template>
 
 <template name="site">
-  <div class="site">
-    <div class="site-content">
-      <h4><a href="http://{{domain}}" target="_blank">{{siteTitle}}</a></h4>
-        <div class="site-url"><a href="http://{{domain}}" target="_blank">{{domain}}</a></div>
-      <div class="site-actions">
-        <a href="http://{{domain}}" class="btn btn-primary" target="_blank">View</a><a href="{{pathFor 'edit.home'}}" class="btn btn-warning wysiwygThis">Edit</a>
-        {{#if isInRole 'admin'}}
-          <div class="admin-actions">
-            <p><strong>Admin</strong></p><p>
-            <a href="#edit-site" doc="{{_id}}" class="fancybox editThis">Quick Edit</a> | <a href="#" class="deleteThis">Permanently Delete</a></p>
+  {{#if isReady}}
+    {{#each siteItem}}
+      <div class="site">
+        <div class="site-content">
+          <h4><a href="http://{{domain}}" target="_blank">{{siteTitle}}</a></h4>
+          <div class="site-url"><a href="http://{{domain}}" target="_blank">{{domain}}</a></div>
+          <div class="site-actions">
+            <a href="http://{{domain}}" class="btn btn-primary" target="_blank">View</a><a href="{{pathFor 'edit.home'}}" class="btn btn-warning wysiwygThis">Edit</a>
+            {{#if isInRole 'admin'}}
+              <div class="admin-actions">
+                <p><strong>Admin</strong></p><p>
+                <a href="#edit-site" doc="{{_id}}" class="fancybox editThis">Quick Edit</a> | <a href="#" class="deleteThis">Permanently Delete</a></p>
+              </div>
+            {{/if}}
+          </div>
         </div>
-        {{/if}}
       </div>
-    </div>
-  </div>
+    {{else}}
+      <p class="alert alert-info">You do not have any sites yet. <a href="#create-site" class="fancybox">Create new site.</a></p>
+    {{/each}}
+  {{else}}
+    <div class="loading">{{>spinner}}</div>
+  {{/if}}
+
 </template>

@@ -2,6 +2,7 @@ EditHomeController = RouteController.extend({
   //layoutTemplate: 'MasterEditLayout',
 
   waitOn: function () {
+    return Meteor.subscribe('editSite', this.params._id);
   },
 
   onBeforeAction: function() {

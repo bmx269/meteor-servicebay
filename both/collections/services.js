@@ -8,7 +8,7 @@ var Schemas = {};
 
 
 
-Services = new Mongo.Collection('services', {});
+Services = new Meteor.Collection('services', {});
 
 Schemas.Services = new SimpleSchema({
   createdAt: {

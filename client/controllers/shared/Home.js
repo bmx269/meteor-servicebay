@@ -1,6 +1,7 @@
 HomeController = RouteController.extend({
   waitOn: function () {
-    //return Meteor.subscribe('site', {domain: host});
+    //return subs.subscribe('site', host);
+    //Meteor.subscribe('findSite', host);
   },
 
   data: function() {

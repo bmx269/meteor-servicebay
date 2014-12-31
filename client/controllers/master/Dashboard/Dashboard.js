@@ -1,10 +1,13 @@
 DashboardController = RouteController.extend({
+
   waitOn: function () {
     //return Meteor.subscribe('site', {domain: host});
+    //return siteData.subscribe('site', {domain: host});
+    //var user = Meteor.userId();
   },
 
   onBeforeAction: function() {
-    Session.set('fromWhere', "dashboard");
+    //Session.set('fromWhere', "dashboard");
     return AccountsEntry.signInRequired(this);
     this.next();//
   },

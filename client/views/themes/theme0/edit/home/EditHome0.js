@@ -8,10 +8,11 @@ Template.EditHome0.events({
 });
 
 
-Template.EditHome0.editingDoc = function () {
-  return Site.findOne({_id: Session.get("selectedDocId")});
-  //inlineEditor();
-};
+Template.EditHome0.helpers({
+  editingDoc: function () {
+    return Site.findOne({_id: Session.get("selectedDocId")});
+  }
+});
 
 
 Template.EditHome0.rendered = function () {

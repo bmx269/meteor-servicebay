@@ -11,12 +11,9 @@ Template.FeaturesTeaser.events({
 });
 
 Template.FeaturesTeaser.helpers({
-  /*
-   * Example:
-   *  items: function () {
-   *    return Items.find();
-   *  }
-   */
+  features: function(){
+    return Site.findOneFaster({'_id': Session.get("selectedDocId")},{fields: {'featuresIntro': 1}});
+  }
 });
 
 /*****************************************************************************/

@@ -4,7 +4,7 @@
 // Notifications.success('title', 'message');
 
 
-AutoForm.addHooks(['createSiteForm', 'editSiteForm', 'createSubscriptionForm', 'editSubscriptionForm'], {
+AutoForm.addHooks(['createSiteForm', 'editSiteForm', 'quickEditSiteForm', 'createSubscriptionForm', 'editSubscriptionForm'], {
     after: {
         insert: function(error, result) {
             if (error) {

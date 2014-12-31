@@ -12,11 +12,15 @@ Template.HomeMaster.events({
 
 Template.HomeMaster.helpers({
   /*
-   * Example:
-   *  items: function () {
-   *    return Items.find();
-   *  }
-   */
+  * Example:
+  *  items: function () {
+  *    return Items.find();
+  *  }
+  */
+
+  homepage: function(){
+    return Site.findOneFaster({'_id': Session.get("selectedDocId")},{fields: {'homeIntro': 1}});
+  }
 });
 
 /*****************************************************************************/

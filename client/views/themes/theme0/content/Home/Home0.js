@@ -17,6 +17,9 @@ Template.Home0.helpers({
    *    return Items.find();
    *  }
    */
+  homepage: function(){
+    return Site.findOneFaster({'_id': Session.get("selectedDocId")},{fields: {'homeIntro': 1}});
+  }
 });
 
 /*****************************************************************************/

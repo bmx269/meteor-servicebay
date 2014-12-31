@@ -13,7 +13,6 @@ gadicohen:headers
 iron:layout
 cunneen:mailgun
 aldeed:autoform
-aldeed:collection2
 joshowens:accounts-entry
 arunoda:find-faster
 mrt:alertfy
@@ -37,7 +36,6 @@ alanning:roles
 multiply:iron-router-progress
 natestrauser:select2
 spiderable
-check
 jquery
 audit-argument-checks
 cmather:handlebars-server
@@ -57,4 +55,11 @@ mpowaga:autoform-summernote
 yogiben:autoform-map
 yogiben:autoform-modals
 woody:stripe-easy
+aldeed:collection2
+msavin:sessioninspector
 
+msavin:mongoinspector
+comerc:autoform-bs-more
+comerc:autoform-placecomplete
+sacha:spin
+slava:xray

@@ -3,7 +3,7 @@
 /*****************************************************************************/
 
 
-var subs = new SubsManager({
+var sites = new SubsManager({
     // will be cached only 20 recently used subscriptions
   cacheLimit: 20,
   // any subscription will be expired after 5 minutes of inactivity
@@ -21,7 +21,8 @@ Router.configure({
 
   waitOn: function() {
     headers;
-    return subs.subscribe('site', {domain: host});
+    //return subs.subscribe('findSite', {domain: host});
+    return sites.subscribe('site', host);
   },
 
   //onBeforeAction: function() {

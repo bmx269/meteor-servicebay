@@ -2,9 +2,15 @@
 /* SiteIndex: Event Handlers and Helpers */
 /*****************************************************************************/
 
-Template.EditHome2.editingDoc = function () {
-  return Site.findOne({_id: Session.get("selectedDocId")});
-};
+//Template.EditHome2.editingDoc = function () {
+//  return Site.findOne({_id: Session.get("selectedDocId")});
+//};
+
+Template.EditHome2.helpers({
+  editingDoc: function () {
+    return Site.findOne({_id: Session.get("selectedDocId")});
+  }
+});
 
 Template.EditHome2.rendered = function () {
 

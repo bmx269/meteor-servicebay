@@ -12,41 +12,22 @@ Template.Dashboard.events({
 });
 
 Template.subscriptionsList.helpers({
-  /*
-   * Example:
-   *  items: function () {
-   *    return Items.find();
-   *  }
-   */
 
-  siteItem: function(){
-      var user = Meteor.userId();
-
-
-      if (user) {
-          //console.log(user);
-          var theSites = Site.findFaster({'userId': user});
-          return theSites;
-
-      }
-      console.log('no sites found');
-      return null;
-  },
-
-  subscriptionItem: function(){
-    var user = Meteor.userId();
-
-
-    if (user) {
-      //console.log(user);
-      var theSubs = Subscription.findFaster({'userId': user});
-      return theSubs;
-    }
-    console.log('no subscriptions found');
-    return null;
-  }
+  //subscriptionItem: function(){
+  //  var user = Meteor.userId();
+  //
+  //
+  //  if (user) {
+  //    return Subscription.findFaster({'userId': user},{fields: {'siteTitle': 1, 'domain': 1}});
+  //  }
+  //  console.log('no subscriptions found');
+  //  return null;
+  //}
 
 });
+
+
+//
 
 Template.subscriptionsList.rendered = function () {
   $(".fancybox").click(function(e){
@@ -60,10 +41,11 @@ Template.subscriptionsList.rendered = function () {
 
 };
 
+
 Template.subscription.events = {
 
   'click .editThis': function() {
-    Session.set('selectedDocId', this._id);
+    Session.set("selectedDocId", this._id);
   },
   'click .deleteThis': function(e) {
     e.preventDefault();
@@ -74,10 +56,73 @@ Template.subscription.events = {
   }
 };
 
+
+
+Template.site.created = function () {
+
+  // 1. Initialization
+
+  var instance = this;
+  var currentUser = Meteor.userId();
+  var sub = new SubsManager({
+    // will be cached only 20 recently used subscriptions
+    cacheLimit: 20,
+    // any subscription will be expired after 5 minutes of inactivity
+    expireIn: 5
+  });
+
+  // initialize the reactive variables
+  instance.user = new ReactiveVar(currentUser);
+  instance.ready = new ReactiveVar(false);
+
+  // 2. Autorun
+
+  // will re-run when the "user" reactive variables changes
+  this.autorun(function () {
+
+    // get the limit
+    var user = instance.user.get();
+
+    //console.log("Asking for "+user+"'s sites…")
+
+
+    // subscribe to the posts publication
+    var subscription = sub.subscribe('userSites', user);
+
+    // if subscription is ready, set limit to newLimit
+    if (subscription.ready()) {
+      //console.log("> Received "+user+"'s sites. \n\n")
+      instance.ready.set(true);
+    } else {
+      instance.ready.set(false);
+      //console.log("> Subscription is not ready yet. \n\n");
+    }
+  });
+
+  // 3. Cursor
+
+  instance.userSites = function() {
+    var user = instance.user.get();
+    return Site.findFaster({'userId': user});
+  }
+
+};
+
+Template.site.helpers({
+
+  siteItem: function(){
+    return Template.instance().userSites();
+  },
+  // the subscription handle
+  isReady: function () {
+    return Template.instance().ready.get();
+  }
+});
+
 Template.site.events = {
 
   'click .editThis': function() {
-    Session.set('selectedDocId', this._id);
+    Session.set("editSiteId", this._id);
   },
   'click .deleteThis': function(e) {
     e.preventDefault();
@@ -85,24 +130,9 @@ Template.site.events = {
       Site.remove (this._id);
       Notifications.success ('Success', 'The Site has been Deleted.');
     }
-  },
-  'click .wysiwygThis': function() {
-   // Session.set('selectedDocId', this._id);
-  },
+  }
 };
 
-// AutoForm.hooks({
-//   onSubmit: function (insert, update, current) {
-//     if (customHandler(insert)) {
-//       this.resetForm();
-//       this.done();
-//       $.fancybox.close();
-//     }
-//     return false;
-//   }
-// });
-//var ownPost = Meteor.userId();
-//Meteor.subscribe('site', {userId: ownPost});
 
 /*****************************************************************************/
 /* Dashboard: Lifecycle Hooks */
@@ -111,10 +141,6 @@ Template.Dashboard.created = function () {
 };
 
 Template.Dashboard.rendered = function () {
-      // $('.fancybox').fancybox({
-      //     padding : 0,
-      //     openEffect  : 'elastic'
-      // });
 };
 
 Template.Dashboard.destroyed = function () {

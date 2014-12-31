@@ -1,5 +1,6 @@
 EditAboutController = RouteController.extend({
   waitOn: function () {
+    return Meteor.subscribe('editSite', this.params._id);
   },
 
   onBeforeAction: function() {

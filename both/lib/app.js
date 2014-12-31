@@ -1,6 +1,7 @@
 /*****************************************************************************/
 /* App: The Global Application Namespace */
 /*****************************************************************************/
+
 App = {
   // Set variables.
   variables: {
@@ -35,3 +36,5 @@ App = {
     return (Session.get('theme') === this.variables.themeMaster);
   }
 };
+
+

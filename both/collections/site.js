@@ -9,7 +9,7 @@ var Schemas = {};
 
 
 
-Site = new Mongo.Collection('site', {});
+Site = new Meteor.Collection('site', {});
 
 
 Schemas.Site = new SimpleSchema({

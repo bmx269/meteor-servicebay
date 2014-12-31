@@ -25,17 +25,10 @@ Template.EditSite.events({
 //});
 
 Template.EditSite.helpers({
-  /*
-   * Example:
-   *  items: function () {
-   *    return Items.find();
-   *  }
-   */
+  editSite: function () {
+    return Site.findOne(Session.get("editSiteId"));
+  }
 });
-
-Template.EditSite.editingDoc = function () {
-  return Site.findOne({_id: Session.get("selectedDocId")});
-};
 
 /*****************************************************************************/
 /* EditSite: Lifecycle Hooks */
@@ -44,7 +37,7 @@ Template.EditSite.created = function () {
 };
 
 Template.EditSite.rendered = function () {
-  var selectedSite = Session.get("selectedDocId");
+ // var selectedSite = Session.get("editDocId");
 
 };
 

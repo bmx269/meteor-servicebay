@@ -17,6 +17,21 @@ Template.HeaderMaster.helpers({
    *    return Items.find();
    *  }
    */
+  header: function(){
+    return Site.findOneFaster({'_id': Session.get("selectedDocId")},{fields: {'siteTitle': 1}});
+  }
+});
+
+Template.HomeHeaderMaster.helpers({
+  /*
+   * Example:
+   *  items: function () {
+   *    return Items.find();
+   *  }
+   */
+  header: function(){
+    return Site.findOneFaster({'_id': Session.get("selectedDocId")},{fields: {'homeSplash': 1, 'siteTitle': 1}});
+  }
 });
 
 /*****************************************************************************/
