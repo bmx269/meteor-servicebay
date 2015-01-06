@@ -80,6 +80,7 @@ Router.map(function () {
 
 
   // WYSIWYG Edit
+  //this.route('edit.site', {path: '/dashboard/site/edit/:_id'});
 
   this.route('edit.home', {path: '/dashboard/site/wysiwyg/:_id'});
   this.route('edit.services', {path: '/dashboard/site/wysiwyg/:_id/services'});

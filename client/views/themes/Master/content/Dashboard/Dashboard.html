@@ -13,19 +13,20 @@
   <div id="dashboard-wrapper">
     <div class="container">
       <div id="subscriptions">
-        {{> subscriptionsList}}
+        {{> sitesList}}
       </div>
       <div id="invoices">
         {{!-- {{> invoices}} --}}
       </div>
     </div>
   </div>
+  {{> autoformModals}}
 </template>
 
 
 <template name="subscriptionsList">
   <h2>Your Subscriptions</h2>
-  <p>Here is a list of the current subscriptions in your plan.</p>
+  <p>Here is a list of the current subscriptions in your account. You can have as many sites as you like, but only active subscriptions will be published for visitors to view.</p>
   <p><a href="#create-subscription" class="fancybox btn btn-success">New
     Subscription</a></p>
     <div class="subscriptions">
@@ -35,20 +36,16 @@
       <p class="alert alert-info">You do not have any subscriptions yet. <a href="#create-subscription" class="fancybox">Subscribe.</a></p>
     {{/each}}
     </div>
+</template>
+
+<template name="sitesList">
   <h2>Your Sites</h2>
-  <p>Here is a list of the current sites in your plan.</p>
-  <p><a href="#create-site" class="fancybox btn btn-warning">New
-    Site Instance</a></p>
-    <div class="sites">
-        {{> site}}
-    </div>
-
-    {{> CreateSite}}
-    {{> EditSite}}
-    {{> CreateSubscription}}
-    {{> EditSubscription}}
-    {{> autoformModals}}
-
+  <p>Here is a list of the current sites in your account. You can have as many sites as you like, but only active subscriptions will be published for visitors to view.</p>
+  <p><a href="#create-site" class="fancybox btn btn-warning">Create New Site</a></p>
+  <div class="sites">
+    {{> site}}
+  </div>
+  {{> CreateSite}}
 </template>
 
 
@@ -72,19 +69,23 @@
           <h4><a href="http://{{domain}}" target="_blank">{{siteTitle}}</a></h4>
           <div class="site-url"><a href="http://{{domain}}" target="_blank">{{domain}}</a></div>
           <div class="site-actions">
-            <a href="http://{{domain}}" class="btn btn-primary" target="_blank">View</a><a href="{{pathFor 'edit.home'}}" class="btn btn-warning wysiwygThis">Edit</a>
+            <a href="http://{{domain}}" class="btn btn-primary" target="_blank">View</a> <a href="{{pathFor 'edit.home'}}" class="btn btn-warning wysiwygThis">Edit</a>
             {{#if isInRole 'admin'}}
               <div class="admin-actions">
                 <p><strong>Admin</strong></p><p>
-                <a href="#edit-site" doc="{{_id}}" class="fancybox editThis">Quick Edit</a> | <a href="#" class="deleteThis">Permanently Delete</a></p>
+                {{#afModal collection="Site" operation="update" doc=_id fields="siteTitle, domain, siteTheme" buttonContent="Update Site" prompt="This is for Admin Purposes Only" title="Quick Update Site Details"}}
+                  Quick Edit
+                {{/afModal}} | <a href="{{pathFor 'edit.site'}}" class="editThis">Full Edit</a> | <a href="#" class="deleteThis">Permanently Delete</a></p>
               </div>
             {{/if}}
           </div>
         </div>
       </div>
+
     {{else}}
-      <p class="alert alert-info">You do not have any sites yet. <a href="#create-site" class="fancybox">Create new site.</a></p>
+      <p class="alert alert-info">You do not have any sites yet. <a href="#create-site" class="fancybox">Create your first site.</a></p>
     {{/each}}
+
   {{else}}
     <div class="loading">{{>spinner}}</div>
   {{/if}}

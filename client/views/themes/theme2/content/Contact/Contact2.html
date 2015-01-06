@@ -1,8 +1,7 @@
 <template name="Contact2">
   <div id="contact">
     <div class="container">
-      <div id="map"></div>
-      {{location}}
+      <div id="map">{{> googleMap name="mapTwo" options=mapTwoOptions}}</div>
       <h2>Contact Us</h2>
       {{#with site}}
         <div class="contact intro">{{{contactIntro}}}</div>

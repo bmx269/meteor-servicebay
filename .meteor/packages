@@ -15,7 +15,6 @@ cunneen:mailgun
 aldeed:autoform
 joshowens:accounts-entry
 arunoda:find-faster
-mrt:alertfy
 mrt:fancybox
 meteorhacks:subs-manager
 http
@@ -26,9 +25,7 @@ npm-container
 aldeed:simple-schema
 iron:dynamic-template
 gfk:notifications
-digilord:roles
 mrt:jquery-ui
-starfall:medium-editor
 mizzao:user-status
 natestrauser:jquery-scrollto
 aldeed:delete-button
@@ -46,11 +43,9 @@ themeteorchef:html5-sortable
 momentjs:moment
 reactive-var
 reactive-dict
-gabrielpoca:bender
 fortawesome:fontawesome
 summernote:summernote
 twbs:bootstrap
-aldeed:template-extension
 mpowaga:autoform-summernote
 yogiben:autoform-map
 yogiben:autoform-modals
@@ -62,4 +57,8 @@ msavin:mongoinspector
 comerc:autoform-bs-more
 comerc:autoform-placecomplete
 sacha:spin
-slava:xray
+cfs:standard-packages
+cfs:filesystem
+yogiben:autoform-file
+forwarder:autoform-wizard
+dburles:google-maps

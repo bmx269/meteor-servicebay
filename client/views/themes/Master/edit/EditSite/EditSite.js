@@ -24,9 +24,11 @@ Template.EditSite.events({
 //  }
 //});
 
+
+
 Template.EditSite.helpers({
-  editSite: function () {
-    return Site.findOne(Session.get("editSiteId"));
+  editingSite: function () {
+    return Site.findOne({_id: Session.get("selectedDocId")});
   }
 });
 
@@ -38,7 +40,9 @@ Template.EditSite.created = function () {
 
 Template.EditSite.rendered = function () {
  // var selectedSite = Session.get("editDocId");
-
+ // //'click .editModal': function() {
+ // $(".grid-form").setAttribute("doc", Session.get("editSiteId"));
+ // //},
 };
 
 Template.EditSite.destroyed = function () {

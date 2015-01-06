@@ -1,4 +1,8 @@
 HomeController = RouteController.extend({
+  onBeforeAction: function () {
+    GoogleMaps.load();
+    this.next();
+  },
   waitOn: function () {
     //return subs.subscribe('site', host);
     //Meteor.subscribe('findSite', host);

@@ -11,25 +11,10 @@ Template.Dashboard.events({
 
 });
 
-Template.subscriptionsList.helpers({
-
-  //subscriptionItem: function(){
-  //  var user = Meteor.userId();
-  //
-  //
-  //  if (user) {
-  //    return Subscription.findFaster({'userId': user},{fields: {'siteTitle': 1, 'domain': 1}});
-  //  }
-  //  console.log('no subscriptions found');
-  //  return null;
-  //}
-
-});
-
 
 //
 
-Template.subscriptionsList.rendered = function () {
+Template.sitesList.rendered = function () {
   $(".fancybox").click(function(e){
     e.preventDefault();
   });
@@ -109,7 +94,9 @@ Template.site.created = function () {
 };
 
 Template.site.helpers({
-
+  editingSite: function () {
+    return Site.findOne(Session.get("selectedDocId"));
+  },
   siteItem: function(){
     return Template.instance().userSites();
   },
@@ -122,7 +109,7 @@ Template.site.helpers({
 Template.site.events = {
 
   'click .editThis': function() {
-    Session.set("editSiteId", this._id);
+    Session.set("selectedDocId", this._id);
   },
   'click .deleteThis': function(e) {
     e.preventDefault();
@@ -132,7 +119,6 @@ Template.site.events = {
     }
   }
 };
-
 
 /*****************************************************************************/
 /* Dashboard: Lifecycle Hooks */

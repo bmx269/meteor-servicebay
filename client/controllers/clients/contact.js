@@ -1,4 +1,8 @@
 ContactController = RouteController.extend({
+  onBeforeAction: function () {
+    GoogleMaps.load();
+    this.next();
+  },
   waitOn: function () {
   },
 
