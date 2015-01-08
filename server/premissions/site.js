@@ -32,9 +32,3 @@ Site.deny({
   }
 });
 
-
-Meteor.users.deny({
-  update: function() {
-    return true;
-  }
-});
