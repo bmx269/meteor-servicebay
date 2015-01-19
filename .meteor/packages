@@ -53,10 +53,10 @@ aldeed:collection2
 msavin:sessioninspector
 
 msavin:mongoinspector
-comerc:autoform-placecomplete
 sacha:spin
 cfs:standard-packages
 cfs:filesystem
 yogiben:autoform-file
 forwarder:autoform-wizard
 dburles:google-maps
+dburles:collection-helpers
