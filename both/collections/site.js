@@ -152,26 +152,6 @@ Schemas.Site = new SimpleSchema({
       }
     }
   },
-  location: {
-    type: String,
-    label: "Location",
-    optional: true,
-    autoform: {
-      afFieldInput: {
-        type: 'map',
-        mapType: 'roadmap', //'roadmap' 'satellite' 'hybrid' 'terrain'
-        zoom: 15,
-        scrollwheel: false,
-        searchBox: true,
-        geolocation: 'true', // 'true', false
-        width: '100%',
-        height: '300px',
-        //defaultLat: ,
-        //defaultLng: ,
-        // summernote options goes here
-      }
-    }
-  },
   companyName: {
     type: String,
     label: "Business Name",
@@ -193,6 +173,12 @@ Schemas.Site = new SimpleSchema({
   companyState: {
     type: String,
     label: "Province / State",
+    max: 50,
+    optional: true
+  },
+  companyPostal: {
+    type: String,
+    label: "Postal Code / Zip",
     max: 50,
     optional: true
   },

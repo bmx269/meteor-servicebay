@@ -47,14 +47,12 @@ fortawesome:fontawesome
 summernote:summernote
 twbs:bootstrap
 mpowaga:autoform-summernote
-yogiben:autoform-map
 yogiben:autoform-modals
 woody:stripe-easy
 aldeed:collection2
 msavin:sessioninspector
 
 msavin:mongoinspector
-comerc:autoform-bs-more
 comerc:autoform-placecomplete
 sacha:spin
 cfs:standard-packages

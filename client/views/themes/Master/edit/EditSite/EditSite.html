@@ -22,17 +22,20 @@
                 {{> afQuickField placeholder="e.g., ServiceBay" name='companyName'}}
               </div>
             </div>
-            <div data-row-span="1">
+            <div data-row-span="3">
+              <div data-field-span="2">
+                {{> afQuickField name='companyAddress'}}
+              </div>
               <div data-field-span="1">
-                {{> afQuickField name='companyAddress' rows=2}}
+                {{> afQuickField  name='companyCity'}}
               </div>
             </div>
             <div data-row-span="3">
               <div data-field-span="1">
-                {{> afQuickField  name='companyCity'}}
+                {{> afQuickField name='companyState'}}
               </div>
               <div data-field-span="1">
-                {{> afQuickField name='companyState'}}
+                {{> afQuickField name='companyPostal'}}
               </div>
               <div data-field-span="1">
                 {{> afQuickField name='companyCountry'}}
@@ -47,11 +50,6 @@
               </div>
               <div data-field-span="1">
                 {{> afQuickField placeholder="e.g., name@gmail.com" name='companyEmail'}}
-              </div>
-            </div>
-            <div data-row-span="1">
-              <div data-field-span="1">
-                {{> afQuickField name='location'}}
               </div>
             </div>
           </fieldset>

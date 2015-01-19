@@ -1,10 +1,18 @@
 <template name="Contact0">
   <div id="content-wrapper">
     <div class="container">
-      <div id="map"></div>
+      <div id="map">{{> googleMap name="mapZero" options=mapZeroOptions}}</div>
       <h2>Contact Us</h2>
       {{#with site}}
         <div class="contact intro">{{{contactIntro}}}</div>
+        <div  class="address">
+          <h3 class="company">{{companyName}}</h3>
+          <div class="street">{{companyAddress}}</div>
+          <div class="city">{{companyCity}}, {{companyState}}</div>
+          <div class="country">{{companyCountry}} {{companyPostal}}</div>
+          {{#if companyPhone}}<div class="phone"><strong>Phone:</strong> {{companyPhone}}</div>{{/if}}
+          {{#if companyFax}}<div class="fax"><strong>Fax:</strong> {{companyFax}}</div>{{/if}}
+        </div>
       {{/with}}
       {{> ContactForm}}
     </div>

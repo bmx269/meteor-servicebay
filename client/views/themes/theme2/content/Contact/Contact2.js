@@ -10,13 +10,41 @@ Template.Contact2.events({
    */
 });
 
+
+
 Template.Contact2.helpers({
 
     mapTwoOptions: function() {
-      geo = this.location;
+      //geo = this.location;
+      //console.log(geo);
+
 
       // Make sure the maps API has loaded
       if (GoogleMaps.loaded()) {
+
+        // defining vars
+        var lat = Session.get('locationLat');
+        var lng = Session.get('locationLng');
+        var street = this.companyAddress;
+        var city = this.companyCity;
+        var state = this.companyState;
+        var country = this.companyCountry;
+        var address = street + ", "  + city + ", " + state + ", " + country;
+
+        //console.log("address = " + address);
+
+        var geocoder = new google.maps.Geocoder();
+
+        geocoder.geocode( { 'address': address}, function(results, status) {
+          geoLatLng = results[0].geometry.location;
+          //console.log(geoLatLng);
+          var lat = geoLatLng.k;
+          var lng =  geoLatLng.D;
+          Session.set('locationLat', lat);
+          Session.set('locationLng', lng);
+          //console.log("geocoder " + lat + ", " + lng);
+        });
+
         // We can use the `ready` callback to interact with the map API once the map is ready.
         GoogleMaps.ready('mapTwo', function(map) {
           // Add a marker to the map once it's ready
@@ -27,14 +55,13 @@ Template.Contact2.helpers({
         });
 
         // Map initialization options
-        var latLng = geo.split(',');
+        //console.log("before return " + lat + ", " + lng);
         return {
-          center: new google.maps.LatLng(latLng[0], latLng[1]),
+          center: new google.maps.LatLng(lat,lng),
           zoom: 15,
           scrollwheel: false
         }
       }
-
     },
 
     contactFormSchema: function() {
@@ -46,6 +73,8 @@ Template.Contact2.helpers({
 /* Contact: Lifecycle Hooks */
 /*****************************************************************************/
 Template.Contact2.created = function () {
+  //geo = Session.get('location');
+
 };
 
 Template.Contact2.rendered = function () {

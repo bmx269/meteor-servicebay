@@ -2,10 +2,18 @@
   {{#autoForm collection="Site" template="afContenteditable" doc=editingDoc id="editSiteForm" type="update" validation="submitThenBlur"}}
     <div id="content-wrapper">
       <div class="container">
-        <div id="map"></div>
+        <div id="map">{{> googleMap name="mapThree" options=mapThreeOptions}}</div>
         <h2>Contact Us</h2>
         <div class="contact intro">
           {{> afQuickField name='contactIntro' label=false placeholder="Tell us how to contact you..."}}
+        </div>
+        <div  class="address">
+          <h3 class="company">{{companyName}}</h3>
+          <div class="street">{{> afQuickField name='companyAddress'}}</div>
+          <div class="city">{{> afQuickField name='companyCity'}} {{> afQuickField name='companyState'}}</div>
+          <div class="country">{{> afQuickField name='companyCountry'}} {{> afQuickField name='companyPostal'}}</div>
+          <div class="phone"><strong>Phone:</strong> {{> afQuickField label=false name='companyPhone'}}</div>
+          <div class="fax"><strong>Fax:</strong> {{> afQuickField label=false name='companyFax'}}</div>
         </div>
         {{> ContactForm}}
       </div>
