@@ -164,6 +164,18 @@ Schemas.Site = new SimpleSchema({
     max: 255,
     optional: true
   },
+  lat: {
+    type: String,
+    label: "Lat",
+    max: 255,
+    optional: true
+  },
+  lng: {
+    type: String,
+    label: "Lng",
+    max: 255,
+    optional: true
+  },
   companyCity: {
     type: String,
     label: "City",

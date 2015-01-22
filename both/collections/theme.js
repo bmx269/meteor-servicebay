@@ -1,4 +1,4 @@
-Theme = new Mongo.Collection('theme');
+Theme = new Meteor.Collection('theme');
 
 /*
  * Add query methods like this:

@@ -2,7 +2,7 @@
   <div id="edit-site" tabindex="-1" role="dialog">
     <div class="container">
         <h1>Edit Site</h1>
-        <a href="{{pathFor 'dashboard'}}" class="btn btn-warning">Back to Dashboard</a>
+        <a href="{{pathFor 'dashboard'}}" class="btn btn-warning"><i class="fa fa-arrow-circle-left"></i> Back to Dashboard</a>
         {{#autoForm collection="Site" doc=this id="quickEditSiteForm" type="update" validation="submitThenBlur" class="grid-form"}}
           <fieldset>
             <legend>Site</legend>
@@ -108,7 +108,7 @@
               </div>
             </div>
           </fieldset>
-          <button type="submit" class="btn btn-primary">Save Changes</button> <a href="{{pathFor 'dashboard'}}" class="btn btn-link">Back to Dashboard</a>
+          <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save Changes</button> <a href="{{pathFor 'dashboard'}}" class="btn btn-link"><i class="fa fa-arrow-circle-left"></i> Back to Dashboard</a>
         {{/autoForm}}
       </div>
     </div>

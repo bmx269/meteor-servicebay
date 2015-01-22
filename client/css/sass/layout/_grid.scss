@@ -433,7 +433,7 @@ ul.features{
     @include span-columns(12 omega,12);
 
     // Services
-    &.node-14{
+    &.services{
       @include at-breakpoint($narrow){
         clear: both;
         @include remove-omega;
@@ -447,7 +447,7 @@ ul.features{
       }
     }
     // Designs
-    &.node-13{
+    &.designs{
       @include at-breakpoint($narrow){
         @include span-columns(6 omega,12);
       } // narrow
@@ -460,7 +460,7 @@ ul.features{
       }
     }
     // Management
-    &.node-8{
+    &.management{
       @include at-breakpoint($narrow){
         clear: both;
         @include remove-omega;
@@ -476,7 +476,7 @@ ul.features{
       }
     }
     // Mobile
-    &.node-9{
+    &.mobile{
       @include at-breakpoint($narrow){
         @include span-columns(6 omega,12);
       } // narrow
@@ -491,7 +491,7 @@ ul.features{
       }
     }
     // SEO
-    &.node-12{
+    &.seo{
       @include at-breakpoint($narrow){
         clear: both;
         @include remove-omega;
@@ -508,7 +508,7 @@ ul.features{
       }// wide
     }
     // Affordable
-    &.node-11{
+    &.affordable{
       @include at-breakpoint($narrow){
         @include span-columns(6 omega,12);
       } // narrow
@@ -521,7 +521,7 @@ ul.features{
       }// wide
     }
     // No Contracts
-    &.node-10{
+    &.fees{
       @include at-breakpoint($narrow){
         clear: both;
         @include remove-omega;

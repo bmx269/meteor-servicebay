@@ -27,7 +27,7 @@
 <template name="subscriptionsList">
   <h2>Your Subscriptions</h2>
   <p>Here is a list of the current subscriptions in your account. You can have as many sites as you like, but only active subscriptions will be published for visitors to view.</p>
-  <p><a href="#create-subscription" class="fancybox btn btn-success">New
+  <p><a href="#create-subscription" class="fancybox btn btn-success"><i class="fa fa-plus-square"></i> New
     Subscription</a></p>
     <div class="subscriptions">
     {{#each subscriptionItem}}
@@ -41,7 +41,7 @@
 <template name="sitesList">
   <h2>Your Sites</h2>
   <p>Here is a list of the current sites in your account. You can have as many sites as you like, but only active subscriptions will be published for visitors to view.</p>
-  <p><a href="#create-site" class="fancybox btn btn-warning">Create New Site</a></p>
+  <p><a href="#create-site" class="fancybox btn btn-danger"><i class="fa fa-plus-square"></i> Create New Site</a></p>
   <div class="sites">
     {{> site}}
   </div>
@@ -55,7 +55,7 @@
       <h4><a href="http://{{domain}}" target="_blank">{{siteTitle}}</a></h4>
       <div class="site-url"><a href="http://{{domain}}" target="_blank">{{domain}}</a></div>
       <div class="site-actions">
-        <a href="http://{{domain}}" class="btn btn-link" target="_blank">View</a> | <a href="#edit-subscription" class="fancybox btn btn-link editThis">Edit</a> | <a href="#" class="btn btn-link deleteThis">Permanently Delete</a>
+        <a href="http://{{domain}}" class="btn btn-link" target="_blank">View</a> | <a href="#edit-subscription" class="fancybox btn btn-link editThis">Edit</a> | <a href="#" class="btn btn-link deleteThis"><i class="fa fa-trash-o"></i> Permanently Delete</a>
       </div>
     </div>
   </div>
@@ -69,13 +69,11 @@
           <h4><a href="http://{{domain}}" target="_blank">{{siteTitle}}</a></h4>
           <div class="site-url"><a href="http://{{domain}}" target="_blank">{{domain}}</a></div>
           <div class="site-actions">
-            <a href="http://{{domain}}" class="btn btn-primary" target="_blank">View</a> <a href="{{pathFor 'edit.home'}}" class="btn btn-warning wysiwygThis">Edit</a>
+            <a href="http://{{domain}}" class="btn btn-primary" target="_blank"><i class="fa fa-eye"></i> View Live Site</a> <a href="{{pathFor 'edit.home'}}" class="btn btn-success wysiwygThis"><i class="fa fa-building"></i> Build Your Site</a>
             {{#if isInRole 'admin'}}
               <div class="admin-actions">
                 <p><strong>Admin</strong></p><p>
-                {{#afModal collection="Site" operation="update" doc=_id fields="siteTitle, domain, siteTheme" buttonContent="Update Site" prompt="This is for Admin Purposes Only" title="Quick Update Site Details"}}
-                  Quick Edit
-                {{/afModal}} | <a href="{{pathFor 'edit.site'}}" class="editThis">Full Edit</a> | <a href="#" class="deleteThis">Permanently Delete</a></p>
+                {{#afModal collection="Site" operation="update" doc=_id fields="siteTitle, domain, siteTheme" buttonContent="Update Site" prompt="This is for Admin Purposes Only" title="Quick Update Site Details"}} <i class="fa fa-terminal"></i> Domain Edit{{/afModal}} | <a href="{{pathFor 'edit.site'}}" class="editThis"><i class="fa fa-tasks"></i> Full Edit</a> | <a href="#" class="deleteThis"><i class="fa fa-trash-o"></i> Permanently Delete</a></p>
               </div>
             {{/if}}
           </div>

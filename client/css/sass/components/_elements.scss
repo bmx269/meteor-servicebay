@@ -50,46 +50,29 @@ animation: iron-router-progress-before 0.5s linear infinite;
 // Features Icons
 ul.features{
   li{
-    h3{
+    h3 {
       text-align: center;
-      &:before{
-        color: #273138;
+      margin-bottom: 0;
+
+      i {
+        display: block;
+        text-decoration: none;
+
+        &:before {
+          color: #273138;
+          display: block;
+          padding-bottom: 15px;
+
+        }
       }
-    }
-    // Services
-    .node-14{
-      @include icon-eye-open;
-      @include icon-xlarge;
-    }
-    // Designs
-    .node-13{
-      @include icon-picture;
-      @include icon-xlarge;
-    }
-    // Management
-    .node-8{
-      @include icon-cogs;
-      @include icon-xlarge;
-    }
-    // Mobile
-    .node-9{
-      @include icon-mobile-phone;
-      @include icon-xlarge;
-    }
-    // SEO
-    .node-12{
-      @include icon-search;
-      @include icon-xlarge;
-    }
-    // Affordable
-    .node-11{
-      @include icon-heart;
-      @include icon-xlarge;
-    }
-    // No Contracts
-    .node-10{
-      @include icon-thumbs-up;
-      @include icon-xlarge;
+      a {
+
+        &:hover,
+        &:focus,
+        &:active {
+          text-decoration: none;
+        }
+      }
     }
   } //li
 } //ul

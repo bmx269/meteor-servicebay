@@ -921,7 +921,6 @@
   padding-top: 0px;
   line-height: 1em;
 
-  @include icon-reorder;
 
   &:before{
     display: block;
@@ -1067,7 +1066,7 @@ nav#jPanelMenu-menu{
 
         &.dashboard{
           display: block;
-          padding: 5px 0;
+//          padding: 5px 0;
           text-align: center;
 
           @include at-breakpoint($narrow){
@@ -1076,7 +1075,7 @@ nav#jPanelMenu-menu{
             text-align: left;
           }
           @include at-breakpoint($computer){
-            padding: 10px 0;
+//            padding: 10px 0;
           }
         }
       }
@@ -1175,6 +1174,10 @@ nav#user-menu{
 
         @include at-breakpoint($narrow){
           padding: 5px 10px;
+
+          i{
+            font-size: 13px;
+          }
         }
 
         &.support{
@@ -1182,8 +1185,8 @@ nav#user-menu{
           background: $red;
 
           @include at-breakpoint($tablet){
-            @include icon-comments-alt;
-            @include icon-large;
+//            @include icon-comments-alt;
+//            @include icon-large;
 //            @extend fa;
 //            @extend fa-comments-alt;
           }
@@ -1203,8 +1206,8 @@ nav#user-menu{
           font-size: 11px;
 
           @include at-breakpoint($tablet){
-            @include icon-home;
-            @include icon-large;
+//            @include icon-home;
+//            @include icon-large;
           }
 
           &.active{
@@ -1218,8 +1221,8 @@ nav#user-menu{
           font-size: 11px;
 
           @include at-breakpoint($tablet){
-            @include icon-cog;
-            @include icon-large;
+//            @include icon-cog;
+//            @include icon-large;
           }
 
         }
@@ -1228,8 +1231,8 @@ nav#user-menu{
           font-size: 11px;
 
           @include at-breakpoint($tablet){
-            @include icon-user;
-            @include icon-large;
+//            @include icon-user;
+//            @include icon-large;
           }
         }
         &.signin,
@@ -1238,8 +1241,8 @@ nav#user-menu{
           font-size: 11px;
 
           @include at-breakpoint($tablet){
-            @include icon-user;
-            @include icon-large;
+//            @include icon-user;
+//            @include icon-large;
           }
         }
 
@@ -1247,8 +1250,8 @@ nav#user-menu{
           font-size: 11px;
 
           @include at-breakpoint($tablet){
-            @include icon-signout;
-            @include icon-large;
+//            @include icon-signout;
+//            @include icon-large;
           }
         }
         &.active{
@@ -1664,3 +1667,8 @@ nav#main-menu{
 }
 
 
+.admin-actions{
+  a{
+    white-space: nowrap;
+  }
+}

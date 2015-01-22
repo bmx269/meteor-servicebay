@@ -8,7 +8,7 @@ var Schemas = {};
 
 
 
-Subscription = new Mongo.Collection('subscription', {});
+Subscription = new Meteor.Collection('subscription', {});
 
 
 Schemas.Subscription = new SimpleSchema({

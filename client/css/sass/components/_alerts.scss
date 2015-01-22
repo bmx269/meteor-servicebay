@@ -101,89 +101,71 @@ ul.notifications {
     max-width: 600px;
 }
 
-// #loader {
-//   width: 70px;
-//   height: 35px;
-//   overflow: hidden;
-//   position: absolute;
-//   top: calc(50% - 17px);
-//   left: calc(50% - 35px);
-// }
-// .page-loading {
-
-//   width: 70px;
-//   height: 70px;
-//   border-style: solid;
-//   border-top-color: $grayLight;
-//   border-right-color: $grayLight;
-//   border-left-color: transparent;
-//   border-bottom-color: transparent;
-//   border-radius: 50%;
-//   box-sizing: border-box;
-//   animation: rotate 1s ease-in-out infinite;
-//   transform: rotate(-200deg)
-// }
-// @keyframes rotate {
-//   0% { border-width: 10px; }
-//   25% { border-width: 3px; }
-//   50% {
-//     transform: rotate(115deg);
-//     border-width: 10px;
-//   }
-//   75% { border-width: 3px;}
-//   100% { border-width: 10px;}
-// }
-
 
 #loader {
   font-size: 20px;
   position: relative;
-  width: 4em;
+  width: 200px;
   height: 1em;
   margin: 30% auto;
 }
 
-.dot {
-  width: 1em;
-  height: 1em;
-  border-radius: 0.5em;
-  background: $grayLight;
-  position: absolute;
-  animation-duration: 0.5s;
-  animation-timing-function: ease;
-  animation-iteration-count: infinite;
+
+.load {
+  -webkit-animation: load 2s linear infinite;
+  -moz-animation: load 2s linear infinite;
+  -ms-animation: load 2s linear infinite;
+  animation: load 2s linear infinite;
 }
 
-.dot1, .dot2 {
-  left: 0;
+@keyframes load {
+  0% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.1;
+  }
 }
 
-.dot3 { left: 1.5em; }
-
-.dot4 { left: 3em; }
-
-@keyframes reveal {
-  from { transform: scale(0.001); }
-  to { transform: scale(1); }
+@-moz-keyframes load {
+  0% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.1;
+  }
 }
 
-@keyframes slide {
-  to { transform: translateX(1.5em) }
+@-webkit-keyframes load {
+  0% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.1;
+  }
 }
 
-
-.dot1 {
-  animation-name: reveal;
+@-ms-keyframes load {
+  0% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.1;
+  }
 }
 
-.dot2, .dot3 {
-  animation-name: slide;
-}
-
-.dot4 {
-  animation-name: reveal;
-  animation-direction: reverse; /* thx @HugoGiraudel */
-}
 
 .help-block{
   display: block;

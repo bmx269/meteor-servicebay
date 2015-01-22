@@ -60,3 +60,6 @@ yogiben:autoform-file
 forwarder:autoform-wizard
 dburles:google-maps
 dburles:collection-helpers
+houston:admin
+aldeed:geocoder
+tkornblit:olark

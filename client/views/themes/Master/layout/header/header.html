@@ -28,31 +28,28 @@
 
 <template name="HomeHeaderMaster">
     {{> topMenu}}
+  {{#with header}}
     <div id="header-wrapper" class="home" >
+      <style type="text/css">
+        .themeMaster #header-wrapper.home {
+          background-image: url({{homeSplash}});
+          background-size: cover;
+        }
+      </style>
       <div class="container">
         <header>
           <div id="branding">
-            {{#with header}}
             <a href="{{pathFor 'home'}}"><img src="/img/logo-white.png" title="{{siteTitle}}" alt="ServiceBay Logo"></a>
-            {{/with}}
           </div>
           {{> MenuMaster}}
         </header>
-      </div>
-    </div>
-  {{#with header}}
-    <style type="text/css">
-      .themeMaster #splash.home {
-        background-image: url({{homeSplash}});
-        background-size: cover;
-      }
-    </style>
-    <div id="splash" class="home" data-stellar-ratio="0.5">
-      <div class="container">
-        <h2 class="slogan">I focus on what I am good at, <span class="break">&amp; so does my website.</span></h2>
+          <div id="splash" class="home">
+              <h2 class="slogan">I focus on what I am good at, <span class="break">&amp; so does my website.</span></h2>
+          </div>
       </div>
     </div>
   {{/with}}
+
 </template>
 
 
@@ -139,7 +136,7 @@
 
 <template name="EditHeaderMaster">
   {{> topMenu}}
-  <div id="header-wrapper">
+  <div id="header-wrapper" class="editor">
     <div class="container">
       <header>
         <div id="branding">
@@ -153,7 +150,7 @@
 
 <template name="EditHomeHeaderMaster">
   {{> topMenu}}
-  <div id="header-wrapper" class="home">
+  <div id="header-wrapper" class="home editor">
     <div class="container">
       <header>
         <div id="branding">
@@ -170,7 +167,7 @@
 
 
 <template name="EditHeader0">
-  <div id="header-wrapper">
+  <div id="header-wrapper" class="editor">
     <div class="container">
       <header>
         {{> EditMenu0}}
@@ -186,7 +183,7 @@
 
 
 <template name="EditHeader1">
-  <div id="header-wrapper">
+  <div id="header-wrapper" class="editor">
     <div class="container">
       <header>
         <div id="branding">
@@ -202,7 +199,7 @@
 
 
 <template name="EditHeader2">
-  <div id="header-wrapper">
+  <div id="header-wrapper" class="editor">
     <div class="container">
       <header>
         <div id="branding">
@@ -231,7 +228,7 @@
 
 
 <template name="EditHeader3">
-  <div id="header-wrapper">
+  <div id="header-wrapper" class="editor">
     <div class="container">
       <header>
         <div id="branding">
