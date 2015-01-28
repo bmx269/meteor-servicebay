@@ -14,7 +14,7 @@ Template.Contact2.events({
 
 Template.Contact2.helpers({
 
-    mapTwoOptions: function() {
+    mapOptions: function() {
       // Set location as an object pior to submission.
       var location =  {
             street: this.companyAddress,
@@ -45,7 +45,7 @@ Template.Contact2.helpers({
       if (GoogleMaps.loaded()) {
 
         // We can use the `ready` callback to interact with the map API once the map is ready.
-        GoogleMaps.ready('mapTwo', function(map) {
+        GoogleMaps.ready('contactMap', function(map) {
           // Add a marker to the map once it's ready
           var marker = new google.maps.Marker({
             position: map.options.center,

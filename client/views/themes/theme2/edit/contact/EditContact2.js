@@ -6,40 +6,34 @@ Template.EditContact2.helpers({
   editingDoc: function () {
     return Site.findOne({_id: Session.get("selectedDocId")});
   },
-  mapTwoOptions: function() {
+  mapOptions: function() {
+    // Set location as an object pior to submission.
+    var location =  {
+      street: this.companyAddress,
+      city: this.companyCity,
+      state: this.companyState,
+      country: this.companyCountry
+    };
+    var address = '';
 
-    //geo = this.location;
-    //console.log(geo);
+    // Set address based on variables being set or not.
+    $.each(location, function(k, v) {
+      if (v) {
+        address += v +', ';
+      }
+    });
 
+    // Using Method to geocode - to be moved to create / update form to prevent hitting geocoder too often.
+    Meteor.call('geoCode', address, function(error, result){
+      Template.instance.lat.set(result[0].latitude);
+      Template.instance.lng.set(result[0].longitude);
+    });
 
-    // Make sure the maps API has loaded
+    //// Make sure the maps API has loaded.
     if (GoogleMaps.loaded()) {
 
-      // defining vars
-      var lat = Session.get('locationLat');
-      var lng = Session.get('locationLng');
-      var street = this.companyAddress;
-      var city = this.companyCity;
-      var state = this.companyState;
-      var country = this.companyCountry;
-      var address = street + ", "  + city + ", " + state + ", " + country;
-
-      //console.log("address = " + address);
-
-      var geocoder = new google.maps.Geocoder();
-
-      geocoder.geocode( { 'address': address}, function(results, status) {
-        geoLatLng = results[0].geometry.location;
-        //console.log(geoLatLng);
-        var lat = geoLatLng.k;
-        var lng =  geoLatLng.D;
-        Session.set('locationLat', lat);
-        Session.set('locationLng', lng);
-        //console.log("geocoder " + lat + ", " + lng);
-      });
-
       // We can use the `ready` callback to interact with the map API once the map is ready.
-      GoogleMaps.ready('mapTwo', function(map) {
+      GoogleMaps.ready('contactMap', function(map) {
         // Add a marker to the map once it's ready
         var marker = new google.maps.Marker({
           position: map.options.center,
@@ -47,16 +41,32 @@ Template.EditContact2.helpers({
         });
       });
 
+      // Setting the simple vars.
+      var lat = Template.instance.lat.get();
+      var lng = Template.instance.lng.get();
+
       // Map initialization options
-      //console.log("before return " + lat + ", " + lng);
       return {
         center: new google.maps.LatLng(lat,lng),
         zoom: 15,
         scrollwheel: false
-      }
+      };
     }
   }
 });
+
+Template.EditContact2.created = function () {
+  //geo = Session.get('location');
+
+  // 1. Initialization
+
+  var instance = this;
+
+  // initialize the reactive variables
+  Template.instance.lat = new ReactiveVar(0);
+  Template.instance.lng = new ReactiveVar(0);
+
+};
 
 
 Template.EditContact2.rendered = function () {
