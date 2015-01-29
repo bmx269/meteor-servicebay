@@ -116,10 +116,15 @@ AccountsTemplates.configureRoute('signIn', {
   path: '/user',
   redirect: '/dashboard',
 });
+//
+//AccountsTemplates.configureRoute('signUp', {
+//  name: 'signUp',
+//  path: '/user/register',
+//  redirect: '/welcome',
+//});
+//
 
-AccountsTemplates.configureRoute('signUp', {
-  name: 'signUp',
-  path: '/user/register',
-  redirect: '/welcome',
+AccountsTemplates.configureRoute('forgotPwd', {
+  name: 'forgotPwd',
+  path: '/user/password'
 });
-
