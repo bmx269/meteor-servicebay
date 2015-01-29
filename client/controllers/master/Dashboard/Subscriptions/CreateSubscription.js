@@ -2,11 +2,11 @@ CreateSubscriptionController = RouteController.extend({
   waitOn: function () {
   },
 
-  onBeforeAction: function() {
-    Session.set('fromWhere', "dashboard");
-    return AccountsEntry.signInRequired(this);
-    this.next();
-  },
+  //onBeforeAction: function() {
+  //  Session.set('fromWhere', "dashboard");
+  //  return AccountsEntry.signInRequired(this);
+  //  this.next();
+  //},
 
   data: function() {
     return siteData();

@@ -39,6 +39,25 @@ Router.configure({
 
 Router.onBeforeAction('loading');
 
+Router.onBeforeAction(AccountsTemplates.ensureSignedIn, {
+  only: [
+      'dashboard',
+      'subscription.index',
+      'theme.index',
+      'create.subscription',
+      'edit.subscription',
+      'create.site',
+      'edit.site',
+      'services.create',
+      'services.edit',
+      'edit.home',
+      'edit.services',
+      'edit.about',
+      'edit.contact',
+      'welcome'
+  ]
+});
+
 Router.onBeforeAction('dataNotFound');
 //Router.plugin('dataNotFound', {notFoundTemplate: 'NotFound'});
 
@@ -57,6 +76,7 @@ Router.map(function () {
   this.route('contact', {path: '/contact'});
   this.route('support', {path: '/support'});
   this.route('listing', {path: '/listing'});
+  this.route('welcome', {path: '/welcome'});
 
   // Client Sites
 
@@ -90,3 +110,16 @@ Router.map(function () {
 
   this.route('NotFound', {path: '*'});
 });
+
+AccountsTemplates.configureRoute('signIn', {
+  name: 'signIn',
+  path: '/user',
+  redirect: '/dashboard',
+});
+
+AccountsTemplates.configureRoute('signUp', {
+  name: 'signUp',
+  path: '/user/register',
+  redirect: '/welcome',
+});
+

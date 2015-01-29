@@ -5,11 +5,11 @@ EditSiteController = RouteController.extend({
     return Meteor.subscribe('editSite', this.params._id);
   },
 
-  onBeforeAction: function() {
-    //Session.set('fromWhere', "dashboard");
-    return AccountsEntry.signInRequired(this);
-    this.next();
-  },
+  //onBeforeAction: function() {
+  //  //Session.set('fromWhere', "dashboard");
+  //  AccountsTemplates.ensureSignedIn
+  //  this.next();
+  //},
 
   data: function() {
     Session.set("selectedDocId", this.params._id);

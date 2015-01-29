@@ -20,7 +20,11 @@ Template.topMenu.rendered = function() {
 
 };
 
-
+Template.topMenu.events({
+  'click .signout': function () {
+    AccountsTemplates.logout();
+  }
+});
 
 
 

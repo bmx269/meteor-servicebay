@@ -3137,6 +3137,14 @@ select[multiple].input-lg,
   .form-horizontal .form-group-sm .control-label {
     padding-top: 6px; } }
 
+.at-form {
+  width: 300px;
+  margin: 40px auto;
+  border: 1px solid #4b5c66; }
+  @media (min-width: 40em) {
+    .at-form {
+      width: 400px; } }
+
 #signIn input,
 #signUp input {
   width: 100%; }

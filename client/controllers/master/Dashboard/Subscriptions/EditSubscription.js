@@ -2,11 +2,11 @@ EditSubscriptionController = RouteController.extend({
   waitOn: function () {
   },
 
-  onBeforeAction: function() {
-    Session.set('fromWhere', "dashboard");
-    return AccountsEntry.signInRequired(this);
-    this.next();
-  },
+  //onBeforeAction: function() {
+  //  Session.set('fromWhere', "dashboard");
+  //  return AccountsEntry.signInRequired(this);
+  //  this.next();
+  //},
 
   data: function() {
     Session.set("selectedDocId", this.params._id);

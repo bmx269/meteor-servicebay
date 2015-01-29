@@ -1,8 +1,8 @@
-EntrySignUpController = RouteController.extend({
+SignInController = RouteController.extend({
   waitOn: function () {
   },
 
-  data: function() {
+  data: function () {
     return siteData();
   },
 
@@ -14,10 +14,11 @@ EntrySignUpController = RouteController.extend({
       scrollUp();
       this.render('Header'+ themeMasterID, { to: 'header' });
       this.render('Footer'+ themeMasterID, { to: 'footer' });
-      this.render("entrySignUp");
+      this.render("SignIn");
     }
     else {
-      this.redirect(baseURL + "sign-up");
+      this.redirect(baseURL + "user");
     }
   }
 });
+

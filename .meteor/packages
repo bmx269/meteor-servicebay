@@ -13,7 +13,6 @@ gadicohen:headers
 iron:layout
 cunneen:mailgun
 aldeed:autoform
-joshowens:accounts-entry
 arunoda:find-faster
 mrt:fancybox
 meteorhacks:subs-manager
@@ -64,3 +63,4 @@ houston:admin
 aldeed:geocoder
 tkornblit:olark
 meteorhacks:zones
+useraccounts:bootstrap

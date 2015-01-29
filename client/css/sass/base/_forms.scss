@@ -776,7 +776,15 @@ input[type="checkbox"] {
 
 
 
+.at-form{
+  width: 300px;
+  margin: 40px auto;
+  border: 1px solid $gray;
 
+  @include at-breakpoint($tablet){
+    width: 400px;
+  }
+}
 
 #signIn,
 #signUp{
