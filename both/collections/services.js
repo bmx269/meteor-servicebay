@@ -46,6 +46,11 @@ Schemas.Services = new SimpleSchema({
     label: "Brief summary",
     optional: true,
     max: 1000
+  },
+  sortWeight: {
+    type: Number,
+    label: "Sort Weight",
+    max: 3
   }
 });
 

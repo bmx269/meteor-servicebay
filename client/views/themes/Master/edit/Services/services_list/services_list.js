@@ -1,7 +1,7 @@
 /*****************************************************************************/
-/* CreateService: Event Handlers and Helpers */
+/* ServicesEdit: Event Handlers and Helpers */
 /*****************************************************************************/
-Template.CreateService.events({
+Template.ServicesListEdit.events({
   /*
    * Example:
    *  'click .selector': function (e, tmpl) {
@@ -10,7 +10,7 @@ Template.CreateService.events({
    */
 });
 
-Template.CreateService.helpers({
+Template.ServicesListEdit.helpers({
   /*
    * Example:
    *  items: function () {
@@ -20,13 +20,13 @@ Template.CreateService.helpers({
 });
 
 /*****************************************************************************/
-/* CreateService: Lifecycle Hooks */
+/* ServicesEdit: Lifecycle Hooks */
 /*****************************************************************************/
-Template.CreateService.created = function () {
+Template.ServicesListEdit.created = function () {
 };
 
-Template.CreateService.rendered = function () {
+Template.ServicesListEdit.rendered = function () {
 };
 
-Template.CreateService.destroyed = function () {
+Template.ServicesListEdit.destroyed = function () {
 };

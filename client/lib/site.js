@@ -67,7 +67,7 @@ quickEditSiteData = function(){
   // no data found, must return null for iron-router
   //console.log('no edit site found');
   Session.set("theme", "None");
-  document.title = "ServiceBay";
+  document.title = "ServiceBay - Beautifully Easy Auto Service Websites";
   return null;
 };
 

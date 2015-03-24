@@ -33,7 +33,7 @@
     {{#each subscriptionItem}}
       {{> subscription}}
     {{else}}
-      <p class="alert alert-info">You do not have any subscriptions yet. <a href="#create-subscription" class="fancybox">Subscribe.</a></p>
+      <p class="alert alert-info">You do not have any subscriptions yet. <a href="#create-subscription">Subscribe.</a></p>
     {{/each}}
     </div>
 </template>
@@ -41,11 +41,10 @@
 <template name="sitesList">
   <h2>Your Sites</h2>
   <p>Here is a list of the current sites in your account. You can have as many sites as you like, but only active subscriptions will be published for visitors to view.</p>
-  <p><a href="#create-site" class="fancybox btn btn-danger"><i class="fa fa-plus-square"></i> Create New Site</a></p>
+  <p><a href="{{pathFor 'create.site'}}" class="btn btn-danger"><i class="fa fa-plus-square"></i> Create New Site</a></p>
   <div class="sites">
     {{> site}}
   </div>
-  {{> CreateSite}}
 </template>
 
 
@@ -81,7 +80,7 @@
       </div>
 
     {{else}}
-      <p class="alert alert-info">You do not have any sites yet. <a href="#create-site" class="fancybox">Create your first site.</a></p>
+      <p class="alert alert-info">You do not have any sites yet. <a href="{{pathFor 'create.site'}}" class="">Create your first site.</a></p>
     {{/each}}
 
   {{else}}
