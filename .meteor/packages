@@ -41,15 +41,11 @@ reactive-dict
 fortawesome:fontawesome
 summernote:summernote
 twbs:bootstrap
-mpowaga:autoform-summernote
 yogiben:autoform-modals
 woody:stripe-easy
 aldeed:collection2
 
 sacha:spin
-cfs:standard-packages
-cfs:filesystem
-yogiben:autoform-file
 dburles:google-maps
 dburles:collection-helpers
 aldeed:geocoder
@@ -59,13 +55,19 @@ useraccounts:bootstrap
 service-configuration
 xolvio:cucumber
 percolate:velocityjs
-rubaxa:sortable
 xolvio:webdriver
 dburles:mongo-collection-instances
 msavin:mongol
 matb33:collection-hooks
 msavin:jetsetter
 mrt:fancybox
-forwarder:autoform-wizard
 cunneen:mailgun
 natestrauser:jquery-scrollto
+meteorhacks:sikka
+hb5:meteor-is.js
+yogiben:autoform-map
+rubaxa:sortable
+cfs:standard-packages
+cfs:filesystem
+mpowaga:autoform-summernote
+yogiben:autoform-file
