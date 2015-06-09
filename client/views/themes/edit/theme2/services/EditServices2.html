@@ -1,0 +1,12 @@
+<template name="EditServices2">
+    <div id="services">
+      <div class="container">
+        <h2>Services</h2>
+        <div class="services intro">
+          {{> afQuickField name='servicesIntro' label=false placeholder="Introduce your services and what you do..."}}
+        </div>
+        <a href="add/services" class="btn bg-primary">Add Services</a>
+        {{> EditServicesList}}
+      </div>
+    </div>
+</template>

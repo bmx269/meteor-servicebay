@@ -1,0 +1,12 @@
+<template name="EditContact0">
+  {{#autoForm collection="Site" template="afContenteditable" doc=this id="editSiteForm" type="update" validation="submitThenBlur"}}
+    <div id="content-wrapper">
+      <div class="container">
+          {{> EditContact}}
+
+          {{> ContactForm}}
+      </div>
+    </div>
+    {{> adminToolbar}}
+  {{/autoForm}}
+</template>

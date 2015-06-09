@@ -1,0 +1,17 @@
+<template name="EditServicesList">
+  <h3>Our Services</h3>
+  <div class="services">
+    {{#if isReady}}
+      {{#each services}}
+        <div class="service width-50">
+          <div class="service-item">
+            <h4>{{serviceTitle}}</h4>
+            {{serviceDescription}}
+          </div>
+        </div>
+      {{/each}}
+    {{else}}
+      <div class="loading">{{>spinner}}</div>
+    {{/if}}
+  </div>
+</template>
