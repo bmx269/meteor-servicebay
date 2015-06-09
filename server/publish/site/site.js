@@ -4,7 +4,7 @@
 
 // Meteor.publish('site_index', function () {
 //   // you can remove this if you return a cursor
-//   this.ready();
+//   this.ready();,
 // });
 //Meteor.publish('posts', function(author) {
 

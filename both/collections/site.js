@@ -65,7 +65,7 @@ Schemas.Site = new SimpleSchema({
   siteLogo: {
     type: String,
     label: "Your Logo",
-    optional: true,
+    optional: true
   },
   siteTitle: {
     type: String,
@@ -87,7 +87,7 @@ Schemas.Site = new SimpleSchema({
           ['font', ['strikethrough']],
           ['para', ['ul', 'ol', 'paragraph']],
           ['insert', ['picture', 'link', 'video', 'table', 'hr']],
-          ['misc', ['codeview']],
+          ['misc', ['codeview']]
         ]
       }
     }
@@ -107,7 +107,7 @@ Schemas.Site = new SimpleSchema({
           ['font', ['strikethrough']],
           ['para', ['ul', 'ol', 'paragraph']],
           ['insert', ['picture', 'link', 'video', 'table', 'hr']],
-          ['misc', ['codeview']],
+          ['misc', ['codeview']]
         ]
       }
     }
@@ -127,7 +127,7 @@ Schemas.Site = new SimpleSchema({
           ['font', ['strikethrough']],
           ['para', ['ul', 'ol', 'paragraph']],
           ['insert', ['picture', 'link', 'video', 'table', 'hr']],
-          ['misc', ['codeview']],
+          ['misc', ['codeview']]
         ]
       }
     }
@@ -147,7 +147,7 @@ Schemas.Site = new SimpleSchema({
           ['font', ['strikethrough']],
           ['para', ['ul', 'ol', 'paragraph']],
           ['insert', ['picture', 'link', 'video', 'table', 'hr']],
-          ['misc', ['codeview']],
+          ['misc', ['codeview']]
         ]
       }
     }
@@ -161,18 +161,6 @@ Schemas.Site = new SimpleSchema({
   companyAddress: {
     type: String,
     label: "Street Address",
-    max: 255,
-    optional: true
-  },
-  lat: {
-    type: String,
-    label: "Lat",
-    max: 255,
-    optional: true
-  },
-  lng: {
-    type: String,
-    label: "Lng",
     max: 255,
     optional: true
   },
@@ -201,9 +189,42 @@ Schemas.Site = new SimpleSchema({
     autoform: {
       options: [
         {label: "Canada", value: "Canada"},
-        {label: "United States", value: "USA"},
+        {label: "United States", value: "USA"}
       ]
     }
+  },
+  //location: {
+  //  type: Object,
+  //  label: "Location Map",
+  //  autoform: {
+  //    type: 'map',
+  //    afFieldInput: {
+  //      mapType: 'street',
+  //      zoom: 15,
+  //      height: '400px',
+  //      geolocation: true,
+  //      searchBox: true,
+  //      autolocate: true,
+  //      options: [
+  //        ({
+  //          'location.lat': {type: Number, decimal: true},
+  //          'location.lng': {type: Number, decimal: true}
+  //        })
+  //      ]
+  //    }
+  //  }
+  //},
+  lat: {
+    type: String,
+    label: "Lat",
+    max: 255,
+    optional: true
+  },
+  lng: {
+    type: String,
+    label: "Lng",
+    max: 255,
+    optional: true
   },
   companyPhone: {
     type: String,
@@ -240,8 +261,67 @@ Schemas.Site = new SimpleSchema({
   homeSplash:{
     type: String,
     label: "Home Splash Image",
-    optional: true,
+    optional: true
   }
 });
 
 Site.attachSchema(Schemas.Site);
+
+
+//Site.after.insert(function (userId, doc) {
+//
+//  var location =  {
+//    street: this.companyAddress,
+//    city: this.companyCity,
+//    state: this.companyState,
+//    country: this.companyCountry
+//  };
+//  var address = '';
+//
+//  // Set address based on variables being set or not.
+//  $.each(location, function(k, v) {
+//    if (v) {
+//      address += v +', ';
+//    }
+//  });
+//
+//  // Using Method to geocode - to be moved to create / update form to prevent hitting geocoder too often.
+//  Meteor.call('geoCode', address, function(error, result){
+//    doc.lat = result[0].latitude;
+//    doc.lng = result[0].longitude;
+//  });
+//
+// Site.update({id: doc._id},{$set: {lat: doc.lat}, {lng: doc.lng}});
+//
+//});
+
+Site.after.update(function (userId, doc, fieldNames, modifier, options) {
+
+  var location =  {
+    street: doc.companyAddress,
+    city: doc.companyCity,
+    state: doc.companyState,
+    country: doc.companyCountry
+  };
+  var address = '';
+
+  // Set address based on variables being set or not.
+  $.each(location, function(k, v) {
+    if (v) {
+      address += v +', ';
+    }
+  });
+
+  // Using Method to geocode.
+  Meteor.call('geoCode', address, function(error, result){
+    modifier.$set.lat = result[0].latitude;
+    modifier.$set.lng = result[0].longitude;
+  });
+
+  //// Update latitude and longitude with geocoder values.
+  //Site.update({_id: doc._id},
+  //  {$set: {lat: doc.lat, lng: doc.lng}},
+  //  {multi: true});
+
+
+});

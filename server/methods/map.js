@@ -1,19 +1,47 @@
+//Meteor.methods({
+//  geoCode: function(argument) {
+//
+//    var geocodeSync=Meteor.wrapAsync(argument);
+//
+//    var geoResult=geocodeSync({
+//      check(argument, String);
+//      console.log(argument);
+//      var geo = new GeoCoder();
+//      var result = geo.geocode(argument);
+//      console.log(result);
+//      return result;
+//    });
+//
+//    // do whatever you want with the result
+//    console.log(geoResult);
+//    return geoResult;
+//  }
+//});
 
 
+// Geocode server method
 Meteor.methods({
-  /*
-   * Example:
-   *  '/app/services/update/email': function (email) {
-   *    Users.update({_id: this.userId}, {$set: {'profile.email': email}});
-   *  }
-   *
-   */
-
   geoCode: function(argument) {
-    check(argument, String);
-    console.log(argument);
-    var geo = new GeoCoder();
-    var geoResult = geo.geocode(argument);
-    return geoResult;
+
+    var geoResult= function(argument, cb) {
+      check(argument, String);
+      console.log(argument);
+      var geo = new GeoCoder();
+      var result = geo.geocode(argument);
+      cb && cb(null, result);
+    };
+
+
+    var geoCodeSync=Meteor.wrapAsync(geoResult);
+
+    try {
+      var result = geoCodeSync(argument);
+      // do whatever you want with the result
+      console.log(result);
+    } catch (e) {
+      console.log(e);
+    }
   }
 });
+
+

@@ -47,7 +47,7 @@ Schemas.Services = new SimpleSchema({
     optional: true,
     max: 1000
   },
-  sortWeight: {
+  order: {
     type: Number,
     label: "Sort Weight",
     max: 3
