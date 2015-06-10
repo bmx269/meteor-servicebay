@@ -267,36 +267,13 @@ Schemas.Site = new SimpleSchema({
 
 Site.attachSchema(Schemas.Site);
 
+//
+// Collection Hooks for Site
+//
 
-//Site.after.insert(function (userId, doc) {
-//
-//  var location =  {
-//    street: this.companyAddress,
-//    city: this.companyCity,
-//    state: this.companyState,
-//    country: this.companyCountry
-//  };
-//  var address = '';
-//
-//  // Set address based on variables being set or not.
-//  $.each(location, function(k, v) {
-//    if (v) {
-//      address += v +', ';
-//    }
-//  });
-//
-//  // Using Method to geocode - to be moved to create / update form to prevent hitting geocoder too often.
-//  Meteor.call('geoCode', address, function(error, result){
-//    doc.lat = result[0].latitude;
-//    doc.lng = result[0].longitude;
-//  });
-//
-// Site.update({id: doc._id},{$set: {lat: doc.lat}, {lng: doc.lng}});
-//
-//});
+Site.before.insert(function (userId, doc) {
 
-Site.after.update(function (userId, doc, fieldNames, modifier, options) {
-
+  // Build address for geocoder from site values
   var location =  {
     street: doc.companyAddress,
     city: doc.companyCity,
@@ -306,22 +283,46 @@ Site.after.update(function (userId, doc, fieldNames, modifier, options) {
   var address = '';
 
   // Set address based on variables being set or not.
-  $.each(location, function(k, v) {
-    if (v) {
-      address += v +', ';
+  _.each(location, function(k, v) {
+    if (k) {
+      address += k +', ';
     }
   });
 
   // Using Method to geocode.
   Meteor.call('geoCode', address, function(error, result){
-    modifier.$set.lat = result[0].latitude;
-    modifier.$set.lng = result[0].longitude;
+    doc.lat = result[0].latitude;
+    doc.lng = result[0].longitude;
+    console.log(result);
   });
 
-  //// Update latitude and longitude with geocoder values.
-  //Site.update({_id: doc._id},
-  //  {$set: {lat: doc.lat, lng: doc.lng}},
-  //  {multi: true});
+});
 
+
+Site.before.update(function (userId, doc, fieldNames, modifier, options) {
+
+  // Build address for geocoder from site values
+  var location =  {
+    street: doc.companyAddress,
+    city: doc.companyCity,
+    state: doc.companyState,
+    country: doc.companyCountry
+  };
+  var address = '';
+
+  // Set address based on variables being set or not.
+  _.each(location, function(k, v) {
+    if (k) {
+      address += k +', ';
+    }
+  });
+
+
+  // Using Method to geocode.
+  Meteor.call('geoCode', address, function(error, result){
+      modifier.$set.lat = result[0].latitude;
+      modifier.$set.lng = result[0].longitude;
+      console.log(result);
+  });
 
 });
