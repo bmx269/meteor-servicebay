@@ -1,7 +1,6 @@
 /*****************************************************************************/
 /* App: The Global Application Namespace */
 /*****************************************************************************/
-
 App = {
   // Set variables.
   variables: {
@@ -27,8 +26,8 @@ App = {
 
     // Remove and set proper body classes.
     $('html')
-        .removeClass(this.variables.themeClasses)
-        .addClass('theme'+ _themeID);
+      .removeClass(this.variables.themeClasses)
+      .addClass('theme' + _themeID);
   },
 
   // Check if theme is master.
@@ -37,7 +36,7 @@ App = {
   },
 
   // Builds google map instance.
-  googleMaps: function (location) {
+  googleMaps: function(location) {
     location = location || {};
 
     //console.log(location);
@@ -52,17 +51,19 @@ App = {
 
       // Define global vars.
       var address = '',
-          geocoder = new google.maps.Geocoder();
+        geocoder = new google.maps.Geocoder();
 
       // Set address based on variables being set or not.
       $.each(location, function(k, v) {
         if (v) {
-          address += v +',';
+          address += v + ',';
         }
       });
       console.log(address);
       // Set lat and lng with actual and valid values.
-      geocoder.geocode( { 'address': address}, function(results, status) {
+      geocoder.geocode({
+        'address': address
+      }, function(results, status) {
         geoLatLng = results[0].geometry.location;
         console.log(geoLatLng);
         // Set reactive-vars.
@@ -96,10 +97,4 @@ App = {
 
     return '';
   }
-
-
-
-
 };
-
-

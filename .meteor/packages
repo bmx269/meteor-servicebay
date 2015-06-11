@@ -71,3 +71,4 @@ cfs:standard-packages
 cfs:filesystem
 mpowaga:autoform-summernote
 yogiben:autoform-file
+djedi:sanitize-html

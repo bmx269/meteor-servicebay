@@ -5381,6 +5381,10 @@ ul.features li h3 {
   margin-top: 10px;
   margin-bottom: 10px; }
 
+.sortable-ghost {
+  border: 1px #21b5fd solid;
+  opacity: 0.4; }
+
 @media print {
   * {
     text-shadow: none !important;
