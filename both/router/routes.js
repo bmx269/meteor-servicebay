@@ -112,7 +112,7 @@ Router.map(function () {
   this.route('theme.index', {path: '/dashboard/site/edit/themes'});
   this.route('create.subscription', {path: '/dashboard/subscription/create'});
   this.route('edit.subscription', {path: '/dashboard/subscription/edit/:_id'});
-  this.route('edit.site', {path: '/dashboard/site/edit/:_id'});
+  this.route('edit.site', {path: '/dashboard/site/edit/:_id', layoutTemplate:'MasterEditLayout'});
   this.route('create.site', {path: '/dashboard/site/create'});
   this.route('service.create', {path: '/dashboard/site/wysiwyg/:_id/services/create'});
   this.route('service.edit', {path: '/dashboard/site/wysiwyg/:_id/services/edit/:_id'});
@@ -121,10 +121,10 @@ Router.map(function () {
   // WYSIWYG Edit
   //this.route('edit.site', {path: '/dashboard/site/edit/:_id'});
 
-  this.route('edit.home', {path: '/dashboard/site/wysiwyg/:_id'});
-  this.route('edit.services', {path: '/dashboard/site/wysiwyg/:_id/services'});
-  this.route('edit.about', {path: '/dashboard/site/wysiwyg/:_id/about'});
-  this.route('edit.contact', {path: '/dashboard/site/wysiwyg/:_id/contact'});
+  this.route('edit.home', {path: '/dashboard/site/wysiwyg/:_id', layoutTemplate:'MasterEditLayout'});
+  this.route('edit.services', {path: '/dashboard/site/wysiwyg/:_id/services', layoutTemplate:'MasterEditLayout'});
+  this.route('edit.about', {path: '/dashboard/site/wysiwyg/:_id/about', layoutTemplate:'MasterEditLayout'});
+  this.route('edit.contact', {path: '/dashboard/site/wysiwyg/:_id/contact', layoutTemplate:'MasterEditLayout'});
 
 
   this.route('NotFound', {path: '*'});

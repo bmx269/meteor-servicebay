@@ -147,25 +147,3 @@ Template.MenuMaster.destroyed = function () {
 //    jPM.off();
 //};
 
-Template.adminToolbar.rendered = function () {
-  //$(".fancybox").click(function(e){
-  //  e.preventDefault();
-  //});
-
-  //$('.fancybox').fancybox({
-  //  padding : 10
-  //  //openEffect  : 'elastic'
-  //});
-  $(".more-settings").click(function(e){
-    e.preventDefault();
-
-    $("#admin-flyout").toggleClass('open')
-  });
-
-};
-
-Template.adminToolbar.events({
-  'click [action=edit]': function (event, tmpl) {
-    event.preventDefault ();
-  }
-});

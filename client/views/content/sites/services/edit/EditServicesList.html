@@ -1,5 +1,4 @@
 <template name="EditServicesList">
-  <h3>Our Services</h3>
   <ul class="services">
     {{#if isReady}}
       {{#each services}}
@@ -12,4 +11,5 @@
       <div class="loading">{{>spinner}}</div>
     {{/if}}
   </ul>
+  <a href="add/services" class="btn btn-success">Add Services</a>
 </template>

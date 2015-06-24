@@ -7,9 +7,9 @@
 //};
 
 Template.EditHome.helpers({
-  editingDoc: function () {
-    return Site.findOne({_id: Session.get("selectedDocId")});
-  }
+  //editingDoc: function () {
+  //  return Site.findOne({_id: Session.get("selectedDocId")});
+  //}
 });
 
 Template.EditHome.rendered = function () {

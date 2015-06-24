@@ -6,9 +6,7 @@
 //};
 
 Template.EditServices.helpers({
-  editingDoc: function () {
-    return Site.findOne({_id: Session.get("selectedDocId")});
-  }
+
 });
 
 

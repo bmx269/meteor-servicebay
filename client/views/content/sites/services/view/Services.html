@@ -1,12 +1,5 @@
 <template name="Services">
-  <div id="services">
-    <div class="container">
-      <h2>Services</h2>
-      {{#with site}}
-        <div class="services intro">{{{servicesIntro}}}</div>
-      {{/with}}
-
-      {{> ServicesList}}
-    </div>
-  </div>
+  {{#with site}}
+    <div class="services intro">{{{servicesIntro}}}</div>
+  {{/with}}
 </template>

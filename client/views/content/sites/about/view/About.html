@@ -1,10 +1,7 @@
 <template name="About">
-  <div id="about">
-    <div class="container">
-      <h2>About Us</h2>
-      {{#with site}}
-        <div class="about intro">{{{aboutIntro}}}</div>
-      {{/with}}
+  {{#with site}}
+    <div class="about intro">
+        {{{aboutIntro}}}
     </div>
-  </div>
+  {{/with}}
 </template>
