@@ -11,5 +11,6 @@
       <div class="loading">{{>spinner}}</div>
     {{/if}}
   </ul>
-  <a href="add/services" class="btn btn-success">Add Services</a>
+
+  {{#afModal collection="Services" operation="insert" buttonContent="Add Services" prompt="This is for Admin Purposes Only" title="Add A Service" class="btn btn-success"}}Add Services{{/afModal}}
 </template>

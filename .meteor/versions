@@ -87,7 +87,7 @@ meteorhacks:picker@1.0.2
 meteorhacks:sikka@1.0.1
 meteorhacks:subs-manager@1.4.0
 meteorhacks:zones@1.4.0
-meteortoys:toykit@0.7.0
+meteortoys:toykit@0.8.1
 minifiers@1.1.5
 minimongo@1.0.8
 mizzao:timesync@0.3.1
@@ -100,8 +100,8 @@ mpowaga:autoform-summernote@0.3.2
 mpowaga:string-template@0.1.0
 mrt:fancybox@0.5.0
 mrt:jquery-ui@1.9.2
-msavin:jetsetter@1.0.17
-msavin:mongol@1.0.97
+msavin:jetsetter@1.0.18
+msavin:mongol@1.0.98
 multiply:iron-router-progress@1.0.1
 natestrauser:jquery-scrollto@1.4.7
 natestrauser:select2@3.5.1
@@ -148,8 +148,8 @@ underscore@1.0.3
 url@1.0.4
 useraccounts:bootstrap@1.11.1
 useraccounts:core@1.11.1
-velocity:chokidar@1.0.1_1
-velocity:core@0.7.0
+velocity:chokidar@1.0.3_1
+velocity:core@0.7.1
 velocity:html-reporter@0.6.2
 velocity:meteor-internals@1.1.0_7
 velocity:shim@0.1.0
