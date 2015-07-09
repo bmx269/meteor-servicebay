@@ -1,16 +1,16 @@
 <template name="EditServicesList">
-  <ul class="services">
-    {{#if isReady}}
-      {{#each services}}
-      <li class="service-item">
-        <h4>{{serviceTitle}}</h4>
-        {{serviceDescription}}
-      </li>
-      {{/each}}
-    {{else}}
-      <div class="loading">{{>spinner}}</div>
-    {{/if}}
+  {{#if isReady}}
+    <ul class="services">
+    {{#each services}}
+    <li class="service-item">
+      <h4>{{serviceTitle}}</h4>
+      {{serviceDescription}}
+    </li>
+    {{/each}}
   </ul>
+  {{else}}
+    <div class="loading">{{>spinner}}</div>
+  {{/if}}
 
-  {{#afModal collection="Services" operation="insert" buttonContent="Add Services" prompt="This is for Admin Purposes Only" title="Add A Service" class="btn btn-success"}}Add Services{{/afModal}}
+  {{#afModal formId="serviceInsert" collection="Services" operation="insert" doc=_id fields="serviceTitle, image, serviceDescription" buttonContent="Add New Service"  title="Add A Service" prompt="This is for Admin Purposes Only" class="btn btn-success"}}Add Services{{/afModal}}
 </template>

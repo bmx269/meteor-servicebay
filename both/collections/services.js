@@ -27,11 +27,8 @@ Schemas.Services = new SimpleSchema({
   },
   siteId: {
     type: String,
-    label: "Site ID"
-  },
-  domain: {
-    type: String,
-    label: "Domain"
+    optional: true
+
   },
   serviceTitle: {
     type: String,
@@ -39,18 +36,20 @@ Schemas.Services = new SimpleSchema({
   },
   image: {
     type: String,
-    label: "Image"
+    label: "Image",
+    optional: true
   },
   serviceDescription: {
     type: String,
-    label: "Brief summary",
+    label: "Brief summary of the service",
     optional: true,
     max: 1000
   },
   order: {
     type: Number,
     label: "Sort Weight",
-    max: 3
+    optional: true,
+    max: 90
   }
 });
 

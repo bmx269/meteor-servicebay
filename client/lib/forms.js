@@ -40,7 +40,18 @@ AutoForm.addHooks(null, {
     }
 });
 
-
+AutoForm.hooks({
+    serviceInsert: {
+        before: {
+            insert: function (doc, template) {
+                //modify the document here
+                doc.siteId = Session.get("selectedDocId");
+                doc.order = 1;
+                return doc;
+            }
+        }
+    }
+});
 
 //Template.docList.helpers({
 //    docs: function () {

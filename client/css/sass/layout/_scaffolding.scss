@@ -865,7 +865,7 @@ hr {
   overflow: hidden;
   top: 100px;
   left: 0;
-  z-index: 99999;
+  z-index: 999;
   -webkit-transform: translateZ(0);
   border-top: 1px solid $gray;
 
@@ -887,7 +887,7 @@ hr {
   overflow: hidden;
   top: 0px;
   left: 0;
-  z-index: 99999;
+  //z-index: 99999;
   -webkit-transform: translateZ(0);
 
   @include at-breakpoint($narrow){
@@ -895,17 +895,14 @@ hr {
   }
 }
 
-
 .container.loading{
   height: 1000px;
   width: 100%;
   margin: 0 auto;
 }
 
-
-
 .sites,
 .services{
-  position: relative;
+  //position: relative;
   display: block;
 }

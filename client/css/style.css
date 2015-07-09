@@ -1311,6 +1311,50 @@ ul.features {
       float: left;
       margin-right: 2.12766%; } }
 
+.services-50 ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+  .services-50 ul li {
+    list-style: none;
+    margin: 0 0 20px 0;
+    padding: 0;
+    width: 100%;
+    float: right;
+    margin-right: 0;
+    *margin-left: -2em;
+    display: inline;
+    clear: right; }
+    @media (min-width: 30em) {
+      .services-50 ul li {
+        width: 100%;
+        float: right;
+        margin-right: 0; } }
+    @media (min-width: 40em) {
+      .services-50 ul li {
+        float: left;
+        margin-right: 3.22581%;
+        width: 48.93617%;
+        float: left;
+        margin-right: 2.12766%; }
+        .services-50 ul li:nth-child(2n) {
+          float: right;
+          margin-right: 0; } }
+    @media (min-width: 52em) {
+      .services-50 ul li {
+        float: left;
+        margin-right: 2.12766%;
+        width: 48.93617%;
+        float: left;
+        margin-right: 2.12766%; } }
+    @media (min-width: 65em) {
+      .services-50 ul li {
+        float: left;
+        margin-right: 2.12766%;
+        width: 48.93617%;
+        float: left;
+        margin-right: 2.12766%; } }
+
 * {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -1867,7 +1911,7 @@ hr {
   overflow: hidden;
   top: 100px;
   left: 0;
-  z-index: 99999;
+  z-index: 999;
   -webkit-transform: translateZ(0);
   border-top: 1px solid #4b5c66; }
   @media (min-width: 30em) {
@@ -1885,7 +1929,6 @@ hr {
   overflow: hidden;
   top: 0px;
   left: 0;
-  z-index: 99999;
   -webkit-transform: translateZ(0); }
   @media (min-width: 30em) {
     #admin-toolbar {
@@ -1898,7 +1941,6 @@ hr {
 
 .sites,
 .services {
-  position: relative;
   display: block; }
 
 h1, h2, h3, h4, h5, h6,
@@ -1928,7 +1970,7 @@ h1, h2, h3, h4, h5, h6,
 h1, .h1,
 h2, .h2,
 h3, .h3 {
-  margin-top: 22px;
+  margin-top: 0;
   margin-bottom: 11px; }
   h1 small,
   h1 .small, .h1 small,
@@ -1944,7 +1986,7 @@ h3, .h3 {
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-  margin-top: 11px;
+  margin-top: 0;
   margin-bottom: 11px; }
   h4 small,
   h4 .small, .h4 small,
