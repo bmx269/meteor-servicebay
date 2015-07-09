@@ -1,12 +1,12 @@
 <template name="EditServicesList">
   {{#if isReady}}
     <ul class="services">
-    {{#each services}}
-    <li class="service-item">
+      {{#sortable items=services ghostClass="sortable-ghost" options=serviceOptions sortField="order"}}
+    <li data-id="{{order}}" class="service-item sortable-item removable">
       <h4>{{serviceTitle}}</h4>
       {{serviceDescription}}
     </li>
-    {{/each}}
+    {{/sortable}}
   </ul>
   {{else}}
     <div class="loading">{{>spinner}}</div>

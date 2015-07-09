@@ -67,5 +67,11 @@ Template.EditServicesList.helpers({
   // the subscription handle
   isReady: function () {
     return Template.instance().ready.get();
+  },
+  serviceOptions: function () {
+    return {
+      sort: true
+    };
   }
 });
+
