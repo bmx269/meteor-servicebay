@@ -54,7 +54,7 @@ Template.EditServicesList.created = function () {
 
   instance.services = function() {
     var id = instance.id.get();
-    return Services.findFaster({'siteId': id}, {sort:{order: 1}, reactive:true});
+    return Services.find({'siteId': id}, {sort:{order: 1}, reactive:true});
   }
 
 };
@@ -68,10 +68,16 @@ Template.EditServicesList.helpers({
   isReady: function () {
     return Template.instance().ready.get();
   },
-  serviceOptions: function () {
-    return {
-      sort: true
-    };
-  }
+  serviceOptions: {
+      group: {
+        name: 'services',
+      },
+      // event handler for reordering attributes
+      onSort: function (event) {
+        console.log('Item %s went from #%d to #%d',
+          event.data.name, event.oldIndex, event.newIndex
+        );
+      }
+    }
 });
 

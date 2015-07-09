@@ -1,8 +1,8 @@
 <template name="EditServicesList">
   {{#if isReady}}
-    <ul class="services">
+    <ul class="services sortable target">
       {{#sortable items=services ghostClass="sortable-ghost" options=serviceOptions sortField="order"}}
-    <li data-id="{{order}}" class="service-item sortable-item removable">
+    <li data-id="{{order}}" class="service-item sortable-item">
       <h4>{{serviceTitle}}</h4>
       {{serviceDescription}}
     </li>

@@ -81,6 +81,7 @@ Schemas.Site = new SimpleSchema({
       afFieldInput: {
         type: 'summernote',
         class: 'editor', // optional
+        disableDragAndDrop: true,
         // summernote options goes here
         toolbar: [
           ['style', ['style', 'bold', 'italic', 'underline', 'clear']],
@@ -101,6 +102,7 @@ Schemas.Site = new SimpleSchema({
       afFieldInput: {
         type: 'summernote',
         class: 'editor', // optional
+        disableDragAndDrop: true,
         // summernote options goes here
         toolbar: [
           ['style', ['style', 'bold', 'italic', 'underline', 'clear']],
@@ -121,6 +123,7 @@ Schemas.Site = new SimpleSchema({
       afFieldInput: {
         type: 'summernote',
         class: 'editor', // optional
+        disableDragAndDrop: true,
         // summernote options goes here
         toolbar: [
           ['style', ['style', 'bold', 'italic', 'underline', 'clear']],
@@ -141,6 +144,7 @@ Schemas.Site = new SimpleSchema({
       afFieldInput: {
         type: 'summernote',
         class: 'editor', // optional
+        disableDragAndDrop: true,
         // summernote options goes here
         toolbar: [
           ['style', ['style', 'bold', 'italic', 'underline', 'clear']],

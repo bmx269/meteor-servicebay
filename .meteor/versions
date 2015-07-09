@@ -38,7 +38,6 @@ cfs:tempstore@0.1.5
 cfs:upload-http@0.0.20
 cfs:worker@0.1.4
 check@1.0.5
-chuangbo:cookie@1.1.0
 coffeescript@1.0.6
 cunneen:mailgun@0.9.1
 dburles:collection-helpers@1.0.3
@@ -81,12 +80,8 @@ meteor@1.1.6
 meteor-platform@1.2.2
 meteorhacks:async@1.0.0
 meteorhacks:inject-initial@1.0.2
-meteorhacks:meteorx@1.3.1
 meteorhacks:npm@1.3.0
-meteorhacks:picker@1.0.2
-meteorhacks:sikka@1.0.1
 meteorhacks:subs-manager@1.4.0
-meteorhacks:zones@1.4.0
 meteortoys:toykit@0.8.1
 minifiers@1.1.5
 minimongo@1.0.8
@@ -159,5 +154,4 @@ woody:stripe-easy@0.1.0
 xolvio:cucumber@0.10.0
 xolvio:webdriver@0.5.2
 yogiben:autoform-file@0.2.5
-yogiben:autoform-map@0.1.1
 yogiben:autoform-modals@0.3.5

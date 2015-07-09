@@ -8,3 +8,4 @@ Meteor.publishAuth = function(name, fn) {
 };
 
 
+Sortable.collections = ['services'];

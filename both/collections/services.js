@@ -49,7 +49,7 @@ Schemas.Services = new SimpleSchema({
     type: Number,
     label: "Sort Weight",
     optional: true,
-    max: 90
+    max: 9999
   }
 });
 

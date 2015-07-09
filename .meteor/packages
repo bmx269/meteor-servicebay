@@ -50,7 +50,6 @@ dburles:google-maps
 dburles:collection-helpers
 aldeed:geocoder
 tkornblit:olark
-meteorhacks:zones
 useraccounts:bootstrap
 service-configuration
 xolvio:cucumber
@@ -63,9 +62,7 @@ msavin:jetsetter
 mrt:fancybox
 cunneen:mailgun
 natestrauser:jquery-scrollto
-meteorhacks:sikka
 hb5:meteor-is.js
-yogiben:autoform-map
 rubaxa:sortable
 cfs:standard-packages
 cfs:filesystem

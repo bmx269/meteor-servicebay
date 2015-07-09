@@ -54,7 +54,7 @@ Template.ServicesList.created = function () {
 
   instance.services = function() {
     var id = instance.id.get();
-    return Services.findFaster({'siteId': id});
+    return Services.find({'siteId': id}, {sort:{order: 1}, reactive:true});
   }
 
 };

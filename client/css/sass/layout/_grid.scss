@@ -735,6 +735,7 @@ ul.features{
         @include remove-nth-omega(2n);
         @include span-columns(4, 12);
         @include nth-omega(3n);
+
       }
       @include at-breakpoint($wide){
         @include span-columns(4, 12);
