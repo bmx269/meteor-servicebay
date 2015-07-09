@@ -11,6 +11,7 @@
   {{else}}
     <div class="loading">{{>spinner}}</div>
   {{/if}}
-
+  <div class="actions">
   {{#afModal formId="serviceInsert" collection="Services" operation="insert" doc=_id fields="serviceTitle, image, serviceDescription" buttonContent="Add New Service"  title="Add A Service" prompt="This is for Admin Purposes Only" class="btn btn-success"}}Add Services{{/afModal}}
+  </div>
 </template>
