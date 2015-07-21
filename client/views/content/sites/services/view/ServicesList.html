@@ -2,7 +2,7 @@
   {{#if isReady}}
   <ul class="services">
     {{#each services}}
-      <li class="service-item">
+      <li  data-id="{{order}}" class="service-item">
         <h4>{{serviceTitle}}</h4>
         {{serviceDescription}}
       </li>

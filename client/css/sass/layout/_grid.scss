@@ -699,6 +699,10 @@ ul.features{
         @include remove-omega;
         @include span-columns(6, 12);
         @include nth-omega(2n);
+        &:nth-child(2n+1){
+          clear: both;
+        }
+
       }
       @include at-breakpoint($computer){
         @include span-columns(6, 12);
@@ -730,12 +734,23 @@ ul.features{
         @include remove-omega;
         @include span-columns(6, 12);
         @include nth-omega(2n);
+
+        &:nth-child(2n+1){
+          clear: both;
+        }
+
       }
       @include at-breakpoint($computer){
         @include remove-nth-omega(2n);
         @include span-columns(4, 12);
         @include nth-omega(3n);
 
+        &:nth-child(2n+1){
+          clear: right;
+        }
+        &:nth-child(3n+1){
+          clear: both;
+        }
       }
       @include at-breakpoint($wide){
         @include span-columns(4, 12);

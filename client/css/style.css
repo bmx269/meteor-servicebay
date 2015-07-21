@@ -1339,7 +1339,9 @@ ul.features {
         margin-right: 2.12766%; }
         .services-50 ul li:nth-child(2n) {
           float: right;
-          margin-right: 0; } }
+          margin-right: 0; }
+        .services-50 ul li:nth-child(2n+1) {
+          clear: both; } }
     @media (min-width: 52em) {
       .services-50 ul li {
         width: 48.93617%;
@@ -1379,7 +1381,9 @@ ul.features {
         margin-right: 2.12766%; }
         .services-33 ul li:nth-child(2n) {
           float: right;
-          margin-right: 0; } }
+          margin-right: 0; }
+        .services-33 ul li:nth-child(2n+1) {
+          clear: both; } }
     @media (min-width: 52em) {
       .services-33 ul li {
         width: 31.91489%;
@@ -1390,7 +1394,11 @@ ul.features {
           margin-right: 2.12766%; }
         .services-33 ul li:nth-child(3n) {
           float: right;
-          margin-right: 0; } }
+          margin-right: 0; }
+        .services-33 ul li:nth-child(2n+1) {
+          clear: right; }
+        .services-33 ul li:nth-child(3n+1) {
+          clear: both; } }
     @media (min-width: 65em) {
       .services-33 ul li {
         width: 31.91489%;
@@ -5468,9 +5476,11 @@ ul.features li h3 {
   margin-top: 10px;
   margin-bottom: 10px; }
 
-.sortable-ghost {
-  border: 1px #21b5fd solid;
-  opacity: 0.4; }
+[draggable="true"] {
+  border: 1px #21b5fd solid; }
+  [draggable="true"].sortable-ghost {
+    border: 1px #21b5fd dashed;
+    opacity: 0.6; }
 
 .sortable-handle {
   background: #333;

@@ -46,7 +46,7 @@ AutoForm.hooks({
             insert: function (doc, template) {
                 //modify the document here
                 doc.siteId = Session.get("selectedDocId");
-                doc.order = 0;
+                //doc.order = Session.get("sortIndex");
                 return doc;
             }
         }

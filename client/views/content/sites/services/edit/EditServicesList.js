@@ -64,20 +64,34 @@ Template.EditServicesList.helpers({
   services: function(){
     return Template.instance().services();
   },
+
   // the subscription handle
   isReady: function () {
     return Template.instance().ready.get();
   },
+
   serviceOptions: {
       group: {
         name: 'services',
       },
       // event handler for reordering attributes
       onSort: function (event) {
+
+        var sortOrder = event.newIndex;
+        var item = event.data._id;
+
+        console.log(item);
+
+        Services.update(item, {$set: {order: sortOrder}});
+
         console.log('Item %s went from #%d to #%d',
-          event.data.name, event.oldIndex, event.newIndex
+          event.data._id, event.oldIndex, event.newIndex
         );
+
+
       }
     }
 });
 
+Template.EditServicesList.onRendered(function () {
+});

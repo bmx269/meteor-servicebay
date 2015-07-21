@@ -28,7 +28,6 @@ Schemas.Services = new SimpleSchema({
   siteId: {
     type: String,
     optional: true
-
   },
   serviceTitle: {
     type: String,
@@ -48,9 +47,45 @@ Schemas.Services = new SimpleSchema({
   order: {
     type: Number,
     label: "Sort Weight",
-    optional: true,
-    max: 9999
+    unique: false,
+    autoValue: function() {
+      if (this.isInsert) {
+        return Services.find().count() + 1;
+      }
+    }
   }
 });
 
 Services.attachSchema(Schemas.Services);
+
+
+//
+// Collection Hooks for Services
+//
+
+//Service.before.insert(function (userId, doc) {
+//
+//  // Build address for geocoder from site values
+//  var location =  {
+//    street: doc.companyAddress,
+//    city: doc.companyCity,
+//    state: doc.companyState,
+//    country: doc.companyCountry
+//  };
+//  var address = '';
+//
+//  // Set address based on variables being set or not.
+//  _.each(location, function(k, v) {
+//    if (k) {
+//      address += k +', ';
+//    }
+//  });
+//
+//  // Using Method to geocode.
+//  Meteor.call('geoCode', address, function(error, result){
+//    doc.lat = result[0].latitude;
+//    doc.lng = result[0].longitude;
+//    console.log(result);
+//  });
+//
+//});

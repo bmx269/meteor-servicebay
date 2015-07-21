@@ -1,5 +1,6 @@
 <template name="EditServicesList">
   {{#if isReady}}
+    <div class="alert alert-success">Drag service items to sort as needed.</div>
     <ul class="services sortable target">
       {{#sortable items=services ghostClass="sortable-ghost" options=serviceOptions sortField="order"}}
     <li data-id="{{order}}" class="service-item sortable-item">

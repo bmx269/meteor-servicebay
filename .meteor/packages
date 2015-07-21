@@ -69,3 +69,4 @@ cfs:filesystem
 mpowaga:autoform-summernote
 yogiben:autoform-file
 djedi:sanitize-html
+osv:mongo-counter
