@@ -158,3 +158,50 @@ input[type="button"] {
     width: 100%;
   }
 }
+
+
+a.sort{
+  font-size: 16px;
+  color: #444;
+  margin: 0 10px 0 0;
+  text-decoration: none;
+  float: left;
+  display: none;
+
+  span{
+    display: none;
+  }
+
+  &:hover,
+  &:focus,
+  &:active{
+    color: #ddd;
+    text-decoration: none;
+  }
+}
+
+.edit-controls{
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 16px;
+  float: right;
+  color: #444;
+
+  a{
+    color: #444;
+    margin: 0 4px;
+    text-decoration: none;
+
+    span{
+      display: none;
+    }
+
+    &:hover,
+    &:focus,
+    &:active{
+      color: #ddd;
+      text-decoration: none;
+    }
+  }
+}

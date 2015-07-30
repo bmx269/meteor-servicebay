@@ -119,13 +119,34 @@ padding: 10px 14px;
 }
 
 
+.sortable-item{
+  &:hover,
+  &:focus,
+  &:active{
+    cursor: move;
+    outline: 1px #A9A9A9 dashed;
+  }
+}
 
 [draggable="true"] {
-  border: 1px $blueLight solid;
+  outline: 1px $blueLight solid;
+  cursor: move;
+    &:hover,
+    &:focus,
+    &:active{
+      cursor: -webkit-grabbing;
+    }
 
   &.sortable-ghost {
-    border: 1px $blueLight dashed;
+    outline: 1px $blueLight dashed;
     opacity: 0.6;
+    cursor: -webkit-grabbing;
+
+    &:hover,
+    &:focus,
+    &:active{
+      cursor: -webkit-grabbing;
+    }
   }
 
 }

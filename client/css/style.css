@@ -2534,6 +2534,9 @@ h4 small {
 .intro {
   margin-bottom: 30px; }
 
+.service-item h4 {
+  position: relative; }
+
 code,
 kbd,
 pre,
@@ -3264,7 +3267,14 @@ select[multiple].input-lg,
 
 .note-editor {
   position: relative;
-  border: 0px solid #A9A9A9; }
+  border: 0px solid #A9A9A9;
+  background: transparent; }
+  .note-editor .note-editing-area .note-editable {
+    padding: 10px;
+    overflow: auto;
+    color: inherit;
+    background-color: transparent;
+    outline: 0; }
 
 table {
   background-color: transparent; }
@@ -3926,6 +3936,36 @@ input[type="submit"].btn-block,
 input[type="reset"].btn-block,
 input[type="button"].btn-block {
   width: 100%; }
+
+a.sort {
+  font-size: 16px;
+  color: #444;
+  margin: 0 10px 0 0;
+  text-decoration: none;
+  float: left;
+  display: none; }
+  a.sort span {
+    display: none; }
+  a.sort:hover, a.sort:focus, a.sort:active {
+    color: #ddd;
+    text-decoration: none; }
+
+.edit-controls {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 16px;
+  float: right;
+  color: #444; }
+  .edit-controls a {
+    color: #444;
+    margin: 0 4px;
+    text-decoration: none; }
+    .edit-controls a span {
+      display: none; }
+    .edit-controls a:hover, .edit-controls a:focus, .edit-controls a:active {
+      color: #ddd;
+      text-decoration: none; }
 
 .alert, .admin-actions {
   padding: 15px;
@@ -5476,11 +5516,21 @@ ul.features li h3 {
   margin-top: 10px;
   margin-bottom: 10px; }
 
+.sortable-item:hover, .sortable-item:focus, .sortable-item:active {
+  cursor: move;
+  outline: 1px #A9A9A9 dashed; }
+
 [draggable="true"] {
-  border: 1px #21b5fd solid; }
+  outline: 1px #21b5fd solid;
+  cursor: move; }
+  [draggable="true"]:hover, [draggable="true"]:focus, [draggable="true"]:active {
+    cursor: -webkit-grabbing; }
   [draggable="true"].sortable-ghost {
-    border: 1px #21b5fd dashed;
-    opacity: 0.6; }
+    outline: 1px #21b5fd dashed;
+    opacity: 0.6;
+    cursor: -webkit-grabbing; }
+    [draggable="true"].sortable-ghost:hover, [draggable="true"].sortable-ghost:focus, [draggable="true"].sortable-ghost:active {
+      cursor: -webkit-grabbing; }
 
 .sortable-handle {
   background: #333;

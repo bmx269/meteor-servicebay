@@ -8,5 +8,6 @@
 //});
 
 Meteor.publish('subscription', function (options) {
+  check(options, String);
   return Subscription.findFaster({}, options);
 });

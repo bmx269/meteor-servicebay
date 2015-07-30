@@ -3,16 +3,16 @@
     <div class="alert alert-success">Drag service items to sort as needed.</div>
     <ul class="services sortable target">
       {{#sortable items=services ghostClass="sortable-ghost" options=serviceOptions sortField="order"}}
-    <li data-id="{{order}}" class="service-item sortable-item">
-      <h4>{{serviceTitle}}</h4>
-      {{serviceDescription}}
-    </li>
-    {{/sortable}}
-  </ul>
+        <li data-id="{{order}}" class="service-item sortable-item">
+          <a href="#" class="sort" title="Rearrange Items"><i class="fa fa-arrows"></i> <span>Rearrange Items</span></a><h4>{{serviceTitle}} <span class="edit-controls"> {{#afModal formId="serviceEdit" collection="Services" operation="update" doc=_id fields="serviceTitle, image, serviceDescription" buttonContent="Edit Service"  title="Edit A Service" prompt="You are now able permanently edit any of the values for this Service." class="edit-service"}}<i class="fa fa-edit"></i> <span>Edit Service</span>{{/afModal}} {{#afModal formId="serviceRemove" collection="Services" operation="remove"  doc=_id buttonContent="Remove Service"  title="Remove Service" prompt="Are you sure you want to permanently remove this service?" class="remove-service"}}<i class="fa fa-trash"></i> <span>Remove Service</span>{{/afModal}}</span></h4>
+          {{serviceDescription}}
+        </li>
+      {{/sortable}}
+    </ul>
   {{else}}
     <div class="loading">{{>spinner}}</div>
   {{/if}}
   <div class="actions">
-  {{#afModal formId="serviceInsert" collection="Services" operation="insert" doc=_id fields="serviceTitle, image, serviceDescription" buttonContent="Add New Service"  title="Add A Service" prompt="This is for Admin Purposes Only" class="btn btn-success"}}Add Services{{/afModal}}
+  {{#afModal formId="serviceInsert" collection="Services" operation="insert" doc=_id fields="serviceTitle, image, serviceDescription" buttonContent="Add New Service"  title="Add A Service" prompt="Please create a new Service to show in your list of Services. You can rearange the Services after adding to have them displayed in the order you wish. To rearrange a Service, click and drag on the service to sort." class="btn btn-success"}}Add Services{{/afModal}}
   </div>
 </template>

@@ -821,4 +821,13 @@ input[type="checkbox"] {
   .note-editor {
     position: relative;
     border: 0px solid #A9A9A9;
+    background: transparent;
+
+    .note-editing-area .note-editable {
+      padding: 10px;
+      overflow: auto;
+      color: inherit;
+      background-color: transparent;
+      outline: 0;
+    }
   }
