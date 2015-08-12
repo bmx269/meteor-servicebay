@@ -36,7 +36,15 @@ Schemas.Services = new SimpleSchema({
   image: {
     type: String,
     label: "Image",
-    optional: true
+    optional: true,
+    autoform: {
+      afFieldInput: {
+        type: 'fileUpload',
+        collection: 'Images',
+        accept: 'image/*',
+        label: 'Choose file',
+      }
+    }
   },
   serviceDescription: {
     type: String,
