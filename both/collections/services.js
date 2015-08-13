@@ -50,7 +50,12 @@ Schemas.Services = new SimpleSchema({
     type: String,
     label: "Brief summary of the service",
     optional: true,
-    max: 1000
+    max: 1000,
+    autoform: {
+      afFieldInput: {
+        type: "textarea"
+      }
+    }
   },
   order: {
     type: Number,

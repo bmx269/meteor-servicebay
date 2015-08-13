@@ -70,3 +70,7 @@ mpowaga:autoform-summernote
 yogiben:autoform-file
 djedi:sanitize-html
 osv:mongo-counter
+react-template-helper
+react
+useraccounts:iron-routing
+aldeed:http
