@@ -112,7 +112,7 @@ Router.map(function () {
   this.route('theme.index', {path: '/dashboard/site/edit/themes'});
   this.route('create.subscription', {path: '/dashboard/subscription/create'});
   this.route('edit.subscription', {path: '/dashboard/subscription/edit/:_id'});
-  this.route('edit.site', {path: '/dashboard/site/edit/:_id', layoutTemplate:'MasterEditLayout'});
+  this.route('edit.site', {path: '/dashboard/site/edit/:_id'});
   this.route('create.site', {path: '/dashboard/site/create'});
   this.route('service.create', {path: '/dashboard/site/wysiwyg/:_id/services/create'});
   this.route('service.edit', {path: '/dashboard/site/wysiwyg/:_id/services/edit/:_id'});

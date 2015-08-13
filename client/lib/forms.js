@@ -9,23 +9,23 @@ AutoForm.addHooks(['createSiteForm', 'editSiteForm', 'quickEditSiteForm', 'creat
         insert: function(error, result) {
             if (error) {
                 console.log("Insert Error:", error);
-                Notifications.error('Oh Snap!', 'There is an error in your form, and the form could not been saved.');
+                toastr.error('There is an error in your form, and the form could not been saved.','Oh Snap!');
             } else {
                 console.log("Insert Result:", result);
                 $.fancybox.close();
-                Notifications.success('Success', 'Your changes have been saved.');
+                toastr.success('Your changes have been saved.', 'Success');
             }
         },
         update: function(error) {
             if (error) {
                 console.log("Oh Snap!", error);
-                Notifications.error('Update Error', 'There is an error in your form, and the changes have not been saved.');
+                toastr.error('There is an error in your form, and the changes have not been saved.', 'Update Error');
 
 
             } else {
                 console.log("Updated!");
                 //$.fancybox.close();
-                Notifications.success('Success', 'Your changes have been saved.');
+                toastr.success('Your changes have been saved.', 'Success');
             }
         },
         remove: function(error) {

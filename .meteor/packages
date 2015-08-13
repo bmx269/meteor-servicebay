@@ -21,7 +21,6 @@ meteorhacks:npm
 npm-container
 aldeed:simple-schema
 iron:dynamic-template
-gfk:notifications
 mrt:jquery-ui
 mizzao:user-status
 aldeed:delete-button
@@ -74,3 +73,4 @@ react-template-helper
 react
 useraccounts:iron-routing
 aldeed:http
+chrismbeckett:toastr
