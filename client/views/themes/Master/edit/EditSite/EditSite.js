@@ -8,7 +8,7 @@ Template.EditSite.events({
     e.preventDefault();
     if(confirm("Are you sure you want to Permanently Delete this Site?")) {
       Site.remove (selectedSite);
-      Notifications.success ('Success', 'The Site has been Deleted.');
+      toastr.success ('Success', 'The Site has been Deleted.');
     }
   }
 

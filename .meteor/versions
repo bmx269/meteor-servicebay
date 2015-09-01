@@ -7,12 +7,15 @@ aldeed:autoform@4.2.2
 aldeed:collection2@2.3.3
 aldeed:delete-button@1.0.0
 aldeed:geocoder@0.3.6
+aldeed:http@0.2.2
 aldeed:simple-schema@1.3.3
 aldeed:template-extension@3.4.3
 amplify@1.0.0
 arunoda:find-faster@0.1.3
 audit-argument-checks@1.0.3
 autoupdate@1.2.1
+babel-compiler@5.6.15
+babel-runtime@0.1.3
 babrahams:editable-json@0.4.3
 base64@1.0.3
 binary-heap@1.0.3
@@ -25,6 +28,7 @@ cfs:base-package@0.0.30
 cfs:collection@0.5.5
 cfs:collection-filters@0.2.4
 cfs:data-man@0.0.6
+cfs:dropbox@0.0.3
 cfs:file@0.1.17
 cfs:filesystem@0.1.2
 cfs:http-methods@0.0.29
@@ -38,7 +42,9 @@ cfs:tempstore@0.1.5
 cfs:upload-http@0.0.20
 cfs:worker@0.1.4
 check@1.0.5
+chrismbeckett:toastr@2.1.2_1
 coffeescript@1.0.6
+cosmos:browserify@0.4.0
 cunneen:mailgun@0.9.1
 dburles:collection-helpers@1.0.3
 dburles:google-maps@1.1.3
@@ -52,7 +58,6 @@ fastclick@1.0.3
 fortawesome:fontawesome@4.4.0
 gadicohen:headers@0.0.30
 geojson-utils@1.0.3
-gfk:notifications@1.1.3
 gwendall:session-json@0.1.7
 hb5:meteor-is.js@0.0.1
 html-tools@1.0.4
@@ -69,6 +74,7 @@ iron:router@1.0.9
 iron:url@1.0.9
 jquery@1.11.3_2
 json@1.0.3
+jsx@0.1.2
 lai:collection-extensions@0.1.4
 launch-screen@1.0.2
 less@1.0.14
@@ -112,6 +118,12 @@ practicalmeteor:loglevel@1.1.0_3
 raix:eventemitter@0.1.3
 raix:handlebar-helpers@0.2.4
 random@1.0.3
+react@0.1.7
+react-meteor-data@0.1.5
+react-runtime@0.13.3_4
+react-runtime-dev@0.13.3_3
+react-runtime-prod@0.13.3_2
+react-template-helper@0.1.2
 reactive-dict@1.1.0
 reactive-var@1.0.5
 reload@1.1.3
@@ -145,6 +157,7 @@ underscore@1.0.3
 url@1.0.4
 useraccounts:bootstrap@1.12.1
 useraccounts:core@1.12.1
+useraccounts:iron-routing@1.12.1
 velocity:chokidar@1.0.3_1
 velocity:core@0.9.3
 velocity:html-reporter@0.7.3

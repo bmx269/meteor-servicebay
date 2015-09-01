@@ -36,7 +36,7 @@ Template.subscription.events = {
     e.preventDefault();
     if(confirm("Are you sure you want to Permanently Delete this Subscription?")) {
       Subscription.remove (this._id);
-      Notifications.success ('Success', 'The Subscription has been Deleted.');
+      toastr.success ('The Subscription has been Deleted.','Success');
     }
   }
 };
@@ -115,7 +115,7 @@ Template.site.events = {
     e.preventDefault();
     if(confirm("Are you sure you want to Permanently Delete this Site?")) {
       Site.remove (this._id);
-      Notifications.success ('Success', 'The Site has been Deleted.');
+      toastr.success ('The Site has been Deleted.','Success');
     }
   }
 };

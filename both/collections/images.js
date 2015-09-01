@@ -1,8 +1,13 @@
-var Images = new FS.Collection("images", {
-  stores: [new FS.Store.FileSystem("images", {path: "~/uploads"})]
-});
-
-//var Schemas = {};
+//FS.debug = true;
 //
+//var imageStore = new FS.Store.Dropbox("images");
 //
-//Images = new Meteor.Collection('images', {});
+//Images = new FS.Collection("images", {
+//  stores: [imageStore],
+//  filter: {
+//    allow: {
+//      contentTypes: ['image/*']
+//    }
+//  }
+//});
+//

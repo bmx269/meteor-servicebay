@@ -21,7 +21,6 @@ meteorhacks:npm
 npm-container
 aldeed:simple-schema
 iron:dynamic-template
-gfk:notifications
 mrt:jquery-ui
 mizzao:user-status
 aldeed:delete-button
@@ -70,3 +69,9 @@ mpowaga:autoform-summernote
 yogiben:autoform-file
 djedi:sanitize-html
 osv:mongo-counter
+react-template-helper
+react
+useraccounts:iron-routing
+aldeed:http
+chrismbeckett:toastr
+cfs:dropbox
