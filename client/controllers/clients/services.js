@@ -1,6 +1,6 @@
 ServicesController = RouteController.extend({
   waitOn: function () {
-    return Meteor.subscribe('images')
+    return Meteor.subscribe('images');
   },
 
   data: function() {

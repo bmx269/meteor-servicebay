@@ -1,6 +1,7 @@
 EditServicesController = RouteController.extend({
   waitOn: function () {
     return Meteor.subscribe('editSite', this.params._id);
+    return Meteor.subscribe('images');
   },
 
   //onBeforeAction: function() {
