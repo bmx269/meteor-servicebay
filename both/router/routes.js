@@ -38,25 +38,6 @@ Router.configure({
 });
 
 Router.onBeforeAction('loading');
-// 
-// Router.onBeforeAction(AccountsTemplates.ensureSignedIn, {
-//   only: [
-//       'dashboard',
-//       'subscription.index',
-//       'theme.index',
-//       'create.subscription',
-//       'edit.subscription',
-//       'create.site',
-//       'edit.site',
-//       'services.create',
-//       'services.edit',
-//       'edit.home',
-//       'edit.services',
-//       'edit.about',
-//       'edit.contact',
-//       'welcome'
-//   ]
-// });
 
 Router.plugin('ensureSignedIn', {
     only: [
