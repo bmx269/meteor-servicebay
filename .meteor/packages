@@ -4,7 +4,6 @@
 # but you can also edit it by hand.
 
 standard-app-packages
-accounts-ui
 accounts-password
 coffeescript
 accounts-base
@@ -25,7 +24,6 @@ mrt:jquery-ui
 mizzao:user-status
 aldeed:delete-button
 alanning:roles
-multiply:iron-router-progress
 natestrauser:select2
 spiderable
 jquery
@@ -40,7 +38,6 @@ reactive-dict
 fortawesome:fontawesome
 summernote:summernote
 twbs:bootstrap
-yogiben:autoform-modals
 woody:stripe-easy
 aldeed:collection2
 
@@ -66,9 +63,11 @@ rubaxa:sortable
 cfs:standard-packages
 cfs:filesystem
 mpowaga:autoform-summernote
-yogiben:autoform-file
 osv:mongo-counter
 useraccounts:iron-routing
 aldeed:http
 chrismbeckett:toastr
 cfs:dropbox
+kadira:blaze-plus
+yogiben:autoform-modals
+standard-minifiers

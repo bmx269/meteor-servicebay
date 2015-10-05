@@ -6,11 +6,11 @@
  */
  // Meteor.subscribe('subscription');
 
-
-host =  headers.get('host');
-host = String(host).replace(/^www\./,'');
-var header =  headers.get();
-//console.log(host);
-//return Site.find({'domain': host});
-
-Meteor.subscribe('subscription', {domain: host});
+//
+//host =  headers.get('host');
+//host = String(host).replace(/^www\./,'');
+//var header =  headers.get();
+////console.log(host);
+////return Site.find({'domain': host});
+//
+//Meteor.subscribe('subscription', {domain: host});

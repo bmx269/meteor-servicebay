@@ -2,12 +2,9 @@
 /* SubscriptionIndex Publish Functions
 /*****************************************************************************/
 
-//Meteor.publish('subscription_index', function () {
-//  // you can remove this if you return a cursor
-//  this.ready();
-//});
 
-Meteor.publish('subscription', function (options) {
-  check(options, String);
-  return Subscription.findFaster({}, options);
+Meteor.publish('subscription', function (id) {
+  check(id, String);
+  console.log(id);
+  return Site.findFaster({'_id': id},{fields: {'createdAt': 0}});
 });
