@@ -7,11 +7,22 @@
             <fieldset>
               <legend>Site</legend>
               <div data-row-span="3">
-                <div data-field-span="2">
+                <div data-field-span="3">
                   {{> afQuickField name='siteTitle'}}
                 </div>
+              </div>
+              <div data-row-span="1">
                 <div data-field-span="1">
-                  {{> afQuickField placeholder="e.g., servicebay.ca" name='domain'}}
+                  {{> afQuickField placeholder="e.g., demo.servicebay.ca" name='domain'}}
+                </div>
+              </div>
+              <div data-row-span="6">
+                <div data-field-span="3">
+                  {{> afQuickField placeholder="e.g., servicebay.ca" name='fullDomain'}}
+                </div>
+                <div data-field-span="3">
+                  <label>Domain Subscription</label>
+                  {{> afQuickField radio="false" name="fullDomainActive"}}
                 </div>
               </div>
             </fieldset>
@@ -46,7 +57,7 @@
                   {{> afQuickField name='companyFax'}}
                 </div>
                 <div data-field-span="1">
-                  {{> afQuickField placeholder="e.g., name@gmail.com" name='companyEmail'}}
+                  {{> afQuickField placeholder="e.g., name@example.com" name='companyEmail'}}
                 </div>
               </div>
             </fieldset>

@@ -39,14 +39,27 @@ Schemas.Site = new SimpleSchema({
     },
     denyUpdate: true
   },
-  // siteId: {
-  //   type: String,
-  //   label: "Site ID"
-  // },
   domain: {
     type: String,
     label: "Domain",
     unique: true
+  },
+  fullDomainActive: {
+    type: Boolean,
+    allowedValues: ['0', '1'],
+    label: "Full Domain Active",
+    autoform: {
+      type: "boolean-checkbox",
+      options: [
+        {trueLabel: "Yes"}
+      ]
+    }
+  },
+  fullDomain: {
+    type: String,
+    label: "Full Domain",
+    unique: true,
+    optional: true
   },
   siteTheme: {
     type: String,

@@ -4,11 +4,39 @@
   </div>
 
     <div  class="address">
-        <h3 class="company">{{companyName}}</h3>
-        <div class="street">{{> afQuickField name='companyAddress'}}</div>
-        <div class="city">{{> afQuickField name='companyCity'}} {{> afQuickField name='companyState'}}</div>
-        <div class="country">{{> afQuickField name='companyCountry'}} {{> afQuickField name='companyPostal'}}</div>
-        <div class="phone"><strong>Phone:</strong> {{> afQuickField label=false name='companyPhone'}}</div>
-        <div class="fax"><strong>Fax:</strong> {{> afQuickField label=false name='companyFax'}}</div>
+      <fieldset class="grid-form">
+        <div data-row-span="1">
+          <div data-field-span="1">
+            {{> afQuickField placeholder="e.g., ServiceBay" name='companyName'}}
+          </div>
+        </div>
+        <div data-row-span="1">
+          <div data-field-span="1">
+            {{> afQuickField name='companyAddress' rows=2}}
+          </div>
+        </div>
+        <div data-row-span="3">
+          <div data-field-span="1">
+            {{> afQuickField  name='companyCity'}}
+          </div>
+          <div data-field-span="1">
+            {{> afQuickField name='companyState'}}
+          </div>
+          <div data-field-span="1">
+            {{> afQuickField name='companyCountry'}}
+          </div>
+        </div>
+        <div data-row-span="3">
+          <div data-field-span="1">
+            {{> afQuickField name='companyPhone'}}
+          </div>
+          <div data-field-span="1">
+            {{> afQuickField name='companyFax'}}
+          </div>
+          <div data-field-span="1">
+            {{> afQuickField placeholder="e.g., name@example.com" name='companyEmail'}}
+          </div>
+        </div>
+      </fieldset>
     </div>
 </template>
