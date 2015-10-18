@@ -6,9 +6,9 @@
           <li class="home"><a href="http://servicebay.ca/"><img src="/img/servicebay-white.png" title="{{siteTitle}} - Home" alt="ServiceBay Home"></a>
 </li>
 
-          <li><a href="{{pathFor 'support'}}" class="{{activeRouteClass 'support'}} support"><i class="fa fa-comments-o"></i> Help &amp; Support</a></li>
-          {{#if currentUser}}<li><a href="{{pathFor 'dashboard'}}" class="{{activeRouteClass 'dashboard'}} dashboard"><i class="fa fa-cog"></i> My Dashboard</a></li>{{/if}}
-          {{#unless currentUser}}<li><a href="{{pathFor 'signIn'}}" class="{{activeRouteClass 'signIn'}} signup"><i class="fa fa-user"></i> Sign In / Register</a></li>{{/unless}}
+          <li><a href="{{pathFor 'support'}}" class="support"><i class="fa fa-comments-o"></i> Help &amp; Support</a></li>
+          {{#if currentUser}}<li><a href="{{pathFor 'dashboard'}}" class="dashboard"><i class="fa fa-cog"></i> My Dashboard</a></li>{{/if}}
+          {{#unless currentUser}}<li><a href="{{pathFor 'signIn'}}" class="signup"><i class="fa fa-user"></i> Sign In / Register</a></li>{{/unless}}
           {{#if currentUser}}<li><a href="#" class="signout"><i class="fa fa-sign-out"></i> Sign Out</a></li>{{/if}}
           {{#if adminUser}}<li><a href="{{pathFor 'admin'}}"><i class="fa fa-cog"></i> Admin</a></li>{{/if}}
         </ul>
@@ -22,9 +22,9 @@
     <nav id="client-mobile-menu" class="client">
       <ul class="menu">
         <li><a href="{{pathFor 'home'}}">Home</a></li>
-        <li><a href="{{pathFor 'services'}}" class="{{activeRouteClass 'services'}}">Services</a></li>
-        <li><a href="{{pathFor 'about'}}" class="{{activeRouteClass 'about'}}">About Us</a></li>
-        <li><a href="{{pathFor 'contact'}}" class="{{activeRouteClass 'contact'}}">Contact</a></li>
+        <li><a href="{{pathFor 'services'}}" class="">Services</a></li>
+        <li><a href="{{pathFor 'about'}}" class="">About Us</a></li>
+        <li><a href="{{pathFor 'contact'}}" class="">Contact</a></li>
       </ul>
     </nav>
 </template>
@@ -33,9 +33,9 @@
   <nav id="main-menu">
     <ul class="menu" >
       <li><a href="{{pathFor 'home'}}">Home</a></li>
-      <li><a href="{{pathFor 'services'}}" class="{{activeRouteClass 'services'}}">Services</a></li>
-      <li><a href="{{pathFor 'about'}}" class="{{activeRouteClass 'about'}}">About Us</a></li>
-      <li><a href="{{pathFor 'contact'}}" class="{{activeRouteClass 'contact'}}">Contact</a></li>
+      <li><a href="{{pathFor 'services'}}" class="">Services</a></li>
+      <li><a href="{{pathFor 'about'}}" class="">About Us</a></li>
+      <li><a href="{{pathFor 'contact'}}" class="">Contact</a></li>
     </ul>
   </nav>
 </template>
@@ -45,9 +45,9 @@
   <nav id="main-menu">
     <ul class="menu" >
       <li><a href="{{pathFor 'home'}}">Home</a></li>
-      <li><a href="{{pathFor 'services'}}" class="{{activeRouteClass 'services'}}">Services</a></li>
-      <li><a href="{{pathFor 'about'}}" class="{{activeRouteClass 'about'}}">About Us</a></li>
-      <li><a href="{{pathFor 'contact'}}" class="{{activeRouteClass 'contact'}}">Contact</a></li>
+      <li><a href="{{pathFor 'services'}}" class="">Services</a></li>
+      <li><a href="{{pathFor 'about'}}" class="">About Us</a></li>
+      <li><a href="{{pathFor 'contact'}}" class="">Contact</a></li>
     </ul>
   </nav>
 </template>
@@ -68,9 +68,9 @@
   <nav id="main-menu">
     <ul class="menu" >
       <li><a href="{{pathFor 'home'}}">Home</a></li>
-      <li><a href="{{pathFor 'services'}}" class="{{activeRouteClass 'services'}}">Services</a></li>
-      <li><a href="{{pathFor 'about'}}" class="{{activeRouteClass 'about'}}">About Us</a></li>
-      <li><a href="{{pathFor 'contact'}}" class="{{activeRouteClass 'contact'}}">Contact</a></li>
+      <li><a href="{{pathFor 'services'}}" class="">Services</a></li>
+      <li><a href="{{pathFor 'about'}}" class="">About Us</a></li>
+      <li><a href="{{pathFor 'contact'}}" class="">Contact</a></li>
     </ul>
   </nav>
 </template>
@@ -78,9 +78,9 @@
 <template name="MenuMaster">
   <nav id="main-menu">
     <ul class="menu">
-      <li><a href="{{pathFor 'features'}}" class="{{activeRouteClass 'features'}}">Features</a></li>
-      <li><a href="{{pathFor 'pricing'}}" class="{{activeRouteClass 'pricing'}}">Pricing & Options</a></li>
-      <li><a href="{{pathFor 'listing'}}" class="{{activeRouteClass 'listing'}}">Listing</a></li>
+      <li><a href="{{pathFor 'features'}}" class="">Features</a></li>
+      <li><a href="{{pathFor 'pricing'}}" class="">Pricing & Options</a></li>
+      <li><a href="{{pathFor 'listing'}}" class="">Listing</a></li>
     </ul>
   </nav>
 </template>
@@ -89,9 +89,9 @@
     <nav id="mobile-menu" class="sb">
       <ul class="menu">
         <li><a href="{{pathFor 'home'}}">Home</a></li>
-        <li><a href="{{pathFor 'features'}}" class="{{activeRouteClass 'features'}}">Features</a></li>
-        <li><a href="{{pathFor 'pricing'}}" class="{{activeRouteClass 'pricing'}}">Pricing & Options</a></li>
-        <li><a href="{{pathFor 'listing'}}" class="{{activeRouteClass 'listing'}}">Listing</a></li>
+        <li><a href="{{pathFor 'features'}}" class="">Features</a></li>
+        <li><a href="{{pathFor 'pricing'}}" class="">Pricing & Options</a></li>
+        <li><a href="{{pathFor 'listing'}}" class="">Listing</a></li>
       </ul>
     </nav>
 </template>
@@ -102,11 +102,11 @@
       <h3>About ServiceBay</h3>
       <nav id="about-menu">
         <ul class="menu">
-          <li><a href="{{pathFor 'whychoose'}}" class="{{activeRouteClass 'whychoose'}}">Why Choose ServiceBay?</a></li>
-          <li><a href="{{pathFor 'promise'}}" class="{{activeRouteClass 'promise'}}">Our Promise</a></li>
-          <li><a href="{{pathFor 'team'}}" class="{{activeRouteClass 'team'}}">Our Team</a></li>
-          <li><a href="{{pathFor 'privacy'}}" class="{{activeRouteClass 'privacy'}}">Privacy Policy</a></li>
-          <li><a href="{{pathFor 'terms'}}" class="{{activeRouteClass 'terms'}}">Terms of Use</a></li>
+          <li><a href="{{pathFor 'whychoose'}}" class="">Why Choose ServiceBay?</a></li>
+          <li><a href="{{pathFor 'promise'}}" class="">Our Promise</a></li>
+          <li><a href="{{pathFor 'team'}}" class="">Our Team</a></li>
+          <li><a href="{{pathFor 'privacy'}}" class="">Privacy Policy</a></li>
+          <li><a href="{{pathFor 'termsOfService'}}" class="">Terms of Use</a></li>
         </ul>
       </nav>
     </div>
@@ -118,8 +118,8 @@
       <nav id="connect-menu">
         <ul class="menu">
           <li><a href="#" class="">Our Blog</a></li>
-          <li><a href="{{pathFor 'contact'}}" class="{{activeRouteClass 'contact'}}">Contact Us</a></li>
-          <li><a href="{{pathFor 'support'}}" class="{{activeRouteClass 'support'}}">Help &amp; Support</a></li>
+          <li><a href="{{pathFor 'contact'}}" class="">Contact Us</a></li>
+          <li><a href="{{pathFor 'support'}}" class="">Help &amp; Support</a></li>
           <li><a href="http://facebook.com" class="facebook">Facebook</a></li>
           <li><a href="http://twitter.com/Service-Bay" class="twitter">Twitter</a></li>
         </ul>
@@ -135,9 +135,9 @@
   <nav id="main-menu">
     <ul class="menu" >
       <li><a href="{{pathFor 'edit.home'}}">Home</a></li>
-      <li><a href="{{pathFor 'edit.services'}}" class="{{activeRouteClass 'edit.services'}}">Services</a></li>
-      <li><a href="{{pathFor 'edit.about'}}" class="{{activeRouteClass 'edit.about'}}">About Us</a></li>
-      <li><a href="{{pathFor 'edit.contact'}}" class="{{activeRouteClass 'edit.contact'}}">Contact</a></li>
+      <li><a href="{{pathFor 'edit.services'}}" class="">Services</a></li>
+      <li><a href="{{pathFor 'edit.about'}}" class="">About Us</a></li>
+      <li><a href="{{pathFor 'edit.contact'}}" class="">Contact</a></li>
     </ul>
   </nav>
 </template>
@@ -147,9 +147,9 @@
   <nav id="main-menu">
     <ul class="menu" >
       <li><a href="{{pathFor 'edit.home'}}">Home</a></li>
-      <li><a href="{{pathFor 'edit.services'}}" class="{{activeRouteClass 'edit.services'}}">Services</a></li>
-      <li><a href="{{pathFor 'edit.about'}}" class="{{activeRouteClass 'edit.about'}}">About Us</a></li>
-      <li><a href="{{pathFor 'edit.contact'}}" class="{{activeRouteClass 'edit.contact'}}">Contact</a></li>
+      <li><a href="{{pathFor 'edit.services'}}" class="">Services</a></li>
+      <li><a href="{{pathFor 'edit.about'}}" class="">About Us</a></li>
+      <li><a href="{{pathFor 'edit.contact'}}" class="">Contact</a></li>
     </ul>
   </nav>
 </template>
@@ -171,9 +171,9 @@
   <nav id="main-menu">
     <ul class="menu" >
       <li><a href="{{pathFor 'edit.home'}}">Home</a></li>
-      <li><a href="{{pathFor 'edit.services'}}" class="{{activeRouteClass 'edit.services'}}">Services</a></li>
-      <li><a href="{{pathFor 'edit.about'}}" class="{{activeRouteClass 'edit.about'}}">About Us</a></li>
-      <li><a href="{{pathFor 'edit.contact'}}" class="{{activeRouteClass 'edit.contact'}}">Contact</a></li>
+      <li><a href="{{pathFor 'edit.services'}}" class="">Services</a></li>
+      <li><a href="{{pathFor 'edit.about'}}" class="">About Us</a></li>
+      <li><a href="{{pathFor 'edit.contact'}}" class="">Contact</a></li>
     </ul>
   </nav>
 </template>
@@ -182,9 +182,9 @@
 <template name="EditMenuMaster">
   <nav id="main-menu">
     <ul class="menu">
-      <li><a href="{{pathFor 'features'}}" class="{{activeRouteClass 'features'}}">Features</a></li>
-      <li><a href="{{pathFor 'pricing'}}" class="{{activeRouteClass 'pricing'}}">Pricing & Options</a></li>
-      <li><a href="{{pathFor 'listing'}}" class="{{activeRouteClass 'listing'}}">Listing</a></li>
+      <li><a href="{{pathFor 'features'}}" class="">Features</a></li>
+      <li><a href="{{pathFor 'pricing'}}" class="">Pricing & Options</a></li>
+      <li><a href="{{pathFor 'listing'}}" class="">Listing</a></li>
     </ul>
   </nav>
 </template>
@@ -193,9 +193,9 @@
 <template name="EditServiceBayMenu">
   <nav id="main-menu">
     <ul class="menu">
-      <li><a href="{{pathFor 'features'}}" class="{{activeRouteClass 'features'}}">Features</a></li>
-      <li><a href="{{pathFor 'pricing'}}" class="{{activeRouteClass 'pricing'}}">Pricing & Options</a></li>
-      <li><a href="{{pathFor 'listing'}}" class="{{activeRouteClass 'listing'}}">Listing</a></li>
+      <li><a href="{{pathFor 'features'}}" class="">Features</a></li>
+      <li><a href="{{pathFor 'pricing'}}" class="">Pricing & Options</a></li>
+      <li><a href="{{pathFor 'listing'}}" class="">Listing</a></li>
     </ul>
   </nav>
 </template>

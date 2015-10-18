@@ -7,9 +7,7 @@ standard-app-packages
 accounts-password
 coffeescript
 accounts-base
-iron:router
 gadicohen:headers
-iron:layout
 aldeed:autoform
 arunoda:find-faster
 meteorhacks:subs-manager
@@ -19,7 +17,6 @@ meteorhacks:npm
 
 npm-container
 aldeed:simple-schema
-iron:dynamic-template
 mrt:jquery-ui
 mizzao:user-status
 aldeed:delete-button
@@ -64,10 +61,14 @@ cfs:standard-packages
 cfs:filesystem
 mpowaga:autoform-summernote
 osv:mongo-counter
-useraccounts:iron-routing
 aldeed:http
 chrismbeckett:toastr
 cfs:dropbox
 kadira:blaze-plus
 yogiben:autoform-modals
 standard-minifiers
+kadira:blaze-layout
+kadira:flow-router
+arillo:flow-router-helpers
+useraccounts:flow-routing
+tomwasd:history-polyfill

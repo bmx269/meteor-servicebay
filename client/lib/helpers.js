@@ -1,15 +1,15 @@
 // helper to set active state on route
-UI.registerHelper('activeRouteClass', function () {
-  /* routes names */
-  var args = Array.prototype.slice.call(arguments, 0);
-  args.pop();
-
-  var active = _.any(args, function(name) {
-    return Router.current() && Router.current().route.getName() === name
-  });
-
-  return active && 'active';
-});
+//UI.registerHelper('activeRouteClass', function () {
+//  /* routes names */
+//  var args = Array.prototype.slice.call(arguments, 0);
+//  args.pop();
+//
+//  var active = _.any(args, function(name) {
+//    return Router.current() && Router.current().route.getName() === name
+//  });
+//
+//  return active && 'active';
+//});
 
 
 scrollUp = function() {

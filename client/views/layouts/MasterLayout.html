@@ -3,13 +3,13 @@
     <p class="browser-warning"><strong><i class="icon-exclamation-sign"></i> Warning</strong> - You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> to properly view this website.</p>
   <![endif]-->
   <div class="header">
-    {{> yield region="header"}}
+    {{>Template.dynamic template=header}}
   </div>
   <div class="content">
-    {{> yield}}
+    {{>Template.dynamic template=content}}
   </div>
   <div class="footer">
-    {{> yield region="footer"}}
+    {{>Template.dynamic template=footer}}
   </div>
   {{> autoformModals}}
 
