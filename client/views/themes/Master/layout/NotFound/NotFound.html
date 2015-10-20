@@ -1,16 +1,10 @@
 <template name="NotFoundMaster">
-  {{#contentFor "header"}}
-    {{> HeaderMaster}}
-  {{/contentFor}}
   <div id="content-wrapper">
     <div class="container">
       <h2>Badges! We Don't Need No Stinking Badges!</h2>
       <p>Oops, this page can't be found.</p>
     </div>
   </div>
-  {{#contentFor "footer"}}
-    {{> FooterMaster}}
-  {{/contentFor}}
 </template>
 
 
@@ -57,16 +51,10 @@
 <!-- No Site Found-->
 
 <template name="NotFound">
-  {{#contentFor "header"}}
-    {{> HeaderNone}}
-  {{/contentFor}}
     <div id="content-wrapper">
     <div class="container">
       <h2>Oh Snap!</h2>
       <p>Great News! there's no site at this address, that means the address <b>{{domain}}</b> is available for <b>Your Site.</b></p>
     </div>
   </div>
-  {{#contentFor "footer"}}
-    {{> FooterNone}}
-  {{/contentFor}}
 </template>
