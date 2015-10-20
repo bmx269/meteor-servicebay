@@ -22,7 +22,7 @@ Meteor.publish('site', function (host) {
   return Site.findFaster({'domain': host},{fields: {'createdAt': 0}});
 });
 
-Meteor.publish('editSite', function (id) {
+Meteor.publish('siteData', function (id) {
   check(id, String);
   console.log(id);
   return Site.findFaster({'_id': id},{fields: {'createdAt': 0}});

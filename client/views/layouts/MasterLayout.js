@@ -31,26 +31,44 @@ Template.MasterLayout.rendered = function () {
 Template.MasterLayout.destroyed = function () {
 };
 
+Template.MasterLayout.onCreated(function() {
+  var self = this;
+  self.autorun(function() {
+    var headersReady = headers.ready();
 
-//Template.MasterLayout.transitionOptions = function(from, to, element) {
-//  return 'right-to-left';
-//
-//  // or
-//  //
-//  //return {
-//  //  with: 'right-to-left'
-//  //  //extra: 'options-for-plugin'
-//  //}
-//};
+    if (headersReady) {
+      // get url and strip http and www
+      var getHost =  headers.get('host');
+      var domain = String(getHost).replace(/^www\./,'');
 
-//Template.MasterEditLayout.editingDoc = function () {
-//  return Site.findOne({_id: Session.get("selectedDocId")});
-//};
+      // set domain in session
+      Session.set("domain", domain);
 
-//{{#momentum plugin='right-to-left'}}
-//{{#if show}}
-//<p>My text!</p>
-//{{/if}}
-//  {{/momentum}}
+       //find data based on session domain
+      var theSite = Site.findOneFaster({'domain': domain});
 
+      if (theSite) {
+        console.log('siteData - found');
+        // set theme session for theme function
+        // set document title
 
+        Session.set('selectedDocId', theSite._id);
+        Session.set("theme", theSite.siteTheme);
+        document.title = theSite.siteTitle;
+
+        //return theSite;
+      };
+    };
+    var host = Session.get("domain");
+    //console.log(host)
+    self.subscribe('site', host)
+  });
+});
+
+Template.MasterLayout.helpers({
+  site: function() {
+    var siteId = Session.get("selectedDocId")
+    var site =  Site.findOneFaster({'_id': siteId});
+    return site;
+  }
+});

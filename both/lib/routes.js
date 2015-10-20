@@ -63,13 +63,31 @@ var sites = new SubsManager({
 
 FlowRouter.route( '/', {
   action: function() {
-    BlazeLayout.render('MasterLayout',
-      {
-        header: 'HeaderMaster',
-        content: 'HomeMaster',
-        footer: 'FooterMaster'
+    
+    var siteThemeID = Session.get('theme');
+
+    // Check if theme ID is available otherwise set redirect user to dashboard.
+    if (siteThemeID !== 'None') {
+
+      if (App.themeIsMaster()) {
+        BlazeLayout.render('MasterLayout',
+          {
+            header: 'HeaderMaster',
+            content: 'HomeMaster',
+            footer: 'FooterMaster'
+          }
+        );
       }
-    );
+      else {
+        BlazeLayout.render('MasterLayout',
+          {
+            header: 'Header'+ siteThemeID,
+            content: 'Home'+ siteThemeID,
+            footer: 'Footer'+ siteThemeID
+          }
+        );
+      }
+    }
 
     // Do whatever we need to do when we visit http://app.com/terms.
     console.log( "Okay, we're on the Home page!" );
@@ -103,6 +121,7 @@ var adminRoutes = FlowRouter.group({
 // handling /admin route
 adminRoutes.route('/', {
   action: function() {
+
     BlazeLayout.render('MasterLayout',
       {
         header: 'HeaderMaster',

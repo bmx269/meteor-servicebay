@@ -1,17 +1,21 @@
 <template name="MasterLayout">
-    <!--[if lt IE 9]>
-    <p class="browser-warning"><strong><i class="icon-exclamation-sign"></i> Warning</strong> - You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> to properly view this website.</p>
-  <![endif]-->
-  <div class="header">
-    {{>Template.dynamic template=header}}
-  </div>
-  <div class="content">
-    {{>Template.dynamic template=content}}
-  </div>
-  <div class="footer">
-    {{>Template.dynamic template=footer}}
-  </div>
-  {{> autoformModals}}
+  {{#if Template.subscriptionsReady}}
+      <!--[if lt IE 9]>
+      <p class="browser-warning"><strong><i class="icon-exclamation-sign"></i> Warning</strong> - You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> to properly view this website.</p>
+    <![endif]-->
+    <div class="header">
+      {{>Template.dynamic template=header}}
+    </div>
+    <div class="content">
+      {{>Template.dynamic template=content}}
+    </div>
+    <div class="footer">
+      {{>Template.dynamic template=footer}}
+    </div>
+    {{> autoformModals}}
+  {{else}}
+    {{> Loading}}
+  {{/if}}
 
 </template>
 

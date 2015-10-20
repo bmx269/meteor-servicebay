@@ -1,11 +1,11 @@
-ServiceCreateController = RouteController.extend({
-  waitOn: function () {
-  },
-
-  data: function () {
-  },
-
-  action: function () {
-    this.render();
-  }
-});
+//ServiceCreateController = RouteController.extend({
+//  waitOn: function () {
+//  },
+//
+//  data: function () {
+//  },
+//
+//  action: function () {
+//    this.render();
+//  }
+//});
