@@ -3,6 +3,9 @@
 /*****************************************************************************/
 
 
+// Tell FR to wait until our ES6 code is fully initialized
+FlowRouter.wait();
+
 var sites = new SubsManager({
     // will be cached only 20 recently used subscriptions
   cacheLimit: 20,
@@ -91,7 +94,7 @@ FlowRouter.route( '/terms', {
 FlowRouter.route( '/404', {
 
   action: function() {
-    siteThemeID = Session.get('theme');
+    var siteThemeID = Session.get('theme');
 
     BlazeLayout.render('MasterLayout',
       {
@@ -187,6 +190,10 @@ FlowRouter.notFound = {
     FlowRouter.redirect('/404');
   }
 };
+
+
+// FlowRouter is now ready to go
+FlowRouter.initialize();
 
 //Router.map(function () {
 //

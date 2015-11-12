@@ -45,7 +45,6 @@ aldeed:geocoder
 tkornblit:olark
 useraccounts:bootstrap
 service-configuration
-xolvio:cucumber
 percolate:velocityjs
 xolvio:webdriver
 dburles:mongo-collection-instances
