@@ -1,7 +1,14 @@
 <template name="About">
-  {{#with site}}
+  {{#if Template.subscriptionsReady}}
+    {{#with about}}
+      <div class="about intro">
+          {{{about.aboutIntro}}}
+      </div>
+    {{/with}}
+  {{else}}
     <div class="about intro">
-        {{{aboutIntro}}}
+      {{spinner}}
+      no data found
     </div>
-  {{/with}}
+  {{/if}}
 </template>

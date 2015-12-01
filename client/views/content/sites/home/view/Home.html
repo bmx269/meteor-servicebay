@@ -1,5 +1,9 @@
 <template name="Home">
-  {{#with site}}
-    <div class="home intro">{{{homeIntro}}}</div>
-  {{/with}}
+  {{#if Template.subscriptionsReady}}
+    {{#with intro}}
+      <div class="home intro">{{{intro.homeIntro}}}</div>
+    {{/with}}
+  {{else}}
+    {{> Loading}}
+  {{/if}}
 </template>

@@ -33,9 +33,9 @@ siteData = function(){
 };
 
 // helper function for template data
-UI.registerHelper("site", function(){
-  return siteData();
-});
+//UI.registerHelper("site", function(){
+//  return siteData();
+//});
 
 UI.registerHelper("editSite", function(){
   return editSiteData();

@@ -1,14 +1,14 @@
 <template name="ContactAddress">
-      {{#with site}}
-        <div class="contact intro">{{{contactIntro}}}</div>
+      {{#with contact}}
+        <div class="contact intro">{{{contact.contactIntro}}}</div>
 
         <div  class="address">
-          <h3 class="company">{{companyName}}</h3>
-          <div class="street">{{companyAddress}}</div>
-          <div class="city">{{companyCity}}, {{companyState}}</div>
-          <div class="country">{{companyCountry}} {{companyPostal}}</div>
-          {{#if companyPhone}}<div class="phone"><strong>Phone:</strong> {{companyPhone}}</div>{{/if}}
-          {{#if companyFax}}<div class="fax"><strong>Fax:</strong> {{companyFax}}</div>{{/if}}
+          <h3 class="company">{{contact.companyName}}</h3>
+          <div class="street">{{contact.companyAddress}}</div>
+          <div class="city">{{contact.companyCity}}, {{contact.companyState}}</div>
+          <div class="country">{{contact.companyCountry}} {{contact.companyPostal}}</div>
+          {{#if contact.companyPhone}}<div class="phone"><strong>Phone:</strong> {{contact.companyPhone}}</div>{{/if}}
+          {{#if contact.companyFax}}<div class="fax"><strong>Fax:</strong> {{contact.companyFax}}</div>{{/if}}
         </div>
       {{/with}}
 </template>
