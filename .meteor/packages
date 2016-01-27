@@ -45,10 +45,10 @@ aldeed:geocoder
 tkornblit:olark
 useraccounts:bootstrap
 service-configuration
-percolate:velocityjs
-xolvio:webdriver
+# xolvio:cucumber
+# percolate:velocityjs
+# xolvio:webdriver
 dburles:mongo-collection-instances
-msavin:mongol
 matb33:collection-hooks
 msavin:jetsetter
 mrt:fancybox
@@ -71,3 +71,5 @@ kadira:flow-router
 arillo:flow-router-helpers
 useraccounts:flow-routing
 tomwasd:history-polyfill
+tomwasd:history-polyfill
+zimme:active-route

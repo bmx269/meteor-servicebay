@@ -1,7 +1,3 @@
-/*****************************************************************************/
-/* Contact: Event Handlers and Helpers */
-/*****************************************************************************/
-
 Schema = {};
 Schema.contact = new SimpleSchema({
     name: {
@@ -21,41 +17,18 @@ Schema.contact = new SimpleSchema({
     }
 });
 
-
-Template.ContactMaster.events({
-  /*
-   * Example:
-   *  'click .selector': function (e, tmpl) {
-   *
-   *  }
-   */
-
-  contact: function(){
-    return Site.findOneFaster({'_id': Session.get("selectedDocId")},{fields: {'contactIntro': 1}});
-  }
+Template.ContactMaster.onCreated(function() {
+    var self = this;
+    self.autorun(function() {
+        var siteId = Session.get("selectedDocId")
+        self.subscribe('siteData', siteId)
+    });
 });
 
 Template.ContactMaster.helpers({
-  /*
-   * Example:
-   *  items: function () {
-   *    return Items.find();
-   *  }
-   */
-
-    contactFormSchema: function() {
-        return Schema.contact;
+    contact: function() {
+        var siteId = Session.get("selectedDocId")
+        var contact =  Site.findOneFaster({'_id': siteId},{fields: {'contactIntro': 1}});
+        return contact;
     }
 });
-
-/*****************************************************************************/
-/* Contact: Lifecycle Hooks */
-/*****************************************************************************/
-Template.ContactMaster.created = function () {
-};
-
-Template.ContactMaster.rendered = function () {
-};
-
-Template.ContactMaster.destroyed = function () {
-};

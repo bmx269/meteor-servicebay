@@ -37,9 +37,10 @@
 //  return siteData();
 //});
 //
-//UI.registerHelper("editSite", function(){
-//  return editSiteData();
-//});
+
+UI.registerHelper("editSite", function(){
+  return editSiteData();
+});
 
 
 quickEditSiteData = function(){

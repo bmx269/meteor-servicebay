@@ -1,32 +1,16 @@
-/*****************************************************************************/
-/* SiteAbout: Event Handlers and Helpers */
-/*****************************************************************************/
-Template.About.events({
-  /*
-   * Example:
-   *  'click .selector': function (e, tmpl) {
-   *
-   *  }
-   */
+Template.About.onCreated(function() {
+  var self = this;
+  self.autorun(function() {
+    var siteId = Session.get("selectedDocId");
+    self.subscribe('siteData', siteId);
+  });
 });
 
 Template.About.helpers({
-  /*
-   * Example:
-   *  items: function () {
-   *    return Items.find();
-   *  }
-   */
+  about: function() {
+    var siteId = Session.get("selectedDocId");
+    console.log(siteId);
+    var about =  Site.findOneFaster({'_id': siteId},{fields: {'aboutIntro': 1}});
+    return about;
+  }
 });
-
-/*****************************************************************************/
-/* SiteAbout: Lifecycle Hooks */
-/*****************************************************************************/
-Template.About.created = function () {
-};
-
-Template.About.rendered = function () {
-};
-
-Template.About.destroyed = function () {
-};

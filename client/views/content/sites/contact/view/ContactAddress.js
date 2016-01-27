@@ -1,31 +1,15 @@
-/*****************************************************************************/
-/* Contact: Event Handlers and Helpers */
-/*****************************************************************************/
-Template.ContactAddress.events({
-  /*
-   * Example:
-   *  'click .selector': function (e, tmpl) {
-   *
-   *  }
-   */
+Template.ContactAddress.onCreated(function() {
+  var self = this;
+  self.autorun(function() {
+    var siteId = Session.get("selectedDocId")
+    self.subscribe('siteData', siteId)
+  });
 });
-
-
 
 Template.ContactAddress.helpers({
-
+  contact: function() {
+    var siteId = Session.get("selectedDocId")
+    var contact =  Site.findOneFaster({'_id': siteId},{fields: {'contactIntro': 1,'companyName': 1, 'companyAddress': 1}});
+    return contact;
+  }
 });
-
-/*****************************************************************************/
-/* Contact: Lifecycle Hooks */
-/*****************************************************************************/
-Template.ContactAddress.created = function () {
-
-};
-
-
-Template.ContactAddress.rendered = function () {
-};
-
-Template.ContactAddress.destroyed = function () {
-};
