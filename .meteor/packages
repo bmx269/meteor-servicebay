@@ -48,11 +48,10 @@ aldeed:geocoder
 tkornblit:olark
 useraccounts:bootstrap
 service-configuration
-xolvio:cucumber
-percolate:velocityjs
-xolvio:webdriver
+# xolvio:cucumber
+# percolate:velocityjs
+# xolvio:webdriver
 dburles:mongo-collection-instances
-msavin:mongol
 matb33:collection-hooks
 msavin:jetsetter
 mrt:fancybox
@@ -69,5 +68,11 @@ aldeed:http
 chrismbeckett:toastr
 cfs:dropbox
 kadira:blaze-plus
+# kadira:blaze-layout
+# kadira:flow-router
+# arillo:flow-router-helpers
+# useraccounts:flow-routing
 yogiben:autoform-modals
 standard-minifiers
+tomwasd:history-polyfill
+# zimme:active-route
