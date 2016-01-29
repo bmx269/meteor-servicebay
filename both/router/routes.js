@@ -3,12 +3,12 @@
  /*****************************************************************************/
 
 
- var sites = new SubsManager({
-     // will be cached only 20 recently used subscriptions
-   cacheLimit: 20,
-   // any subscription will be expired after 5 minutes of inactivity
-   expireIn: 5
- });
+ //var sites = new SubsManager({
+ //    // will be cached only 20 recently used subscriptions
+ //  cacheLimit: 20,
+ //  // any subscription will be expired after 5 minutes of inactivity
+ //  expireIn: 5
+ //});
 
  Router.configure({
    layoutTemplate: 'MasterLayout',
@@ -19,11 +19,11 @@
    templateNameConverter: 'upperCamelCase',
    routeControllerNameConverter: 'upperCamelCase',
 
-   waitOn: function() {
-     headers;
-     //return subs.subscribe('findSite', {domain: host});
-     return sites.subscribe('site', host);
-   },
+   //waitOn: function() {
+   //  headers;
+   //  //return subs.subscribe('findSite', {domain: host});
+   //  return sites.subscribe('site', host);
+   //},
 
    //onBeforeAction: function() {
      //IR_Filters.baseSubscriptions();

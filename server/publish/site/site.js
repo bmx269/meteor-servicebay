@@ -18,7 +18,7 @@ Meteor.publish('findSite', function (host) {
 Meteor.publish('site', function (host) {
   check(host, String);
   console.log(host);
-  //Meteor._sleepForMs(5000);
+  Meteor._sleepForMs(2000);
   return Site.findFaster({'domain': host},{fields: {'createdAt': 0}});
 });
 
