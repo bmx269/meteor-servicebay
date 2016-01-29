@@ -1,10 +1,5 @@
 Meteor.startup(function () {
   GoogleMaps.load();
-});
-
-<<<<<<< HEAD
-=======
-Meteor.startup(function() {
 
   //var collections = _.map(Mongo.Collection.getAll(),function(collection) {
   //  var collectionName = collection.name;
@@ -21,4 +16,3 @@ Meteor.startup(function() {
 });
 
 
->>>>>>> 55520c6098e6984964d6eaf061e3286d78432bfa

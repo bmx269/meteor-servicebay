@@ -45,9 +45,6 @@ aldeed:geocoder
 tkornblit:olark
 useraccounts:bootstrap
 service-configuration
-# xolvio:cucumber
-# percolate:velocityjs
-# xolvio:webdriver
 dburles:mongo-collection-instances
 matb33:collection-hooks
 msavin:jetsetter
@@ -70,6 +67,5 @@ kadira:blaze-layout
 kadira:flow-router
 arillo:flow-router-helpers
 useraccounts:flow-routing
-tomwasd:history-polyfill
 tomwasd:history-polyfill
 zimme:active-route

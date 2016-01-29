@@ -1,6 +1,23 @@
 /*****************************************************************************/
 /* Client and Server Routes */
 /*****************************************************************************/
+AccountsTemplates.configureRoute('signIn', {
+  name: 'signIn',
+  path: '/user',
+  redirect: '/dashboard',
+});
+//
+//AccountsTemplates.configureRoute('signUp', {
+//  name: 'signUp',
+//  path: '/user/register',
+//  redirect: '/welcome',
+//});
+//
+
+AccountsTemplates.configureRoute('forgotPwd', {
+  name: 'forgotPwd',
+  path: '/user/password'
+});
 
 
 // Tell FR to wait until our ES6 code is fully initialized
@@ -55,7 +72,7 @@ FlowRouter.route( '/', {
       else {
         BlazeLayout.render('MasterLayout',
           {
-            header: 'Header'+ siteThemeID,
+            layout: 'Header'+ siteThemeID,
             content: 'Home'+ siteThemeID,
             footer: 'Footer'+ siteThemeID
           }
