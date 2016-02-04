@@ -70,3 +70,28 @@ toastr.options = {
   "showMethod": "fadeIn",
   "hideMethod": "fadeOut"
 }
+
+
+// set global siteThemeID variable
+siteThemeID = Session.get('theme');
+
+Template.registerHelper('appReady', function () {
+  return Template.instance().subscriptionsReady();
+});
+
+
+Template.registerHelper('siteThemeMaster', function () {
+  return siteThemeID === 'Master';
+});
+Template.registerHelper('siteTheme0', function () {
+  return siteThemeID === '0';
+});
+Template.registerHelper('siteTheme1', function () {
+  return siteThemeID === '1';
+});
+Template.registerHelper('siteTheme2', function () {
+  return siteThemeID === '2';
+});
+Template.registerHelper('siteTheme3', function () {
+  return siteThemeID === '3';
+});

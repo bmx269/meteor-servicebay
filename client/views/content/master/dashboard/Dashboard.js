@@ -1,19 +1,3 @@
-/*****************************************************************************/
-/* Dashboard: Event Handlers and Helpers */
-/*****************************************************************************/
-Template.Dashboard.events({
-  /*
-   * Example:
-   *  'click .selector': function (e, tmpl) {
-   *
-   *  }
-   */
-
-});
-
-
-//
-
 Template.sitesList.rendered = function () {
   $(".fancybox").click(function(e){
     e.preventDefault();
@@ -23,7 +7,6 @@ Template.sitesList.rendered = function () {
     padding : 10
     //openEffect  : 'elastic'
   });
-
 };
 
 
@@ -118,16 +101,4 @@ Template.site.events = {
       toastr.success ('The Site has been Deleted.','Success');
     }
   }
-};
-
-/*****************************************************************************/
-/* Dashboard: Lifecycle Hooks */
-/*****************************************************************************/
-Template.Dashboard.created = function () {
-};
-
-Template.Dashboard.rendered = function () {
-};
-
-Template.Dashboard.destroyed = function () {
 };

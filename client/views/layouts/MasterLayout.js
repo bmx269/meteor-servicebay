@@ -47,11 +47,10 @@ Template.MasterLayout.onCreated(function() {
 });
 
 Template.MasterLayout.helpers({
-  appReady: function () {
-    return Template.instance().subscriptionsReady();
-  },
   siteData: function () {
     var domain = theDomain.get();
     return Site.findOneFaster({'domain': domain});
   },
 });
+
+
