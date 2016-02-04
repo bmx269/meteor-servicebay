@@ -1,117 +1,71 @@
-/*****************************************************************************/
-/* Header: Event Handlers and Helpers */
-/*****************************************************************************/
-Template.HeaderMaster.events({
-  /*
-   * Example:
-   *  'click .selector': function (e, tmpl) {
-   *
-   *  }
-   */
+Template.Header.helpers({
+  appReady: function () {
+    return Template.instance().subscriptionsReady();
+  },
+  siteThemeMaster: function(){
+    var siteThemeID = Session.get('theme');
+    console.log('theme function')
+    return siteThemeID === 'Master';
+  },
+  siteTheme0: function(){
+    var siteThemeID = Session.get('theme');
+    console.log('theme function')
+    return siteThemeID === '0';
+  },
+  siteTheme1: function(){
+    var siteThemeID = Session.get('theme');
+    console.log('theme function')
+    return siteThemeID === '1';
+  },
+  siteTheme2: function(){
+    var siteThemeID = Session.get('theme');
+    console.log('theme function')
+    return siteThemeID === '2';
+  },
+  siteTheme3: function(){
+    var siteThemeID = Session.get('theme');
+    console.log('theme function')
+    return siteThemeID === '3';
+  },
+  siteData: function() {
+    var siteId = Session.get("selectedDocId");
+    console.log('header data')
+    return Site.findOneFaster({'_id': siteId},{fields: {'siteTitle': 1}});
+  },
 });
 
-Template.HeaderMaster.helpers({
-  /*
-   * Example:
-   *  items: function () {
-   *    return Items.find();
-   *  }
-   */
-  header: function(){
-    return Site.findOneFaster({'_id': Session.get("selectedDocId")},{fields: {'siteTitle': 1}});
-  }
+Template.HomeHeader.helpers({
+  appReady: function () {
+    return Template.instance().subscriptionsReady();
+  },
+  siteThemeMaster: function(){
+    var siteThemeID = Session.get('theme');
+    console.log('theme function')
+    return siteThemeID === 'Master';
+  },
+  siteTheme0: function(){
+    var siteThemeID = Session.get('theme');
+    console.log('theme function')
+    return siteThemeID === '0';
+  },
+  siteTheme1: function(){
+    var siteThemeID = Session.get('theme');
+    console.log('theme function')
+    return siteThemeID === '1';
+  },
+  siteTheme2: function(){
+    var siteThemeID = Session.get('theme');
+    console.log('theme function')
+    return siteThemeID === '2';
+  },
+  siteTheme3: function(){
+    var siteThemeID = Session.get('theme');
+    console.log('theme function')
+    return siteThemeID === '3';
+  },
+  siteData: function() {
+    var siteId = Session.get("selectedDocId");
+    console.log('header data')
+    return Site.findOneFaster({'_id': siteId},{fields: {'siteTitle': 1, 'homeSplash' : 1}});
+  },
 });
-
-Template.HomeHeaderMaster.helpers({
-  /*
-   * Example:
-   *  items: function () {
-   *    return Items.find();
-   *  }
-   */
-  header: function(){
-    return Site.findOneFaster({'_id': Session.get("selectedDocId")},{fields: {'homeSplash': 1, 'siteTitle': 1}});
-  }
-});
-
-/*****************************************************************************/
-/* Header: Lifecycle Hooks */
-/*****************************************************************************/
-Template.HeaderMaster.created = function () {
-};
-
-Template.HeaderMaster.rendered = function () {
-
-};
-
-Template.HeaderMaster.destroyed = function () {
-};
-
-Template.HomeHeaderMaster.rendered = function () {
-
-  if(navigator.userAgent.match(/(iPhone|iPod|iPad)/i)){
-
-  }
-  else{
-    //paralax
-    $(window).stellar({
-      horizontalScrolling: false,
-      responsive: true
-    });
-  }
-};
-
-Template.EditHomeHeaderMaster.rendered = function () {
-
-  if(navigator.userAgent.match(/(iPhone|iPod|iPad)/i)){
-
-  }
-  else{
-    //paralax
-    $(window).stellar({
-      horizontalScrolling: false,
-      responsive: true
-    });
-  }
-};
-
-Template.Header2.rendered = function () {
-
-  if(navigator.userAgent.match(/(iPhone|iPod|iPad)/i)){
-
-  }
-  else{
-    //paralax
-    $(window).stellar({
-      horizontalScrolling: false,
-      responsive: true
-    });
-  }
-
-  $("a.home").click(function(e){
-    e.preventDefault();
-    scrollUp();
-  });
-};
-
-Template.EditHeader2.rendered = function () {
-
-  if(navigator.userAgent.match(/(iPhone|iPod|iPad)/i)){
-
-  }
-  else{
-    //paralax
-    $(window).stellar({
-      horizontalScrolling: false,
-      responsive: true
-    });
-  }
-
-  //$(window).attr('data-stellar-ratio', 0.5);
-  //$.stellar();
-
-  $("a.home").click(function(e){
-    e.preventDefault();
-    scrollUp();
-  });
-};

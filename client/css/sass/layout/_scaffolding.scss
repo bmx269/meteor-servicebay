@@ -171,24 +171,24 @@ hr {
       padding-bottom: 20px;
     }
 
-    &.home{
-      background: url("/img/home-splash.jpg") center center no-repeat;
-      background-size: cover;
-
-      .splash{
-        height: 300px;
-        position: relative;
-
-        @include at-breakpoint($narrow){
-        }
-        @include at-breakpoint($tablet){
-          height: 350px;
-        }
-        @include at-breakpoint($computer){
-          height: 450px;
-        }
-      }
-    }
+    //&.home{
+    //  background: url("/img/home-splash.jpg") center center no-repeat;
+    //  background-size: cover;
+    //
+    //  .splash{
+    //    height: 300px;
+    //    position: relative;
+    //
+    //    @include at-breakpoint($narrow){
+    //    }
+    //    @include at-breakpoint($tablet){
+    //      height: 350px;
+    //    }
+    //    @include at-breakpoint($computer){
+    //      height: 450px;
+    //    }
+    //  }
+    //}
   }
 
   #content-wrapper{
@@ -250,24 +250,24 @@ hr {
       padding-bottom: 20px;
     }
 
-    &.home{
-      background: url("/img/home-splash.jpg") center center no-repeat;
-      background-size: cover;
-
-      .splash{
-        height: 300px;
-        position: relative;
-
-        @include at-breakpoint($narrow){
-        }
-        @include at-breakpoint($tablet){
-          height: 350px;
-        }
-        @include at-breakpoint($computer){
-          height: 450px;
-        }
-      }
-    }
+    //&.home{
+    //  background: url("/img/home-splash.jpg") center center no-repeat;
+    //  background-size: cover;
+    //
+    //  .splash{
+    //    height: 300px;
+    //    position: relative;
+    //
+    //    @include at-breakpoint($narrow){
+    //    }
+    //    @include at-breakpoint($tablet){
+    //      height: 350px;
+    //    }
+    //    @include at-breakpoint($computer){
+    //      height: 450px;
+    //    }
+    //  }
+    //}
   }
 
   #content-wrapper{
@@ -475,26 +475,26 @@ hr {
       padding-bottom: 20px;
     }
 
-    &.home{
-      background: url("/img/home-splash.jpg") center center no-repeat;
-      background-size: cover;
-
-      .splash{
-        height: 230px;
-        position: relative;
-        margin-top: 70px;
-
-        @include at-breakpoint($narrow){
-        }
-        @include at-breakpoint($tablet){
-          height: 280px;
-        }
-        @include at-breakpoint($computer){
-          height: 380px;
-
-        }
-      }
-    }
+    //&.home{
+    //  background: url("/img/home-splash.jpg") center center no-repeat;
+    //  background-size: cover;
+    //
+    //  .splash{
+    //    height: 230px;
+    //    position: relative;
+    //    margin-top: 70px;
+    //
+    //    @include at-breakpoint($narrow){
+    //    }
+    //    @include at-breakpoint($tablet){
+    //      height: 280px;
+    //    }
+    //    @include at-breakpoint($computer){
+    //      height: 380px;
+    //
+    //    }
+    //  }
+    //}
   }
 
   #content-wrapper{

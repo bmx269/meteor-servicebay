@@ -1,74 +1,57 @@
-/*****************************************************************************/
-/* MasterLayout: Event Handlers and Helpers */
-/*****************************************************************************/
-Template.MasterLayout.events({
-  /*
-   * Example:
-   *  'click .selector': function (e, tmpl) {
-   *
-   *  }
-   */
-});
-
-Template.MasterLayout.helpers({
-  /*
-   * Example:
-   *  items: function () {
-   *    return Items.find();
-   *  }
-   */
-});
-
-/*****************************************************************************/
-/* MasterLayout: Lifecycle Hooks */
-/*****************************************************************************/
-Template.MasterLayout.created = function () {
-};
-
-Template.MasterLayout.rendered = function () {
-};
-
-Template.MasterLayout.destroyed = function () {
-};
-
 Template.MasterLayout.onCreated(function() {
   var self = this;
+
+  var sub = new SubsManager({
+    // will be cached only 20 recently used subscriptions
+    cacheLimit: 20,
+    // any subscription will be expired after 5 minutes of inactivity
+    expireIn: 5
+  });
+  // check to make sure headers are loaded
+  var headersReady = headers.ready();
+
+  if (headersReady) {
+
+    // get url and strip http and www
+    var getHost =  headers.get('host');
+
+    var domain = String(getHost).replace(/^www\./,'');
+    console.log('headersReady - var domain: ' + domain);
+    // set domain in session
+    Session.set("domain", domain);
+    theDomain = new ReactiveVar(domain);
+    // subscribe to site db
+    console.log('ReactiveVar - domain: ' + theDomain);
+
+  }
   self.autorun(function() {
-    var headersReady = headers.ready();
+    var domain = theDomain.get();
+    console.log('autorun - var domain: ' + domain);
+    sub.subscribe('site', domain);
 
-    if (headersReady) {
-      // get url and strip http and www
-      var getHost =  headers.get('host');
-      var domain = String(getHost).replace(/^www\./,'');
+    // find data based on session domain
+    var theSite = Site.findOneFaster({'domain': domain});
 
-      // set domain in session
-      Session.set("domain", domain);
+    if (theSite) {
+      console.log('site - found');
 
-       //find data based on session domain
-      var theSite = Site.findOneFaster({'domain': domain});
+      // set theme session for theme function
+      // set document title
+      Session.set('selectedDocId', theSite._id);
+      Session.set("theme", theSite.siteTheme);
+      document.title = theSite.siteTitle;
 
-      if (theSite) {
-        console.log('siteData - found');
-        // set theme session for theme function
-        // set document title
-
-        Session.set('selectedDocId', theSite._id);
-        Session.set("theme", theSite.siteTheme);
-        document.title = theSite.siteTitle;
-
-        //return theSite;
-      };
-    };
-    var host = Session.get("domain");
-    //console.log(host)
-    self.subscribe('site', host)
+      return theSite;
+    }
   });
 });
 
 Template.MasterLayout.helpers({
-  site: function() {
-    var siteId = Session.get("selectedDocId")
-    var site =  Site.findOneFaster({'_id': siteId});
-    return site;
-  }
+  appReady: function () {
+    return Template.instance().subscriptionsReady();
+  },
+  siteData: function () {
+    var domain = theDomain.get();
+    return Site.findOneFaster({'domain': domain});
+  },
 });

@@ -23,87 +23,43 @@ AccountsTemplates.configureRoute('forgotPwd', {
 // Tell FR to wait until our ES6 code is fully initialized
 FlowRouter.wait();
 
-var sites = new SubsManager({
-    // will be cached only 20 recently used subscriptions
-  cacheLimit: 20,
-  // any subscription will be expired after 5 minutes of inactivity
-  expireIn: 5
-});
-
-
-//Router.plugin('ensureSignedIn', {
-//    only: [
-//      'dashboard',
-//      'subscription.index',
-//      'theme.index',
-//      'create.subscription',
-//      'edit.subscription',
-//      'create.site',
-//      'edit.site',
-//      'services.create',
-//      'services.edit',
-//      'edit.home',
-//      'edit.services',
-//      'edit.about',
-//      'edit.contact',
-//      'welcome'
-//      ]
-//});
-
-
 
 FlowRouter.route( '/', {
   action: function() {
-
-    var siteThemeID = Session.get('theme');
-    var themeMasterID = App.variables.themeMaster;
-
-    if (siteThemeID !== 'None') {
-
-      if (App.themeIsMaster()) {
-        BlazeLayout.render('MasterLayout',
-          {
-            header: 'Header'+ themeMasterID,
-            content: 'HomeMaster',
-            footer: 'Footer'+ themeMasterID
-          }
-        );
+    BlazeLayout.render('MasterLayout',
+      {
+        layout: 'HomeLayout',
       }
-      else {
-        BlazeLayout.render('MasterLayout',
-          {
-            layout: 'Header'+ siteThemeID,
-            content: 'Home'+ siteThemeID,
-            footer: 'Footer'+ siteThemeID
-          }
-        );
-      }
-    }
+    );
     console.log( "Okay, we're on the Home page!" );
   },
   name: 'home' // Optional route name.
 });
 
-FlowRouter.route( '/terms', {
-
+FlowRouter.route( '/features', {
   action: function() {
+    BlazeLayout.render('MasterLayout',
+      {
+        header: 'Header',
+        content: 'Features',
+        footer: 'Footer'
+      }
+    );
+    console.log( "Okay, we're on the Features page!" );
+  },
+  name: 'features' // Optional route name.
+});
 
-    var siteThemeID = Session.get('theme');
-    var themeMasterID = App.variables.themeMaster;
-
-    if (App.themeIsMaster()) {
-      BlazeLayout.render('MasterLayout',
-        {
-          header: 'Header'+ themeMasterID,
-          content: 'Terms',
-          footer: 'Footer'+ themeMasterID
-        }
-      );
-      console.log( "Okay, we're on the Terms page!" );
-    }
-    else {
-      FlowRouter.redirect('/404');
-    }
+FlowRouter.route( '/terms', {
+  action: function() {
+    BlazeLayout.render('MasterLayout',
+      {
+        header: 'Header',
+        content: 'Terms',
+        footer: 'Footer'
+      }
+    );
+    console.log( "Okay, we're on the Terms page!" );
   },
   name: 'termsOfService' // Optional route name.
 });
@@ -111,13 +67,11 @@ FlowRouter.route( '/terms', {
 FlowRouter.route( '/404', {
 
   action: function() {
-    var siteThemeID = Session.get('theme');
-
     BlazeLayout.render('MasterLayout',
       {
-        header: 'Header'+ siteThemeID,
-        content: 'NotFound'+ siteThemeID,
-        footer: 'Footer'+ siteThemeID
+        header: 'Header' + siteThemeID,
+        content: 'Home' + siteThemeID,
+        footer: 'Footer' + siteThemeID
       }
     );
     console.log( "Okay, we're on the 404 page!" );
@@ -142,22 +96,13 @@ var adminRoutes = FlowRouter.group({
 
 adminRoutes.route('/', {
   action: function() {
-
-    var siteThemeID = Session.get('theme');
-    var themeMasterID = App.variables.themeMaster;
-
-    if (App.themeIsMaster()) {
-      BlazeLayout.render('MasterLayout',
-        {
-          header: 'Header'+ themeMasterID,
-          content: 'Dashboard',
-          footer: 'Footer'+ themeMasterID
-        }
-      );
-    }
-    else {
-      FlowRouter.redirect('/404');
-    }
+     BlazeLayout.render('MasterLayout',
+      {
+        header: 'Header'+ themeMasterID,
+        content: 'Dashboard',
+        footer: 'Footer'+ themeMasterID
+      }
+    );
   },
   name: 'dashboard', // Optional route name.
   triggersEnter: [function(context, redirect) {

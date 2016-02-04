@@ -1,242 +1,127 @@
-<template name="HeaderNone">
-  <div id="header-wrapper">
-    <div class="container">
-      <header>
-        <div id="branding">
-          <a href="http://servicebay.ca/"><img src="/img/logo.png" title="{{siteTitle}}" alt="ServiceBay Logo"></a>
-        </div>
-      </header>
+
+<template name="Header">
+  {{#if appReady}}
+
+    {{#if siteThemeMaster}}
+      {{> topMenu}}
+    {{/if}}
+    <div id="header-wrapper">
+      <div class="container">
+        <header>
+          <div id="branding">
+            {{#if siteTheme0}}
+              <h1><a href="{{pathFor 'home'}}">{{siteData.siteTitle}}</a></h1>
+            {{/if}}
+            {{#if siteTheme1}}
+              <h1><a href="{{pathFor 'home'}}">{{siteData.siteTitle}}</a></h1>
+            {{/if}}
+            {{#if siteTheme2}}
+              <h1><a href="{{pathFor 'home'}}">{{siteData.siteTitle}}</a></h1>
+            {{/if}}
+            {{#if siteThene3}}
+              <h1><a href="{{pathFor 'home'}}">{{siteData.siteTitle}}</a></h1>
+            {{/if}}
+            {{#if siteThemeMaster}}
+              <a href="{{pathFor 'home'}}"><img src="/img/logo.png" title="{{siteData.siteTitle}}" alt="ServiceBay Logo"></a>
+            {{/if}}
+          </div>
+          {{#if siteTheme0}}
+            {{> Menu0}}
+          {{/if}}
+          {{#if siteTheme1}}
+            {{> Menu1}}
+          {{/if}}
+          {{#if siteTheme2}}
+            {{> Menu2}}
+          {{/if}}
+          {{#if siteTheme3}}
+            {{> Menu3}}
+          {{/if}}
+          {{#if siteThemeMaster}}
+            {{> MenuMaster}}
+          {{/if}}
+        </header>
+      </div>
     </div>
-  </div>
+  {{else}}
+    {{> spinner}}
+  {{/if}}
 </template>
 
-<template name="HeaderMaster">
-    {{> topMenu}}
-  <div id="header-wrapper">
-    <div class="container">
-      <header>
-        <div id="branding">
-            <a href="{{pathFor 'home'}}"><img src="/img/logo.png" title="{{siteTitle}}" alt="ServiceBay Logo"></a>
-        </div>
-          {{> MenuMaster}}
-      </header>
-    </div>
-  </div>
-</template>
-
-<template name="HomeHeaderMaster">
-    {{> topMenu}}
+<template name="HomeHeader">
+  {{#if appReady}}
+    {{#if siteThemeMaster}}
+      {{> topMenu}}
+    {{/if}}
     <div id="header-wrapper" class="home" >
-      {{#with header}}
+
+
+      <div class="container">
+        <header>
+          <div id="branding">
+            {{#if siteTheme0}}
+              <h1><a href="{{pathFor 'home'}}">{{siteData.siteTitle}}</a></h1>
+            {{/if}}
+            {{#if siteTheme1}}
+              <h1><a href="{{pathFor 'home'}}">{{siteData.siteTitle}}</a></h1>
+            {{/if}}
+            {{#if siteTheme2}}
+              <h1><a href="{{pathFor 'home'}}">{{siteData.siteTitle}}</a></h1>
+            {{/if}}
+            {{#if siteThene3}}
+              <h1><a href="{{pathFor 'home'}}">{{siteData.siteTitle}}</a></h1>
+            {{/if}}
+            {{#if siteThemeMaster}}
+                <a href="{{pathFor 'home'}}"><img src="/img/logo-white.png" title="{{siteData.siteTitle}}" alt="ServiceBay Logo"></a>
+            {{/if}}
+          </div>
+          {{#if siteTheme0}}
+            {{> Menu0}}
+          {{/if}}
+          {{#if siteTheme1}}
+            {{> Menu1}}
+          {{/if}}
+          {{#if siteTheme2}}
+            {{> Menu2}}
+          {{/if}}
+          {{#if siteTheme3}}
+            {{> Menu3}}
+          {{/if}}
+          {{#if siteThemeMaster}}
+            {{> MenuMaster}}
+          {{/if}}
+        </header>
+
+        {{#if siteThemeMaster}}
           <style type="text/css">
             .themeMaster #header-wrapper.home {
-              background-image: url({{homeSplash}});
+              background-image: url({{siteData.homeSplash}});
               background-size: cover;
             }
           </style>
-      {{/with}}
-
-  <div class="container">
-        <header>
-          <div id="branding">
-            <a href="{{pathFor 'home'}}"><img src="/img/logo-white.png" title="{{siteTitle}}" alt="ServiceBay Logo"></a>
-          </div>
-          {{> MenuMaster}}
-        </header>
           <div id="splash" class="home">
               <h2 class="slogan">I focus on what I am good at, <span class="break">&amp; so does my website.</span></h2>
           </div>
+        {{/if}}
+
       </div>
     </div>
 
-</template>
-
-
-<template name="Header0">
-  <div id="header-wrapper">
-    <div class="container">
-      <header>
-          {{> Menu0}}
-          <div id="branding">
-              {{#with site}}
-                <h1><a href="{{pathFor 'home'}}">{{siteTitle}}</a></h1>
-              {{/with}}
-          </div>
-      </header>
-    </div>
-  </div>
-</template>
-
-
-<template name="Header1">
-  <div id="header-wrapper">
-    <div class="container">
-      <header>
-        <div id="branding">
-          {{#with site}}
-            <h1><a href="{{pathFor 'home'}}">{{siteTitle}}</a></h1>
-          {{/with}}
+    {{#if siteTheme2}}
+      <style type="text/css">
+        .theme2 #splash {
+          background-image: url({{siteData.homeSplash}});
+          background-size: cover;
+        }
+      </style>
+      <div id="splash" data-stellar-ratio="0.5">
+        <div class="container">
+          <h2 class="intro"></h2>
         </div>
-          {{> Menu1}}
-      </header>
-    </div>
-  </div>
-</template>
-
-
-<template name="Header2">
-  <div id="header-wrapper">
-    <div class="container">
-      <header>
-        <div id="branding">
-            {{#with site}}
-              <h1><a href="{{pathFor route='home' hash=''}}" class="home">{{siteTitle}}</a></h1>
-            {{/with}}
-        </div>
-          {{> Menu2}}
-      </header>
-    </div>
-  </div>
-  {{#with editSite}}
-    <style type="text/css">
-      .theme2 #splash {
-        background-image: url({{homeSplash}});
-        background-size: cover;
-      }
-    </style>
-    <div id="splash" data-stellar-ratio="0.5">
-      <div class="container">
-        <h2 class="intro"></h2>
       </div>
-    </div>
-  {{/with}}
-</template>
+    {{/if}}
 
-
-<template name="Header3">
-  <div id="header-wrapper">
-    <div class="container">
-      <header>
-        <div id="branding">
-            {{#with site}}
-              <h1><a href="{{pathFor 'home'}}">{{siteTitle}}</a></h1>
-            {{/with}}
-        </div>
-          {{> Menu3}}
-      </header>
-    </div>
-  </div>
-</template>
-
-
-
-<!-- WYSIWYG Editing -->
-
-
-<template name="EditHeaderMaster">
-  {{> topMenu}}
-  <div id="header-wrapper" class="editor">
-    <div class="container">
-      <header>
-        <div id="branding">
-          <a href="{{pathFor 'edit.home'}}"><img src="/img/logo.png" title="{{siteTitle}}" alt="ServiceBay Logo"></a>
-        </div>
-        {{> EditMenuMaster}}
-      </header>
-    </div>
-  </div>
-</template>
-
-<template name="EditHomeHeaderMaster">
-  {{> topMenu}}
-  <div id="header-wrapper" class="home editor">
-    <div class="container">
-      <header>
-        <div id="branding">
-          <a href="{{pathFor 'edit.home'}}"><img src="/img/logo-white.png" title="{{siteTitle}}" alt="ServiceBay Logo"></a>
-        </div>
-        {{> EditMenuMaster}}
-      </header>
-      <div class="splash">
-        <h2 class="intro">I focus on what I am good at, <span class="break">&amp; so does my website.</span></h2>
-      </div>
-    </div>
-  </div>
-</template>
-
-
-<template name="EditHeader0">
-  <div id="header-wrapper" class="editor">
-    <div class="container">
-      <header>
-        {{> EditMenu0}}
-        <div id="branding">
-          {{#with editSite}}
-            <h1><a href="{{pathFor 'edit.home'}}">{{siteTitle}}</a></h1>
-          {{/with}}
-        </div>
-      </header>
-    </div>
-  </div>
-</template>
-
-
-<template name="EditHeader1">
-  <div id="header-wrapper" class="editor">
-    <div class="container">
-      <header>
-        <div id="branding">
-          {{#with editSite}}
-            <h1><a href="{{pathFor 'edit.home'}}">{{siteTitle}}</a></h1>
-          {{/with}}
-        </div>
-        {{> EditMenu1}}
-      </header>
-    </div>
-  </div>
-</template>
-
-
-<template name="EditHeader2">
-  <div id="header-wrapper" class="editor">
-    <div class="container">
-      <header>
-        <div id="branding">
-          {{#with editSite}}
-            <h1><a href="{{pathFor 'edit.home'}}" class="home">{{siteTitle}}</a></h1>
-          {{/with}}
-        </div>
-        {{> EditMenu2}}
-      </header>
-    </div>
-  </div>
-  {{#with editSite}}
-    <style type="text/css">
-      .theme2 #splash {
-        background-image: url({{homeSplash}});
-        background-size: cover;
-      }
-    </style>
-    <div id="splash" data-stellar-ratio="0.5">
-      <div class="container">
-        <h2 class="intro"></h2>
-      </div>
-    </div>
-  {{/with}}
-</template>
-
-
-<template name="EditHeader3">
-  <div id="header-wrapper" class="editor">
-    <div class="container">
-      <header>
-        <div id="branding">
-          {{#with editSite}}
-            <h1><a href="{{pathFor 'edit.home'}}">{{siteTitle}}</a></h1>
-          {{/with}}
-        </div>
-        {{> EditMenu3}}
-      </header>
-    </div>
-  </div>
+  {{else}}
+    {{> spinner}}
+  {{/if}}
 </template>

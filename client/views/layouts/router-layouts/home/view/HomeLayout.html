@@ -1,0 +1,38 @@
+<template name="HomeLayout">
+
+  {{#if appReady}}
+
+    <div class="header">
+      {{> HomeHeader}}
+    </div>
+
+    <div class="content">
+      {{#if siteThemeMaster}}
+        {{> HomeMaster}}
+      {{/if}}
+
+      {{#if siteTheme0}}
+        {{> Home0}}
+      {{/if}}
+
+      {{#if siteTheme1}}
+        {{> Home1}}
+      {{/if}}
+
+      {{#if siteTheme2}}
+        {{> Home2}}
+      {{/if}}
+
+      {{#if siteTheme3}}
+        {{> Home3}}
+      {{/if}}
+    </div>
+
+    <div class="footer">
+      {{> Footer}}
+    </div>
+
+  {{else}}
+    {{> spinner}}
+  {{/if}}
+</template>

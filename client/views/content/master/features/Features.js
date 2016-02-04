@@ -1,32 +1,12 @@
-/*****************************************************************************/
-/* Features: Event Handlers and Helpers */
-/*****************************************************************************/
-Template.Features.events({
-  /*
-   * Example:
-   *  'click .selector': function (e, tmpl) {
-   *
-   *  }
-   */
-});
-
 Template.Features.helpers({
-  /*
-   * Example:
-   *  items: function () {
-   *    return Items.find();
-   *  }
-   */
+  appReady: function () {
+    return Template.instance().subscriptionsReady();
+  },
+  siteData: function() {
+    var siteId = Session.get("selectedDocId");
+
+    if (App.themeIsMaster()) {
+      return Site.findOneFaster({'_id': siteId},{fields: {'featuresIntro': 1}});
+    }
+  },
 });
-
-/*****************************************************************************/
-/* Features: Lifecycle Hooks */
-/*****************************************************************************/
-Template.Features.created = function () {
-};
-
-Template.Features.rendered = function () {
-};
-
-Template.Features.destroyed = function () {
-};

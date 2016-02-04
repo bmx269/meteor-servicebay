@@ -1,8 +1,14 @@
 <template name="Features">
-  <div id="feature-intro-wrapper">
-    <div class="container">
-      <h1>Features</h1>
-    </div>
-  </div>
-  {{> FeaturesDetails}}
+  {{#if appReady}}
+    {{#with siteData}}
+      <div id="feature-intro-wrapper">
+        <div class="container">
+          <h1>Features</h1>
+        </div>
+      </div>
+      {{> FeaturesDetails}}
+    {{/with}}
+  {{else}}
+    {{> spinner}}
+  {{/if}}
 </template>

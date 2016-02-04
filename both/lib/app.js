@@ -5,6 +5,10 @@ App = {
   // Set variables.
   variables: {
     themeMaster: 'Master',
+    theme0: 'theme0',
+    theme1: 'theme1',
+    theme2: 'theme2',
+    theme3: 'theme3',
     themeDefault: 'None',
     themeClasses: 'theme0 theme1 theme2 theme3 theme4 theme5 theme6 theme7 theme8 theme9 theme10 theme11 theme12 theme13 theme14 theme15 themeMaster themeNone'
   },
@@ -33,6 +37,18 @@ App = {
   // Check if theme is master.
   themeIsMaster: function() {
     return (Session.get('theme') === this.variables.themeMaster);
+  },
+  themeIs0: function() {
+    return (Session.get('theme') === this.variables.theme0);
+  },
+  themeIs1: function() {
+    return (Session.get('theme') === this.variables.theme1);
+  },
+  themeIs2: function() {
+    return (Session.get('theme') === this.variables.theme2);
+  },
+  themeIs3: function() {
+    return (Session.get('theme') === this.variables.theme3);
   },
 
   // Builds google map instance.

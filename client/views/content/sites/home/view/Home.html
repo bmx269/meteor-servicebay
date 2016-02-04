@@ -1,9 +1,7 @@
 <template name="Home">
-  {{#if Template.subscriptionsReady}}
-    {{#with intro}}
-      <div class="home intro">{{{intro.homeIntro}}}</div>
-    {{/with}}
+  {{#if appReady}}
+    <div class="home intro">{{{siteData.homeIntro}}}</div>
   {{else}}
-    {{> Loading}}
+    {{> spinner}}
   {{/if}}
 </template>
