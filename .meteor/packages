@@ -62,10 +62,13 @@ chrismbeckett:toastr
 cfs:dropbox
 kadira:blaze-plus
 yogiben:autoform-modals
-standard-minifiers
+tomwasd:history-polyfill
 kadira:blaze-layout
 kadira:flow-router
 arillo:flow-router-helpers
 useraccounts:flow-routing
-tomwasd:history-polyfill
 zimme:active-route
+okgrow:image-upload
+standard-minifier-css
+standard-minifier-js
+ultimatejs:tracker-react

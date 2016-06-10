@@ -1,12 +1,18 @@
 <template name="ContactMaster">
-  <div id="content-wrapper">
-    <div class="container">
-      <h2>Contact ServiceBay</h2>
-      {{#with contact}}
-        <div class="contact intro">{{{contact.contactIntro}}}</div>
-      {{/with}}
-      {{> ContactForm}}
-
+  <div class="header">
+    {{> Header}}
+  </div>
+  <div class="content">
+    <div id="content-wrapper">
+      <div class="container">
+        <h2>Contact ServiceBay</h2>
+        {{#with contact}}
+          <div class="contact intro">{{{contact.contactIntro}}}</div>
+        {{/with}}
+      </div>
     </div>
+  </div>
+  <div class="footer">
+    {{> Footer}}
   </div>
 </template>

@@ -1,25 +1,34 @@
 <template name="Dashboard">
-  <div id="content-wrapper">
-    <div class="container">
-      <h1>Your Dashboard</h1>
-      <div class="intro">
-        <p>Your Dashboard is where you can manage your all aspects of
-          your website. From Feature changes, Billing/Plan details,
-          to the adjustment of your website's Appearance,
-          your Dashboard covers everything you need for your account.</p>
+  <div class="header">
+    {{> Header}}
+  </div>
+  <div class="content">
+    <div id="content-wrapper">
+      <div class="container">
+        <h1>Your Dashboard</h1>
+        <div class="intro">
+          <p>Your Dashboard is where you can manage your all aspects of
+            your website. From Feature changes, Billing/Plan details,
+            to the adjustment of your website's Appearance,
+            your Dashboard covers everything you need for your account.</p>
+        </div>
+      </div>
+    </div>
+    <div id="dashboard-wrapper">
+      <div class="container">
+        <div id="subscriptions">
+          {{> sitesList}}
+        </div>
+        <div id="invoices">
+          {{!-- {{> invoices}} --}}
+        </div>
       </div>
     </div>
   </div>
-  <div id="dashboard-wrapper">
-    <div class="container">
-      <div id="subscriptions">
-        {{> sitesList}}
-      </div>
-      <div id="invoices">
-        {{!-- {{> invoices}} --}}
-      </div>
-    </div>
+  <div class="footer">
+    {{> Footer}}
   </div>
+
 </template>
 
 

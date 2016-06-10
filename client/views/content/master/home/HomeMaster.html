@@ -1,12 +1,20 @@
 <template name="HomeMaster">
-  <div id="content-wrapper" class="home main-site">
-    <div class="container">
-      {{#if appReady}}
-        <div class="home intro">{{{siteData.homeIntro}}}</div>
-      {{else}}
-        {{> spinner}}
-      {{/if}}
+  <div class="header">
+    {{> HomeHeader}}
+  </div>
+  <div class="content">
+    <div id="content-wrapper" class="home main-site">
+      <div class="container">
+        {{#if appReady}}
+          <div class="home intro">{{{siteData.homeIntro}}}</div>
+        {{else}}
+          {{> spinner}}
+        {{/if}}
+      </div>
+      {{> FeaturesTeaser}}
     </div>
   </div>
-  {{> FeaturesTeaser}}
+  <div class="footer">
+    {{> Footer}}
+  </div>
 </template>

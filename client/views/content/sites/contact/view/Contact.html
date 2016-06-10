@@ -1,0 +1,30 @@
+<template name="Contact">
+
+  {{#if appReady}}
+
+    {{#if siteThemeMaster}}
+      {{> ContactMaster}}
+    {{else}}
+      {{#if siteTheme0}}
+        {{> Contact0}}
+      {{else}}
+        {{#if siteTheme1}}
+          {{> Contact1}}
+        {{else}}
+          {{#if siteTheme2}}
+            {{> Contact2}}
+          {{else}}
+            {{#if siteTheme3}}
+              {{> Contact3}}
+            {{else}}
+              {{> Loading}}
+            {{/if}}
+          {{/if}}
+        {{/if}}
+      {{/if}}
+    {{/if}}
+
+  {{else}}
+    {{> Loading}}
+  {{/if}}
+</template>
