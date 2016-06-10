@@ -54,3 +54,31 @@ Template.MasterLayout.helpers({
 });
 
 
+// set global siteThemeID variable
+//var siteThemeID = Session.get('theme');
+
+Template.registerHelper('appReady', function () {
+  return Template.instance().subscriptionsReady();
+});
+
+
+Template.registerHelper('siteThemeMaster', function () {
+  var siteThemeID = Session.get('theme');
+  return siteThemeID === 'Master';
+});
+Template.registerHelper('siteTheme0', function () {
+  var siteThemeID = Session.get('theme');
+  return siteThemeID === '0';
+});
+Template.registerHelper('siteTheme1', function () {
+  var siteThemeID = Session.get('theme');
+  return siteThemeID === '1';
+});
+Template.registerHelper('siteTheme2', function () {
+  var siteThemeID = Session.get('theme');
+  return siteThemeID === '2';
+});
+Template.registerHelper('siteTheme3', function () {
+  var siteThemeID = Session.get('theme');
+  return siteThemeID === '3';
+});

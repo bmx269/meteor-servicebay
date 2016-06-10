@@ -1,0 +1,29 @@
+{
+  "name": "servicebay",
+  "version": "1.0.0",
+  "description": "ServiceBay ==========",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bmx269/servicebay.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bmx269/servicebay/issues"
+  },
+  "homepage": "https://github.com/bmx269/servicebay#readme",
+  "dependencies": {
+    "react": "^0.14.8",
+    "react-dom": "^0.14.8",
+    "react-mounter": "^1.1.0",
+    "react-router": "^2.4.0"
+  }
+}

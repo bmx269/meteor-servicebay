@@ -1,4 +1,35 @@
 <template name="Home">
+
+  {{#if appReady}}
+
+    {{#if siteThemeMaster}}
+      {{> HomeMaster}}
+    {{else}}
+      {{#if siteTheme0}}
+        {{> Home0}}
+      {{else}}
+        {{#if siteTheme1}}
+          {{> Home1}}
+        {{else}}
+          {{#if siteTheme2}}
+            {{> Home2}}
+          {{else}}
+            {{#if siteTheme3}}
+              {{> Home3}}
+            {{else}}
+              {{> Welcome}}
+            {{/if}}
+          {{/if}}
+        {{/if}}
+      {{/if}}
+    {{/if}}
+
+  {{else}}
+    {{> Loading}}
+  {{/if}}
+</template>
+
+<template name="SiteHome">
   {{#if appReady}}
     <div class="home intro">{{{siteData.homeIntro}}}</div>
   {{else}}

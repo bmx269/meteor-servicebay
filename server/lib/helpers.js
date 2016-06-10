@@ -9,3 +9,7 @@ Meteor.publishAuth = function(name, fn) {
 
 
 Sortable.collections = ['services'];
+
+// var accessKeyId = Meteor.settings.s3.accessKeyId;
+// var secretAccessKey = Meteor.settings.s3.secretAccessKey;
+// var bucketName = Meteor.settings.s3.bucketName;

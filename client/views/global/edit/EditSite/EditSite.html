@@ -1,0 +1,116 @@
+<template name="EditSite">
+  <div id="edit-site" tabindex="-1" role="dialog">
+    <div class="container">
+        <h1>Edit Site</h1>
+        <a href="{{pathFor 'dashboard'}}" class="btn btn-warning"><i class="fa fa-arrow-circle-left"></i> Back to Dashboard</a>
+        {{#autoForm collection="Site" doc=this id="quickEditSiteForm" type="update" validation="submitThenBlur" class="grid-form"}}
+          <fieldset>
+            <legend>Site</legend>
+            <div data-row-span="3">
+              <div data-field-span="2">
+                {{> afQuickField name='siteTitle'}}
+              </div>
+              <div data-field-span="1">
+                {{> afQuickField placeholder="e.g., servicebay.ca" name='domain'}}
+              </div>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Company</legend>
+            <div data-row-span="1">
+              <div data-field-span="1">
+                {{> afQuickField placeholder="e.g., ServiceBay" name='companyName'}}
+              </div>
+            </div>
+            <div data-row-span="3">
+              <div data-field-span="2">
+                {{> afQuickField name='companyAddress'}}
+              </div>
+              <div data-field-span="1">
+                {{> afQuickField  name='companyCity'}}
+              </div>
+            </div>
+            <div data-row-span="3">
+              <div data-field-span="1">
+                {{> afQuickField name='companyState'}}
+              </div>
+              <div data-field-span="1">
+                {{> afQuickField name='companyPostal'}}
+              </div>
+              <div data-field-span="1">
+                {{> afQuickField name='companyCountry'}}
+              </div>
+            </div>
+            <div data-row-span="3">
+              <div data-field-span="1">
+                {{> afQuickField name='companyPhone'}}
+              </div>
+              <div data-field-span="1">
+                {{> afQuickField name='companyFax'}}
+              </div>
+              <div data-field-span="1">
+                {{> afQuickField placeholder="e.g., name@gmail.com" name='companyEmail'}}
+              </div>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Social Media</legend>
+            <div data-row-span="3">
+              <div data-field-span="1">
+                {{> afQuickField placeholder="Facebook Page URL" name='companyFacebook'}}
+              </div>
+              <div data-field-span="1">
+                {{> afQuickField placeholder="e.g., servicebay" name='companyTwitter'}}
+              </div>
+              <div data-field-span="1">
+                {{> afQuickField placeholder="Yelp Page URL" name='companyYelp'}}
+              </div>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Look & Feel</legend>
+            <div data-row-span="1">
+              <div data-field-span="1">
+                {{> afQuickField name="siteTheme"}}
+              </div>
+            </div>
+            <div data-row-span="1">
+              <div data-field-span="1">
+                {{> afQuickField name='siteLogo'}}
+                {{> uploadImage imageCollection="productImages" size="thumbnail" doc=product}}
+              </div>
+            </div>
+            <div data-row-span="1">
+              <div data-field-span="1">
+                {{> afQuickField name='homeSplash'}}
+              </div>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Page Content</legend>
+            <div data-row-span="1">
+              <div data-field-span="1">
+                {{> afQuickField name='homeIntro' placeholder="Introduce us to your company..." rows=6}}
+              </div>
+            </div>
+            <div data-row-span="1">
+              <div data-field-span="1">
+                {{> afQuickField name='servicesIntro' placeholder="Introduce your services and what you do..." rows=6}}
+              </div>
+            </div>
+            <div data-row-span="1">
+              <div data-field-span="1">
+                {{> afQuickField name='aboutIntro' placeholder="Write something about your company..." rows=6}}
+              </div>
+            </div>
+            <div data-row-span="1">
+              <div data-field-span="1">
+                {{> afQuickField name='contactIntro' placeholder="Tell us how to contact you..." rows=6}}
+              </div>
+            </div>
+          </fieldset>
+          <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save Changes</button> <a href="{{pathFor 'dashboard'}}" class="btn btn-link"><i class="fa fa-arrow-circle-left"></i> Back to Dashboard</a>
+        {{/autoForm}}
+      </div>
+    </div>
+</template>
