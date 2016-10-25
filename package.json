@@ -21,9 +21,6 @@
   },
   "homepage": "https://github.com/bmx269/servicebay#readme",
   "dependencies": {
-    "react": "^0.14.8",
-    "react-dom": "^0.14.8",
-    "react-mounter": "^1.1.0",
-    "react-router": "^2.4.0"
+    "bcrypt": "^0.8.7"
   }
 }
