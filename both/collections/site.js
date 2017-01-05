@@ -7,8 +7,6 @@
 
 var Schemas = {};
 
-
-
 Site = new Meteor.Collection('site', {});
 
 
