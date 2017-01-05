@@ -8,7 +8,7 @@
 
           <li><a href="{{pathFor 'support'}}" class="support"><i class="fa fa-comments-o"></i> Help &amp; Support</a></li>
           {{#if currentUser}}<li><a href="{{pathFor 'dashboard'}}" class="dashboard"><i class="fa fa-cog"></i> My Dashboard</a></li>{{/if}}
-          {{#unless currentUser}}<li><a href="{{pathFor 'signIn'}}" class="signup"><i class="fa fa-user"></i> Sign In / Register</a></li>{{/unless}}
+          {{#unless currentUser}}<li><a href="/user" class="signup"><i class="fa fa-user"></i> Sign In / Register</a></li>{{/unless}}
           {{#if currentUser}}<li><a href="#" class="signout"><i class="fa fa-sign-out"></i> Sign Out</a></li>{{/if}}
           {{#if adminUser}}<li><a href="{{pathFor 'admin'}}"><i class="fa fa-cog"></i> Admin</a></li>{{/if}}
         </ul>

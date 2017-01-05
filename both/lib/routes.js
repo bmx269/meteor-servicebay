@@ -1,23 +1,38 @@
 /*****************************************************************************/
 /* Client and Server Routes */
 /*****************************************************************************/
-AccountsTemplates.configureRoute('signIn', {
-  name: 'signIn',
-  path: '/user',
-  redirect: '/dashboard',
+
+AccountsTemplates.configure({
+  defaultLayoutType: 'blaze', // Optional, the default is 'blaze'
+  defaultTemplate: 'User',
+  defaultLayout: 'MasterLayout',
+  defaultLayoutRegions: {},
+  defaultContentRegion: 'layout'
 });
+
+AccountsTemplates.configureRoute('signIn', {
+  layoutType: 'blaze',
+  name: 'signin',
+  path: '/user'
+});
+
+// AccountsTemplates.configureRoute('signIn', {
+//   name: 'signIn',
+//   path: '/user',
+//   redirect: '/dashboard',
+// });
 //
-//AccountsTemplates.configureRoute('signUp', {
+// AccountsTemplates.configureRoute('signUp', {
 //  name: 'signUp',
 //  path: '/user/register',
 //  redirect: '/welcome',
-//});
+// });
 //
-
-AccountsTemplates.configureRoute('forgotPwd', {
-  name: 'forgotPwd',
-  path: '/user/password'
-});
+//
+// AccountsTemplates.configureRoute('forgotPwd', {
+//   name: 'forgotPwd',
+//   path: '/user/password'
+// });
 
 
 // Tell FR to wait until our ES6 code is fully initialized
@@ -119,13 +134,12 @@ FlowRouter.route( '/contact', {
 var adminRoutes = FlowRouter.group({
   prefix: '/dashboard',
   name: 'dashboard',
-  triggersEnter: [function(context, redirect) {
-    console.log('running group triggers');
-  }]
+  triggersEnter: [AccountsTemplates.ensureSignedIn]
 });
 
 
 adminRoutes.route('/', {
+  triggersEnter: [AccountsTemplates.ensureSignedIn],
   action: function() {
      BlazeLayout.render('MasterLayout',
       {
@@ -133,10 +147,7 @@ adminRoutes.route('/', {
       }
     );
   },
-  name: 'dashboard', // Optional route name.
-  triggersEnter: [function(context, redirect) {
-    console.log('running /dashboard trigger');
-  }]
+  name: 'dashboard' // Optional route name.
 });
 
 
@@ -148,10 +159,7 @@ adminRoutes.route('/site/add', {
       }
     );
   },
-  name: 'create.site', // Optional route name.
-  triggersEnter: [function(context, redirect) {
-    console.log('running /site/add trigger');
-  }]
+  name: 'create.site' // Optional route name.
 });
 
 
@@ -215,22 +223,21 @@ FlowRouter.initialize();
 //
 //});
 
-//AccountsTemplates.configureRoute('signIn', {
+// AccountsTemplates.configureRoute('signIn', {
 //  name: 'signIn',
 //  path: '/user',
 //  redirect: '/dashboard',
-//});
+// });
 //
-//AccountsTemplates.configureRoute('signUp', {
+// AccountsTemplates.configureRoute('signUp', {
 //  name: 'signUp',
 //  path: '/user/register',
 //  redirect: '/welcome',
-//});
+// });
 //
-
-//AccountsTemplates.configureRoute('forgotPwd', {
+//
+// AccountsTemplates.configureRoute('forgotPwd', {
 //  name: 'forgotPwd',
 //  path: '/user/password'
-//});
-
-
+// });
+//

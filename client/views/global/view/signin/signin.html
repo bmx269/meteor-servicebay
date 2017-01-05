@@ -1,12 +1,19 @@
-<template name="SignIn">
-  {{> atForm}}
-</template>
-
-
-<template name="SignUp">
-  {{> atForm state='signUp'}}
-</template>
-
-<template name="ForgotPwd">
-  {{> atForm state='forgotPwd'}}
+<template name="User">
+  <div class="header">
+    {{> Header}}
+  </div>
+  <div class="content">
+    {{#if appReady}}
+      <div id="login-wrapper">
+        <div class="container">
+          {{> atForm}}
+        </div>
+      </div>
+    {{else}}
+      {{> spinner}}
+    {{/if}}
+  </div>
+  <div class="footer">
+    {{> Footer}}
+  </div>
 </template>
