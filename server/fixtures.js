@@ -7,7 +7,8 @@ if ( Meteor.users.find().count() === 0 ) {
         first_name: 'John',
         last_name: 'Doe',
         company: 'ABC',
-    }
+    },
+    roles: ["admin"],
   });
 };
 
