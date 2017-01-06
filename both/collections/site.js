@@ -55,7 +55,6 @@ Schemas.Site = new SimpleSchema({
         {label: "Theme 1", value: "1"},
         {label: "Theme 2", value: "2"},
         {label: "Theme 3", value: "3"},
-        {label: "ServiceBay", value: "Master"}
       ]
     }
   },
@@ -186,7 +185,7 @@ Schemas.Site = new SimpleSchema({
   companyCountry: {
     type: String,
     label: "Country",
-    allowedValues: ['Canada', 'USA'],
+    optional: true,
     autoform: {
       options: [
         {label: "Canada", value: "Canada"},

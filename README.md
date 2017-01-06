@@ -27,10 +27,15 @@ meteor
 
 You can login with the admin credentials: 
 
-**Login:** none@none.com 
+**Login:** admin@example.com 
 **Password:** 123456 
 
-or create a new account. 
+normal credentials: 
+
+**Login:** normal@example.com 
+**Password:** 123456 
+
+OR create a new account. 
 
 ### Dashboard
 

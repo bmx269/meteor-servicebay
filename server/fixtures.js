@@ -1,28 +1,31 @@
 if ( Meteor.users.find().count() === 0 ) {
-  Accounts.createUser({
-    username: 'admin',
-    email: 'none@none.com',
-    password: '123456',
-    profile: {
-        first_name: 'John',
-        last_name: 'Doe',
-        company: 'ABC',
-    },
-    roles: ["admin"],
+  var users = [
+      {name:"Normal User",email:"normal@example.com",roles:[]},
+      {name:"Admin User",email:"admin@example.com",roles:['admin']}
+    ];
+
+  _.each(users, function (user) {
+    var id;
+
+    id = Accounts.createUser({
+      email: user.email,
+      password: "123456",
+      profile: { name: user.name }
+    });
+
+    if (user.roles.length > 0) {
+      // Need _id of existing user record so this call must come
+      // after `Accounts.createUser` or `Accounts.onCreate`
+      Roles.addUsersToRoles(id, user.roles);
+    }
   });
 };
 
 if (Site.find().count() === 0) {
 
   Site.insert({
-    companyAddress: "100 The Pointe, 999 Canada Place",
-    companyCity: "Vancouver",
     companyCountry: "Canada",
-    companyEmail: "test@servicebay.ca",
-    companyFax: "604-555-4321",
     companyName: "Small Robot",
-    companyPhone: "604-555-4321",
-    companyState: "BC",
     contactIntro: "Contact Introduction Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ut dui ut nunc lacinia rhoncus at venenatis purus. Integer lorem tortor, vestibulum nec quam ac, aliquet lacinia neque.",
     domain: "localhost:3000",
     featuresIntro: "<p>ServiceBay has many of the key features you will need to build a presence on the Internet, which is where your potential customers are looking for you. With setup and site configuration being handled, all you need to focus on is filling out your information, and choosing a design. We take you through all the steps with clear instructions, along with tips and tricks to make your website shine.</p>",
