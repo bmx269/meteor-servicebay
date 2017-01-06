@@ -39,9 +39,11 @@ OR create a new account.
 
 ### Dashboard
 
-This is where you will find the controls to create and manage your various sites. Start by creating a new site, with the "domain" of **127.0.0.1:3000** so you are able to see it working locally. If you used the "admin" account, you will have the ability to so some administrative edits. 
+This is where you will find the controls to create and manage your various sites. 
 
-The create workflow is not complete, after you create a site, you will have to return to the Dashboard to see the site listing, or use the **"Build Your Site"** wysiwyg editor. You can open http://127.0.0.1:3000 in another browser window, and while making edits via the **"Build Your Site"**, and choose to "Save Changes", the open window will update in real time, even if you change themes.
+Start by creating a new site, with the "domain" of **127.0.0.1:3000** so you are able to see it working locally. If you used the "admin" account, you will have the ability to do some extra administrative tasks to the sites on the dashboard. 
+
+The create workflow is not complete, after you create a site, you will have to return to the Dashboard to see the site listing, or use the **"Build Your Site"** wysiwyg editor. You can **View Site** to open http://127.0.0.1:3000 in another browser window. While making edits via the **"Build Your Site"**, choose to "Save Changes", the open window will update in real time, even if you change themes.
 
 ## Project Status
 
