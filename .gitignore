@@ -1,3 +1,4 @@
 server/lib/api
 .idea
+node_modules
 settings.json
