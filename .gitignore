@@ -1,4 +1,3 @@
 server/lib/api
 .idea
 settings.json
-server/fixtures.js
