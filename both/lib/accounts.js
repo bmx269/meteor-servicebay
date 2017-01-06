@@ -2,9 +2,9 @@ AccountsTemplates.configure({
   // Behaviour
   confirmPassword: true,
   enablePasswordChange: true,
-  forbidClientAccountCreation: true,
+  forbidClientAccountCreation: false,
   overrideLoginErrors: false,
-  sendVerificationEmail: true,
+  sendVerificationEmail: false,
 
   // Appearance
   showAddRemoveServices: false,

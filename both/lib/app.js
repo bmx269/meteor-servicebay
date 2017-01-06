@@ -38,13 +38,7 @@ App = {
   // Builds google map instance.
   googleMaps: function(location) {
     location = location || {};
-
     //console.log(location);
-
-    //// initialize the reactive variables
-    //var instance = this;
-    //Template.instance.lat = new ReactiveVar(0);
-    //Template.instance.lng = new ReactiveVar(0);
 
     // Make sure the maps API has loaded.
     if (GoogleMaps.loaded()) {
@@ -59,7 +53,7 @@ App = {
           address += v + ',';
         }
       });
-      console.log(address);
+      // console.log(address);
       // Set lat and lng with actual and valid values.
       geocoder.geocode({
         'address': address
@@ -71,30 +65,7 @@ App = {
         Template.instance.lng.set(geoLatLng.D);
 
       });
-
-      //// We can use the `ready` callback to interact with the map API once the map is ready.
-      //GoogleMaps.ready('mapTwo', function(map) {
-      //  // Add a marker to the map once it's ready
-      //  var marker = new google.maps.Marker({
-      //    position: map.options.center,
-      //    map: map.instance
-      //  });
-      //});
-      //
-      //// Setting the simple vars.
-      //var lat = Template.instance.lat.get();
-      //    lng = Template.instance.lng.get();
-      //
-      //console.log("lat=" + lat + ", lng=" + lng);
-      //
-      //// Map initialization options
-      //return {
-      //  center: new google.maps.LatLng(lat,lng),
-      //  zoom: 15,
-      //  scrollwheel: false
-      //};
     }
-
     return '';
   }
 };

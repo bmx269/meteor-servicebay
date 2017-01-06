@@ -17,13 +17,7 @@ scrollUp = function() {
 },
 
 scrollPage = function() {
-  /**
-   * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
-   * @see http://flesler.demos.com/jquery/scrollTo/
-   * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
-   */
 
-    // The default axis is 'y', but in this demo, I want to scroll both
     // You can modify any default like this
   $.localScroll.defaults.axis = 'y';
 
@@ -34,10 +28,6 @@ scrollPage = function() {
     duration:1500
   });
 
-  /**
-   * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
-   * also affect the >> and << links. I want every link in the page to scroll.
-   */
   $.localScroll({
     target: 'html', // could be a selector or a jQuery object too.
     queue:false,

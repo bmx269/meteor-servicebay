@@ -37,29 +37,13 @@ Schemas.Site = new SimpleSchema({
         this.unset();
       }
     },
-    denyUpdate: true
+    denyUpdate: true,
+    optional: true
   },
   domain: {
     type: String,
     label: "Domain",
     unique: true
-  },
-  fullDomainActive: {
-    type: Boolean,
-    allowedValues: ['0', '1'],
-    label: "Full Domain Active",
-    autoform: {
-      type: "boolean-checkbox",
-      options: [
-        {trueLabel: "Yes"}
-      ]
-    }
-  },
-  fullDomain: {
-    type: String,
-    label: "Full Domain",
-    unique: true,
-    optional: true
   },
   siteTheme: {
     type: String,
@@ -210,27 +194,6 @@ Schemas.Site = new SimpleSchema({
       ]
     }
   },
-  //location: {
-  //  type: Object,
-  //  label: "Location Map",
-  //  autoform: {
-  //    type: 'map',
-  //    afFieldInput: {
-  //      mapType: 'street',
-  //      zoom: 15,
-  //      height: '400px',
-  //      geolocation: true,
-  //      searchBox: true,
-  //      autolocate: true,
-  //      options: [
-  //        ({
-  //          'location.lat': {type: Number, decimal: true},
-  //          'location.lng': {type: Number, decimal: true}
-  //        })
-  //      ]
-  //    }
-  //  }
-  //},
   lat: {
     type: String,
     label: "Lat",

@@ -4,6 +4,7 @@
  *    return Site.find({is_public: true});
  *  }
  */
+
 Site.allow({
   insert: function (userId, doc) {
     return true;
@@ -31,4 +32,3 @@ Site.deny({
     return false;
   }
 });
-
