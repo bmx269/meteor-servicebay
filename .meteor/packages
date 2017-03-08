@@ -75,6 +75,6 @@ kadira:blaze-plus
 yogiben:autoform-modals
 tomwasd:history-polyfill
 # zimme:active-route
-standard-minifier-css
-standard-minifier-js
-shell-server
+standard-minifier-css@1.3.2
+standard-minifier-js@1.2.1
+shell-server@0.2.1
