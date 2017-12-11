@@ -1,5 +1,12 @@
 <template name="Services">
-  {{#with site}}
+  {{#if Template.subscriptionsReady}}
+    {{#with services}}
     <div class="services intro">{{{servicesIntro}}}</div>
-  {{/with}}
+    {{/with}}
+  {{else}}
+    <div class="services intro">
+      {{spinner}}
+      no data found
+    </div>
+  {{/if}}
 </template>
