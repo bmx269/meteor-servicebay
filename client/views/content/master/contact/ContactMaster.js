@@ -1,3 +1,6 @@
+import SimpleSchema from 'simpl-schema';
+
+
 Schema = {};
 Schema.contact = new SimpleSchema({
     name: {

@@ -9,7 +9,7 @@ Template.Services.onCreated(function() {
 Template.Services.helpers({
   about: function() {
     var siteId = Session.get("selectedDocId");
-    console.log(siteId);
+    // console.log(siteId);
     var about =  Site.findOneFaster({'_id': siteId},{fields: {'servicesIntro': 1}});
     return about;
   }

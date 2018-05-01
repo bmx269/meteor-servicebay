@@ -1,3 +1,6 @@
+import SimpleSchema from 'simpl-schema';
+SimpleSchema.extendOptions(['autoform']);
+
 /*
  * Add query methods like this:
  *  Site.findPublic = function () {

@@ -15,7 +15,7 @@ siteData = function(){
     var theSite = Site.findOneFaster({'domain': domain});
 
     if (theSite) {
-      console.log('siteData - found');
+      // console.log('siteData - found');
       // set theme session for theme function
       // set document title
 
@@ -25,10 +25,10 @@ siteData = function(){
 
       return theSite;
     }
-    console.log('siteData - not found');
+    // console.log('siteData - not found');
 
   }
-  // no data found, must return null for iron-router
+  // no data found
   return null;
 };
 

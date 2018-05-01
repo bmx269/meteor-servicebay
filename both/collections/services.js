@@ -1,3 +1,6 @@
+import SimpleSchema from 'simpl-schema';
+SimpleSchema.extendOptions(['autoform']);
+
 /*
  * Add query methods like this:
  *  Services.findPublic = function () {
@@ -33,29 +36,24 @@ Schemas.Services = new SimpleSchema({
     type: String,
     label: "Service Title"
   },
-  image: {
-    type: String,
-    label: "Image",
-    optional: true,
-    autoform: {
-      afFieldInput: {
-        type: 'fileUpload',
-        collection: 'Images',
-        accept: 'image/*',
-        label: 'Choose file',
-      }
-    }
-  },
+  // image: {
+  //   type: String,
+  //   label: "Image",
+  //   optional: true,
+  //   autoform: {
+  //     afFieldInput: {
+  //       type: 'fileUpload',
+  //       collection: 'Images',
+  //       accept: 'image/*',
+  //       label: 'Choose file',
+  //     }
+  //   }
+  // },
   serviceDescription: {
     type: String,
     label: "Brief summary of the service",
     optional: true,
     max: 1000,
-    autoform: {
-      afFieldInput: {
-        type: "textarea"
-      }
-    }
   },
   order: {
     type: Number,
