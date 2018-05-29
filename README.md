@@ -1,4 +1,7 @@
 # ServiceBay
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/bmx269/meteor-servicebay.svg)](https://greenkeeper.io/)
+
 ==========
 
 This is a Meteor.js SaaS project, and is very much a work in progress.
