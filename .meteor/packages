@@ -5,7 +5,7 @@
 
 standard-app-packages@1.0.9
 accounts-password@1.5.1
-accounts-base@1.4.2
+accounts-base@1.4.3
 iron:router
 gadicohen:headers
 iron:layout
@@ -28,7 +28,7 @@ email@1.2.3
 themeteorchef:html5-sortable
 momentjs:moment
 reactive-var@1.0.11
-reactive-dict@1.2.0
+reactive-dict@1.2.1
 fortawesome:fontawesome
 summernote:summernote
 twbs:bootstrap
@@ -64,14 +64,14 @@ kadira:blaze-plus
 # useraccounts:flow-routing
 tomwasd:history-polyfill
 # zimme:active-route
-standard-minifier-css@1.4.1
-standard-minifier-js@2.3.4
-shell-server@0.3.1
-dynamic-import@0.4.0
+standard-minifier-css@1.5.0
+standard-minifier-js@2.4.0
+shell-server@0.4.0
+dynamic-import@0.5.0
 aldeed:collection2-core@2.0.0
 aldeed:schema-deny
 aldeed:schema-index
-ecmascript@0.11.1
+ecmascript@0.12.0
 promise@0.11.1
 ecmascript-collections
 es5-shim@4.8.0
