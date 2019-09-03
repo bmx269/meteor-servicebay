@@ -11,7 +11,7 @@ gadicohen:headers
 iron:layout
 arunoda:find-faster
 meteorhacks:subs-manager
-http@1.4.1
+http@1.4.2
 
 
 npm-container
@@ -28,7 +28,7 @@ email@1.2.3
 themeteorchef:html5-sortable
 momentjs:moment
 reactive-var@1.0.11
-reactive-dict@1.2.1
+reactive-dict@1.3.0
 fortawesome:fontawesome
 summernote:summernote
 twbs:bootstrap
@@ -64,15 +64,15 @@ kadira:blaze-plus
 # useraccounts:flow-routing
 tomwasd:history-polyfill
 # zimme:active-route
-standard-minifier-css@1.5.0
-standard-minifier-js@2.4.0
+standard-minifier-css@1.5.3
+standard-minifier-js@2.4.1
 shell-server@0.4.0
-dynamic-import@0.5.0
+dynamic-import@0.5.1
 aldeed:collection2-core@2.0.0
 aldeed:schema-deny
 aldeed:schema-index
-ecmascript@0.12.0
-promise@0.11.1
+ecmascript@0.12.4
+promise@0.11.2
 ecmascript-collections
 es5-shim@4.8.0
 aldeed:autoform
