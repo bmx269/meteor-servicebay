@@ -50,10 +50,10 @@
 <template name="subscription">
   <div class="subscription">
     <div class="subscription-content">
-      <h4><a href="http://{{domain}}" target="_blank">{{siteTitle}}</a></h4>
-      <div class="site-url"><a href="http://{{domain}}" target="_blank">{{domain}}</a></div>
+      <h4><a href="https://{{domain}}" target="_blank">{{siteTitle}}</a></h4>
+      <div class="site-url"><a href="https://{{domain}}" target="_blank">{{domain}}</a></div>
       <div class="site-actions">
-        <a href="http://{{domain}}" class="btn btn-link" target="_blank">View</a> | <a href="#edit-subscription" class="fancybox btn btn-link editThis">Edit</a> | <a href="#" class="btn btn-link deleteThis"><i class="fa fa-trash-o"></i> Permanently Delete</a>
+        <a href="https://{{domain}}" class="btn btn-link" target="_blank">View</a> | <a href="#edit-subscription" class="fancybox btn btn-link editThis">Edit</a> | <a href="#" class="btn btn-link deleteThis"><i class="fa fa-trash-o"></i> Permanently Delete</a>
       </div>
     </div>
   </div>
@@ -64,10 +64,10 @@
     {{#each siteItem}}
       <div class="site">
         <div class="site-content">
-          <h4><a href="http://{{domain}}" target="_blank">{{siteTitle}}</a></h4>
-          <div class="site-url"><a href="http://{{domain}}" target="_blank">{{domain}}</a></div>
+          <h4><a href="https://{{domain}}" target="_blank">{{siteTitle}}</a></h4>
+          <div class="site-url"><a href="https://{{domain}}" target="_blank">{{domain}}</a></div>
           <div class="site-actions">
-            <a href="http://{{domain}}" class="btn btn-primary" target="_blank"><i class="fa fa-eye"></i> View Live Site</a> <a href="{{pathFor 'edit.home'}}" class="btn btn-success wysiwygThis"><i class="fa fa-building"></i> Build Your Site</a>
+            <a href="https://{{domain}}" class="btn btn-primary" target="_blank"><i class="fa fa-eye"></i> View Live Site</a> <a href="{{pathFor 'edit.home'}}" class="btn btn-success wysiwygThis"><i class="fa fa-building"></i> Build Your Site</a>
             {{#if isInRole 'admin'}}
               <div class="admin-actions">
                 <p><strong>Admin</strong></p><p>
